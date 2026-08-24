@@ -227,6 +227,10 @@
 
   width: 430px;
 
+  max-height: calc(100vh - 100px);
+
+  overflow-y: auto;
+
   transform:
     translateX(-50%)
     translateY(8px);
@@ -408,7 +412,9 @@
   font-size: 9px;
 }
 
-/* HIGH SCHOOL LINK */
+/* =========================================
+   HIGH SCHOOL DROPDOWN LINK
+========================================= */
 
 .education-featured-link {
   background: #faf6fc;
@@ -430,7 +436,9 @@
   font-size: 14px;
 }
 
-/* DISABLED */
+/* =========================================
+   DISABLED
+========================================= */
 
 .disabled-menu-link {
   cursor: default;
@@ -872,10 +880,8 @@
 ========================================= */
 
 .levels-section {
-  width: min(
-    1180px,
-    calc(100% - 48px)
-  );
+  width:
+    min(1180px, calc(100% - 48px));
 
   margin: 0 auto;
 
@@ -895,7 +901,7 @@
 }
 
 .section-heading > div > p,
-.steps-section .section-heading > p,
+.steps-header > div > p,
 .cta-section p:first-child {
   margin:
     0 0 10px;
@@ -941,7 +947,7 @@
 }
 
 /* =========================================
-   LEVEL CARDS
+   LEVEL GRID
 ========================================= */
 
 .levels-grid {
@@ -950,15 +956,27 @@
   grid-template-columns:
     repeat(4, minmax(0, 1fr));
 
-  gap: 15px;
+  gap: 16px;
+
+  align-items: stretch;
 }
+
+/* =========================================
+   ALL LEVEL CARDS
+========================================= */
 
 .level-card {
   position: relative;
 
-  min-height: 350px;
+  min-height: 455px;
 
   padding: 23px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  box-sizing: border-box;
 
   border: 1px solid #e6dfe8;
 
@@ -968,46 +986,52 @@
 
   text-decoration: none;
 
+  box-shadow:
+    0 4px 14px rgba(61, 29, 72, 0.02);
+
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
 }
 
 .level-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+
+  border-color: #d3b9dd;
+
+  box-shadow:
+    0 18px 35px rgba(68, 27, 82, 0.08);
 }
 
-.level-card-active {
+.level-card-primary {
   background:
     linear-gradient(
       145deg,
-      #fff9ff,
-      #f8effc
+      #fffaff,
+      #faf2fd
     );
-
-  border-color: #d9c4e3;
-}
-
-.level-card-active:hover {
-  box-shadow:
-    0 18px 35px rgba(95, 35, 119, 0.1);
 }
 
 .level-card-link {
   cursor: pointer;
 }
 
-.level-card-link:hover {
-  border-color: #d1b5dc;
+/* =========================================
+   CARD TOP
+========================================= */
 
-  box-shadow:
-    0 18px 35px rgba(95, 35, 119, 0.08);
+.level-card-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
 }
 
 .level-icon {
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
 
   display: flex;
 
@@ -1015,55 +1039,85 @@
 
   justify-content: center;
 
-  border-radius: 13px;
+  border-radius: 14px;
 
-  background: #f2e7f7;
+  background:
+    linear-gradient(
+      135deg,
+      #f3e6f8,
+      #ede0f4
+    );
+
+  color: #9234c9;
 
   font-size: 23px;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(150, 59, 209, 0.03);
 }
 
 .level-number {
-  position: absolute;
-
-  top: 23px;
-
-  right: 23px;
-
-  color: #c1b6c6;
+  color: #c0b5c5;
 
   font-size: 10px;
 
   font-weight: 800;
 }
 
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.level-card-content {
+  margin-top: 28px;
+}
+
+.level-card-label {
+  margin: 0 0 7px;
+
+  color: #a060b9;
+
+  font-size: 8px !important;
+
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+}
+
 .level-card h3 {
-  margin:
-    35px 0 4px;
+  margin: 0;
 
   color: #2b2230;
 
-  font-size: 21px;
+  font-size: 23px;
 
-  letter-spacing: -0.5px;
+  line-height: 1.1;
+
+  letter-spacing: -0.7px;
+
+  font-weight: 800;
 }
 
-.level-card > span {
+.level-card-range {
+  display: block;
+
+  margin-top: 7px;
+
   color: #918793;
 
-  font-size: 11px;
+  font-size: 10px;
 
-  font-weight: 600;
+  font-weight: 700;
 }
 
-.level-card > p {
-  margin:
-    17px 0 0;
+.level-card-description {
+  margin: 15px 0 0;
 
   color: #7d7381;
 
-  font-size: 12px;
+  font-size: 11px;
 
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 /* =========================================
@@ -1077,24 +1131,27 @@
 
   flex-direction: column;
 
-  gap: 5px;
+  gap: 6px;
 }
 
 .level-phase-list a {
-  min-height: 29px;
+  min-height: 35px;
 
-  padding: 6px 8px;
+  padding:
+    6px 8px 6px 10px;
 
   display: flex;
 
   align-items: center;
 
-  justify-content: space-between;
+  gap: 8px;
 
-  border-radius: 7px;
+  border: 1px solid #eee5f1;
+
+  border-radius: 8px;
 
   background:
-    rgba(255, 255, 255, 0.65);
+    rgba(255, 255, 255, 0.7);
 
   color: #70427e;
 
@@ -1103,36 +1160,54 @@
   font-weight: 700;
 
   text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .level-phase-list a:hover {
   background: #ffffff;
 
+  border-color: #dfcce6;
+
   color: #8f32c3;
 }
 
-.level-phase-list b {
+.level-phase-list a span {
+  flex: 1;
+}
+
+.level-phase-list a small {
+  color: #a095a4;
+
+  font-size: 8px;
+}
+
+.level-phase-list a b {
   color: #963bd1;
 
-  font-size: 11px;
+  font-size: 12px;
 }
 
 /* =========================================
-   HIGH SCHOOL GRADES
+   GRADE LIST
 ========================================= */
 
-.level-highschool-list {
-  margin-top: 18px;
+.level-grade-list {
+  margin-top: 22px;
 
-  display: flex;
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
 
   gap: 6px;
 }
 
-.level-highschool-list span {
-  flex: 1;
-
-  min-height: 29px;
+.level-grade-list span {
+  min-height: 38px;
 
   display: flex;
 
@@ -1140,124 +1215,219 @@
 
   justify-content: center;
 
-  border-radius: 7px;
+  border: 1px solid #eee5f1;
 
-  background: #faf5fc;
+  border-radius: 8px;
+
+  background: #faf6fc;
 
   color: #795483;
 
   font-size: 8px;
 
   font-weight: 800;
+
+  text-align: center;
 }
 
 /* =========================================
-   CARD ACTION
+   LEVEL CARD BUTTON
 ========================================= */
 
-.level-main-link {
-  position: absolute;
+.level-card-button {
+  min-height: 40px;
 
-  left: 23px;
+  margin-top: auto;
 
-  bottom: 22px;
+  display: flex;
 
-  color: #9539ce;
+  align-items: center;
 
-  font-size: 10px;
+  justify-content: space-between;
+
+  padding:
+    0 12px;
+
+  border-radius: 9px;
+
+  background: #963bd1;
+
+  color: #ffffff;
+
+  font-size: 9px;
 
   font-weight: 800;
 
   text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
-.level-card-link .level-main-link {
-  color: #9539ce;
+.level-card-button span {
+  font-size: 14px;
 }
 
-.level-card-link:hover .level-main-link {
-  color: #7f27ae;
+.level-card-button:hover {
+  background: #8631bd;
 }
 
-.coming-soon {
-  position: absolute;
+.level-card-button-disabled {
+  background: #f3edf6;
 
-  left: 23px;
+  color: #998f9f;
 
-  bottom: 22px;
+  cursor: default;
 
-  color: #9b929f !important;
+  justify-content: center;
+}
 
-  font-size: 10px;
+.level-card-button-disabled:hover {
+  background: #f3edf6;
 
-  font-weight: 800;
+  transform: none;
 }
 
 /* =========================================
-   STEPS
+   HOW IT WORKS
 ========================================= */
 
 .steps-section {
-  width: min(
-    1180px,
-    calc(100% - 48px)
-  );
+  width:
+    min(1180px, calc(100% - 48px));
 
   margin: 0 auto;
 
   padding: 100px 0;
 }
 
-.centered {
-  flex-direction: column;
+.steps-header {
+  margin-bottom: 48px;
 
-  align-items: center;
+  display: flex;
 
-  text-align: center;
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 40px;
 }
+
+.steps-header h2 {
+  margin: 0;
+
+  color: #2b2230;
+
+  font-size:
+    clamp(38px, 4vw, 52px);
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+}
+
+.steps-header h2 span {
+  display: block;
+
+  color: #963bd1;
+}
+
+.steps-header > p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: #807683;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   STEPS GRID
+========================================= */
 
 .steps-grid {
   display: grid;
 
   grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+    1fr 40px 1fr 40px 1fr;
 
-  gap: 16px;
+  gap: 0;
+
+  align-items: center;
 }
+
+/* =========================================
+   STEP CARD
+========================================= */
 
 .step-card {
   position: relative;
 
-  min-height: 260px;
+  min-height: 315px;
 
   padding: 28px;
 
-  border: 1px solid #e8e1ea;
+  display: flex;
 
-  border-radius: 17px;
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e6dfe8;
+
+  border-radius: 18px;
 
   background: #ffffff;
+
+  box-shadow:
+    0 6px 20px rgba(61, 29, 72, 0.03);
+
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
 }
 
-.step-number {
+.step-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #d3b9dd;
+
+  box-shadow:
+    0 18px 35px rgba(68, 27, 82, 0.08);
+}
+
+/* =========================================
+   STEP NUMBER
+========================================= */
+
+.step-card-number {
   position: absolute;
 
-  top: 20px;
+  top: 21px;
 
-  right: 20px;
+  right: 21px;
 
-  color: #c2b8c8;
+  color: #c7bccb;
 
   font-size: 10px;
 
   font-weight: 800;
+
+  letter-spacing: 0.5px;
 }
 
-.step-icon {
-  width: 50px;
-  height: 50px;
+/* =========================================
+   STEP ICON
+========================================= */
 
-  margin-bottom: 25px;
+.step-icon {
+  width: 58px;
+  height: 58px;
 
   display: flex;
 
@@ -1265,30 +1435,121 @@
 
   justify-content: center;
 
-  border-radius: 13px;
+  border-radius: 15px;
 
-  background: #f2e7f7;
+  background:
+    linear-gradient(
+      135deg,
+      #f3e6f8,
+      #ede0f4
+    );
 
-  font-size: 22px;
+  font-size: 24px;
+}
+
+/* =========================================
+   STEP TEXT
+========================================= */
+
+.step-label {
+  margin:
+    22px 0 7px;
+
+  color: #a060b9;
+
+  font-size: 8px !important;
+
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
 }
 
 .step-card h3 {
-  margin:
-    0 0 10px;
-
-  color: #2e2531;
-
-  font-size: 16px;
-}
-
-.step-card p {
   margin: 0;
 
-  color: #817683;
+  max-width: 260px;
 
-  font-size: 12px;
+  color: #302631;
+
+  font-size: 20px;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.5px;
+}
+
+.step-description {
+  margin:
+    12px 0 0;
+
+  color: #7f7583;
+
+  font-size: 11px;
 
   line-height: 1.7;
+}
+
+/* =========================================
+   STEP FOOTER
+========================================= */
+
+.step-footer {
+  margin-top: auto;
+
+  padding-top: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-top: 1px solid #eee8f1;
+
+  color: #963bd1;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+.step-footer span:last-child {
+  font-size: 14px;
+}
+
+/* =========================================
+   CONNECTORS
+========================================= */
+
+.step-connector {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.step-connector span {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #e5d9eb;
+
+  border-radius: 50%;
+
+  background: #faf6fc;
+
+  color: #963bd1;
+
+  font-size: 14px;
+
+  font-weight: 800;
 }
 
 /* =========================================
@@ -1296,14 +1557,13 @@
 ========================================= */
 
 .cta-section {
-  width: min(
-    1180px,
-    calc(100% - 48px)
-  );
+  width:
+    min(1180px, calc(100% - 48px));
 
   margin: 0 auto;
 
-  padding: 0 0 100px;
+  padding:
+    0 0 100px;
 }
 
 .cta-section > div {
@@ -1410,10 +1670,8 @@
 
 .footer-top,
 .footer-bottom {
-  width: min(
-    1180px,
-    calc(100% - 48px)
-  );
+  width:
+    min(1180px, calc(100% - 48px));
 
   margin: 0 auto;
 }
@@ -1488,11 +1746,14 @@
    TABLET
 ========================================= */
 
-@media (max-width: 1050px) {
+@media (max-width: 1080px) {
 
   .home-nav {
     width:
-      min(100%, calc(100% - 32px));
+      min(
+        100%,
+        calc(100% - 32px)
+      );
 
     gap: 20px;
   }
@@ -1504,6 +1765,10 @@
   .levels-grid {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
+  }
+
+  .step-card {
+    min-height: 290px;
   }
 
 }
@@ -1532,8 +1797,25 @@
     padding-top: 70px;
   }
 
+  .steps-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
   .steps-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .step-connector {
+    display: none;
+  }
+
+  .step-card {
+    min-height: 250px;
   }
 
   .footer-top {
@@ -1631,28 +1913,31 @@
   }
 
   .level-card {
-    min-height: 360px;
+    min-height: 430px;
   }
 
-  .level-highschool-list {
-    max-width: 320px;
+  .level-grade-list {
+    max-width: 330px;
+  }
+
+  .step-card {
+    min-height: 270px;
+
+    padding: 24px;
   }
 
   .cta-section > div {
-    padding: 40px 25px;
+    padding:
+      40px 25px;
   }
 
   .cta-buttons {
     flex-direction: column;
 
-    align-items: flex-start;
+    align-items: stretch;
   }
 
   .cta-buttons a {
-    width: 100%;
-
-    box-sizing: border-box;
-
     text-align: center;
   }
 
@@ -1689,8 +1974,8 @@
     font-size: 40px;
   }
 
-  .level-highschool-list {
-    flex-direction: column;
+  .level-grade-list {
+    grid-template-columns: 1fr;
   }
 
 }

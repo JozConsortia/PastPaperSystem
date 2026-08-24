@@ -183,7 +183,7 @@ function Home() {
                       </strong>
 
                       <span>
-                        N4 – N6
+                        Vocational Education
                       </span>
                     </div>
 
@@ -198,7 +198,7 @@ function Home() {
                       </span>
 
                       <small>
-                        Courses & Modules
+                        NC(V) · NATED · Occupational
                       </small>
 
                       <em>
@@ -238,11 +238,11 @@ function Home() {
                     <span className="disabled-menu-link">
 
                       <span>
-                        University Courses
+                        University Programmes
                       </span>
 
                       <small>
-                        Modules & Codes
+                        Courses · Modules
                       </small>
 
                       <em>
@@ -272,7 +272,7 @@ function Home() {
 
           </nav>
 
-          {/* ACTIONS */}
+          {/* ACCOUNT ACTIONS */}
 
           <div className="home-actions">
 
@@ -296,7 +296,7 @@ function Home() {
       </header>
 
       {/* =========================================
-          MAIN CONTENT
+          MAIN
       ========================================== */}
 
       <main>
@@ -317,6 +317,7 @@ function Home() {
             <h1>
               Find past papers.
               <br />
+
               <span>
                 Study with confidence.
               </span>
@@ -335,7 +336,10 @@ function Home() {
                 className="primary-button"
               >
                 Explore Primary School
-                <span>→</span>
+
+                <span>
+                  →
+                </span>
               </Link>
 
               <a
@@ -349,7 +353,9 @@ function Home() {
 
           </div>
 
-          {/* SEARCH */}
+          {/* =====================================
+              SEARCH
+          ====================================== */}
 
           <div className="search-card">
 
@@ -431,10 +437,9 @@ function Home() {
             </div>
 
             <p>
-              From the Foundation Phase through
-              university, the platform is designed
-              to organise academic resources around
-              the way learners study.
+              Explore academic resources from school
+              through vocational education and higher
+              education.
             </p>
 
           </div>
@@ -445,36 +450,52 @@ function Home() {
                 PRIMARY SCHOOL
             ================================== */}
 
-            <div className="level-card level-card-active">
+            <div className="level-card level-card-primary">
 
-              <div className="level-icon">
-                📚
+              <div className="level-card-top">
+
+                <div className="level-icon">
+                  📚
+                </div>
+
+                <span className="level-number">
+                  01
+                </span>
+
               </div>
 
-              <div className="level-number">
-                01
+              <div className="level-card-content">
+
+                <p className="level-card-label">
+                  SCHOOL EDUCATION
+                </p>
+
+                <h3>
+                  Primary School
+                </h3>
+
+                <span className="level-card-range">
+                  Grades R – 9
+                </span>
+
+                <p className="level-card-description">
+                  Explore Foundation, Intermediate and
+                  Senior Phase resources organised by
+                  grade, subject and language.
+                </p>
+
               </div>
-
-              <h3>
-                Primary School
-              </h3>
-
-              <span>
-                Grades R – 9
-              </span>
-
-              <p>
-                Explore Foundation, Intermediate and
-                Senior Phase resources organised by
-                grade, subject and language.
-              </p>
 
               <div className="level-phase-list">
 
                 <Link to="/primary/phases/foundation">
                   <span>
-                    Foundation · R – 3
+                    Foundation Phase
                   </span>
+
+                  <small>
+                    R – 3
+                  </small>
 
                   <b>
                     →
@@ -483,8 +504,12 @@ function Home() {
 
                 <Link to="/primary/phases/intermediate">
                   <span>
-                    Intermediate · 4 – 6
+                    Intermediate Phase
                   </span>
+
+                  <small>
+                    4 – 6
+                  </small>
 
                   <b>
                     →
@@ -493,8 +518,12 @@ function Home() {
 
                 <Link to="/primary/phases/senior">
                   <span>
-                    Senior · 7 – 9
+                    Senior Phase
                   </span>
+
+                  <small>
+                    7 – 9
+                  </small>
 
                   <b>
                     →
@@ -505,9 +534,13 @@ function Home() {
 
               <Link
                 to="/primary"
-                className="level-main-link"
+                className="level-card-button"
               >
-                Explore Primary School →
+                Explore Primary School
+
+                <span>
+                  →
+                </span>
               </Link>
 
             </div>
@@ -521,28 +554,41 @@ function Home() {
               className="level-card level-card-link"
             >
 
-              <div className="level-icon">
-                🎓
+              <div className="level-card-top">
+
+                <div className="level-icon">
+                  🎓
+                </div>
+
+                <span className="level-number">
+                  02
+                </span>
+
               </div>
 
-              <div className="level-number">
-                02
+              <div className="level-card-content">
+
+                <p className="level-card-label">
+                  SCHOOL EDUCATION
+                </p>
+
+                <h3>
+                  High School
+                </h3>
+
+                <span className="level-card-range">
+                  FET · Grades 10 – 12
+                </span>
+
+                <p className="level-card-description">
+                  Explore FET Phase subjects and
+                  past papers for Grades 10, 11
+                  and 12.
+                </p>
+
               </div>
 
-              <h3>
-                High School
-              </h3>
-
-              <span>
-                FET · Grades 10 – 12
-              </span>
-
-              <p>
-                Explore FET Phase subjects and past
-                papers for Grades 10, 11 and 12.
-              </p>
-
-              <div className="level-highschool-list">
+              <div className="level-grade-list">
 
                 <span>
                   Grade 10
@@ -558,42 +604,75 @@ function Home() {
 
               </div>
 
-              <strong className="level-main-link">
-                Explore High School →
-              </strong>
+              <div className="level-card-button">
+                Explore High School
+
+                <span>
+                  →
+                </span>
+              </div>
 
             </Link>
 
             {/* =================================
-                TVET
+                TVET COLLEGE
             ================================== */}
 
             <div className="level-card">
 
-              <div className="level-icon">
-                🛠️
+              <div className="level-card-top">
+
+                <div className="level-icon">
+                  🛠️
+                </div>
+
+                <span className="level-number">
+                  03
+                </span>
+
               </div>
 
-              <div className="level-number">
-                03
+              <div className="level-card-content">
+
+                <p className="level-card-label">
+                  VOCATIONAL EDUCATION
+                </p>
+
+                <h3>
+                  TVET College
+                </h3>
+
+                <span className="level-card-range">
+                  Technical & Vocational
+                </span>
+
+                <p className="level-card-description">
+                  Find vocational resources across
+                  NC(V), NATED and occupational
+                  programmes.
+                </p>
+
               </div>
 
-              <h3>
-                TVET College
-              </h3>
+              <div className="level-grade-list">
 
-              <span>
-                N4 – N6
-              </span>
+                <span>
+                  NC(V)
+                </span>
 
-              <p>
-                Find resources using programmes,
-                courses, modules and module codes.
-              </p>
+                <span>
+                  NATED
+                </span>
 
-              <strong className="coming-soon">
+                <span>
+                  Occupational
+                </span>
+
+              </div>
+
+              <div className="level-card-button level-card-button-disabled">
                 Coming Soon
-              </strong>
+              </div>
 
             </div>
 
@@ -603,30 +682,59 @@ function Home() {
 
             <div className="level-card">
 
-              <div className="level-icon">
-                🏛️
+              <div className="level-card-top">
+
+                <div className="level-icon">
+                  🏛️
+                </div>
+
+                <span className="level-number">
+                  04
+                </span>
+
               </div>
 
-              <div className="level-number">
-                04
+              <div className="level-card-content">
+
+                <p className="level-card-label">
+                  HIGHER EDUCATION
+                </p>
+
+                <h3>
+                  University
+                </h3>
+
+                <span className="level-card-range">
+                  Higher Education
+                </span>
+
+                <p className="level-card-description">
+                  Search for academic resources by
+                  institution, qualification, course,
+                  module and module code.
+                </p>
+
               </div>
 
-              <h3>
-                University
-              </h3>
+              <div className="level-grade-list">
 
-              <span>
-                Higher Education
-              </span>
+                <span>
+                  Institution
+                </span>
 
-              <p>
-                Search by institution, qualification,
-                course, module name and module code.
-              </p>
+                <span>
+                  Course
+                </span>
 
-              <strong className="coming-soon">
+                <span>
+                  Module
+                </span>
+
+              </div>
+
+              <div className="level-card-button level-card-button-disabled">
                 Coming Soon
-              </strong>
+              </div>
 
             </div>
 
@@ -643,26 +751,38 @@ function Home() {
           className="steps-section"
         >
 
-          <div className="section-heading centered">
+          <div className="steps-header">
+
+            <div>
+
+              <p>
+                HOW IT WORKS
+              </p>
+
+              <h2>
+                Find what you need.
+                <span>
+                  Study smarter.
+                </span>
+              </h2>
+
+            </div>
 
             <p>
-              HOW IT WORKS
+              Finding the right past paper should be
+              simple. Follow three straightforward steps
+              to get to the resource you need.
             </p>
-
-            <h2>
-              Find what you need
-              <span>
-                in three steps.
-              </span>
-            </h2>
 
           </div>
 
           <div className="steps-grid">
 
+            {/* STEP 1 */}
+
             <div className="step-card">
 
-              <div className="step-number">
+              <div className="step-card-number">
                 01
               </div>
 
@@ -670,20 +790,44 @@ function Home() {
                 🔎
               </div>
 
+              <p className="step-label">
+                STEP ONE
+              </p>
+
               <h3>
-                Choose your level
+                Choose your education level
               </h3>
 
-              <p>
-                Select your education level and
-                find the resources available for you.
+              <p className="step-description">
+                Start by selecting Primary School,
+                High School, TVET College or University.
               </p>
+
+              <div className="step-footer">
+                <span>
+                  Choose your path
+                </span>
+
+                <span>
+                  →
+                </span>
+              </div>
 
             </div>
 
+            {/* CONNECTOR */}
+
+            <div className="step-connector">
+              <span>
+                →
+              </span>
+            </div>
+
+            {/* STEP 2 */}
+
             <div className="step-card">
 
-              <div className="step-number">
+              <div className="step-card-number">
                 02
               </div>
 
@@ -691,35 +835,74 @@ function Home() {
                 📖
               </div>
 
+              <p className="step-label">
+                STEP TWO
+              </p>
+
               <h3>
-                Select your subject
+                Select your grade or module
               </h3>
 
-              <p>
-                Choose your grade and subject,
-                or your course and module.
+              <p className="step-description">
+                Choose your grade, phase, programme,
+                course, subject or module.
               </p>
+
+              <div className="step-footer">
+                <span>
+                  Narrow your search
+                </span>
+
+                <span>
+                  →
+                </span>
+              </div>
 
             </div>
 
+            {/* CONNECTOR */}
+
+            <div className="step-connector">
+              <span>
+                →
+              </span>
+            </div>
+
+            {/* STEP 3 */}
+
             <div className="step-card">
 
-              <div className="step-number">
+              <div className="step-card-number">
                 03
               </div>
 
               <div className="step-icon">
-                ⬇
+                📄
               </div>
 
+              <p className="step-label">
+                STEP THREE
+              </p>
+
               <h3>
-                Study
+                Open and study
               </h3>
 
-              <p>
-                Open a past paper online or
-                download it for your preparation.
+              <p className="step-description">
+                Open the past paper, study online,
+                practise your answers and prepare
+                for your assessment.
               </p>
+
+              <div className="step-footer">
+                <span>
+                  Start studying
+                </span>
+
+                <span>
+                  →
+                </span>
+              </div>
 
             </div>
 
@@ -747,8 +930,9 @@ function Home() {
             </h2>
 
             <p>
-              Start with Primary School or explore
-              the FET Phase for Grade 10–12 resources.
+              Start exploring past papers today and
+              prepare with resources organised around
+              the way you study.
             </p>
 
             <div className="cta-buttons">
