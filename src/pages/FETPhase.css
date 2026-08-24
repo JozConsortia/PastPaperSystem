@@ -1,8 +1,8 @@
 /* =========================================
-   INTERMEDIATE PAGE
+   FET PHASE
 ========================================= */
 
-.intermediate-page {
+.fet-page {
   width: 100%;
   min-height: 100vh;
 
@@ -12,10 +12,10 @@
 }
 
 /* =========================================
-   HEADER / NAVBAR
+   HEADER
 ========================================= */
 
-.intermediate-header {
+.fet-header {
   width: 100%;
 
   position: relative;
@@ -31,8 +31,8 @@
    HERO
 ========================================= */
 
-.intermediate-hero {
-  padding: 85px 20px;
+.fet-hero {
+  padding: 90px 20px 85px;
 
   text-align: center;
 
@@ -54,7 +54,7 @@
     );
 }
 
-.intermediate-label {
+.fet-label {
   margin: 0 0 12px;
 
   color: #9949b8;
@@ -66,12 +66,12 @@
   letter-spacing: 1.8px;
 }
 
-.intermediate-hero h1 {
+.fet-hero h1 {
   margin: 0;
 
   color: #281f2d;
 
-  font-size: clamp(44px, 6vw, 72px);
+  font-size: clamp(46px, 6vw, 74px);
 
   line-height: 0.98;
 
@@ -80,7 +80,7 @@
   font-weight: 800;
 }
 
-.intermediate-hero h1 span {
+.fet-hero h1 span {
   display: block;
 
   margin-top: 7px;
@@ -88,10 +88,10 @@
   color: #963bd1;
 }
 
-.intermediate-hero > p:last-child {
-  max-width: 650px;
+.fet-hero > p:last-child {
+  max-width: 680px;
 
-  margin: 23px auto 0;
+  margin: 24px auto 0;
 
   color: #7d7381;
 
@@ -101,10 +101,10 @@
 }
 
 /* =========================================
-   GRADES SECTION
+   GRADES
 ========================================= */
 
-.intermediate-section {
+.fet-grades-section {
   width: min(1100px, calc(100% - 40px));
 
   margin: 0 auto;
@@ -112,11 +112,11 @@
   padding: 85px 0 60px;
 }
 
-.intermediate-heading {
+.fet-heading {
   margin-bottom: 35px;
 }
 
-.intermediate-heading p {
+.fet-heading p {
   margin: 0 0 8px;
 
   color: #9949b8;
@@ -128,7 +128,7 @@
   letter-spacing: 1.7px;
 }
 
-.intermediate-heading h2 {
+.fet-heading h2 {
   margin: 0;
 
   color: #2e2532;
@@ -142,7 +142,7 @@
   font-weight: 800;
 }
 
-.intermediate-heading span {
+.fet-heading span {
   display: block;
 
   margin-top: 9px;
@@ -150,29 +150,27 @@
   color: #8a808d;
 
   font-size: 12px;
-
-  line-height: 1.6;
 }
 
 /* =========================================
-   GRADE GRID
+   GRID
 ========================================= */
 
-.intermediate-grades {
+.fet-grades-grid {
   display: grid;
 
   grid-template-columns:
     repeat(3, minmax(0, 1fr));
 
-  gap: 17px;
+  gap: 18px;
 }
 
 /* =========================================
    GRADE CARD
 ========================================= */
 
-.intermediate-grade-card {
-  min-height: 320px;
+.fet-grade-card {
+  min-height: 330px;
 
   padding: 25px;
 
@@ -198,7 +196,7 @@
     background 0.22s ease;
 }
 
-.intermediate-grade-card:hover {
+.fet-grade-card:hover {
   transform: translateY(-6px);
 
   border-color: #d3b9dd;
@@ -209,7 +207,7 @@
     0 18px 35px rgba(68, 27, 82, 0.09);
 }
 
-.intermediate-grade-card:focus-visible {
+.fet-grade-card:focus-visible {
   outline: 3px solid rgba(150, 59, 209, 0.2);
 
   outline-offset: 3px;
@@ -219,19 +217,17 @@
    CARD TOP
 ========================================= */
 
-.intermediate-grade-top {
+.fet-grade-top {
   display: flex;
 
   align-items: center;
 
   justify-content: space-between;
-
-  gap: 10px;
 }
 
-.intermediate-grade-icon {
-  width: 56px;
-  height: 56px;
+.fet-grade-icon {
+  width: 58px;
+  height: 58px;
 
   display: flex;
 
@@ -239,7 +235,7 @@
 
   justify-content: center;
 
-  border-radius: 14px;
+  border-radius: 15px;
 
   background:
     linear-gradient(
@@ -250,12 +246,12 @@
 
   color: #9234c9;
 
-  font-size: 20px;
+  font-size: 18px;
 
   font-weight: 800;
 }
 
-.intermediate-grade-top > span {
+.fet-grade-top > span {
   padding: 6px 9px;
 
   border-radius: 20px;
@@ -268,14 +264,14 @@
 
   font-weight: 800;
 
-  letter-spacing: 0.8px;
+  letter-spacing: 1px;
 }
 
 /* =========================================
-   CARD LABEL
+   LABEL
 ========================================= */
 
-.intermediate-card-label {
+.fet-grade-label {
   margin: 28px 0 7px;
 
   color: #a060b9;
@@ -288,17 +284,15 @@
 }
 
 /* =========================================
-   CARD TITLE
+   TITLE
 ========================================= */
 
-.intermediate-grade-card h3 {
+.fet-grade-card h3 {
   margin: 0;
 
   color: #2d2431;
 
   font-size: 25px;
-
-  line-height: 1.1;
 
   letter-spacing: -0.8px;
 
@@ -309,7 +303,7 @@
    DESCRIPTION
 ========================================= */
 
-.intermediate-card-description {
+.fet-grade-description {
   margin: 14px 0 0;
 
   color: #7e7482;
@@ -320,10 +314,10 @@
 }
 
 /* =========================================
-   CARD ACTION
+   ACTION
 ========================================= */
 
-.intermediate-card-action {
+.fet-grade-action {
   margin-top: auto;
 
   padding-top: 25px;
@@ -334,8 +328,6 @@
 
   justify-content: space-between;
 
-  gap: 10px;
-
   color: #963bd1;
 
   font-size: 10px;
@@ -343,7 +335,7 @@
   font-weight: 800;
 }
 
-.intermediate-arrow {
+.fet-arrow {
   width: 31px;
   height: 31px;
 
@@ -365,23 +357,20 @@
 
   transition:
     transform 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease;
+    background 0.2s ease;
 }
 
-.intermediate-grade-card:hover .intermediate-arrow {
+.fet-grade-card:hover .fet-arrow {
   transform: translateX(4px);
 
   background: #f2e5f7;
-
-  border-color: #dbc2e4;
 }
 
 /* =========================================
    INFO
 ========================================= */
 
-.intermediate-info-section {
+.fet-info-section {
   width: min(1100px, calc(100% - 40px));
 
   margin: 0 auto;
@@ -389,7 +378,7 @@
   padding: 5px 0 30px;
 }
 
-.intermediate-info-card {
+.fet-info-card {
   padding: 28px;
 
   display: flex;
@@ -402,15 +391,10 @@
 
   border-radius: 17px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #faf7fc,
-      #fdfbfe
-    );
+  background: #faf7fc;
 }
 
-.intermediate-info-icon {
+.fet-info-icon {
   width: 48px;
   height: 48px;
 
@@ -429,19 +413,15 @@
   font-size: 22px;
 }
 
-.intermediate-info-card h2 {
+.fet-info-card h2 {
   margin: 0;
 
   color: #302631;
 
   font-size: 20px;
-
-  line-height: 1.2;
-
-  font-weight: 800;
 }
 
-.intermediate-info-card p {
+.fet-info-card p {
   max-width: 760px;
 
   margin: 7px 0 0;
@@ -454,10 +434,10 @@
 }
 
 /* =========================================
-   BACK TO PHASES
+   BACK
 ========================================= */
 
-.intermediate-back-section {
+.fet-back-section {
   width: min(1100px, calc(100% - 40px));
 
   margin: 0 auto;
@@ -465,13 +445,7 @@
   padding: 0 0 70px;
 }
 
-.intermediate-back {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 8px;
-
+.fet-back {
   color: #77348e;
 
   font-size: 12px;
@@ -479,62 +453,23 @@
   font-weight: 700;
 
   text-decoration: none;
-
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
 }
 
-.intermediate-back:hover {
+.fet-back:hover {
   color: #963bd1;
-
-  transform: translateX(-3px);
-}
-
-.intermediate-back-arrow {
-  font-size: 16px;
-
-  line-height: 1;
 }
 
 /* =========================================
    TABLET
 ========================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
 
-  .intermediate-section {
-    width: min(100% - 32px, 700px);
-  }
-
-  .intermediate-grades {
+  .fet-grades-grid {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
   }
 
-  .intermediate-info-section,
-  .intermediate-back-section {
-    width: min(100% - 32px, 700px);
-  }
-}
-
-/* =========================================
-   SMALL TABLET
-========================================= */
-
-@media (max-width: 750px) {
-
-  .intermediate-hero {
-    padding: 65px 20px;
-  }
-
-  .intermediate-grades {
-    grid-template-columns: 1fr;
-  }
-
-  .intermediate-grade-card {
-    min-height: 280px;
-  }
 }
 
 /* =========================================
@@ -543,76 +478,33 @@
 
 @media (max-width: 600px) {
 
-  .intermediate-hero {
-    padding: 55px 20px 50px;
+  .fet-hero {
+    padding: 65px 20px;
   }
 
-  .intermediate-hero h1 {
+  .fet-hero h1 {
     font-size: 45px;
 
     letter-spacing: -2px;
   }
 
-  .intermediate-hero > p:last-child {
-    margin-top: 18px;
+  .fet-grades-section {
+    width: min(100% - 32px, 520px);
 
-    font-size: 13px;
+    padding-top: 60px;
   }
 
-  .intermediate-section {
-    padding: 55px 0 45px;
+  .fet-grades-grid {
+    grid-template-columns: 1fr;
   }
 
-  .intermediate-heading {
-    margin-bottom: 25px;
+  .fet-info-section,
+  .fet-back-section {
+    width: min(100% - 32px, 520px);
   }
 
-  .intermediate-heading h2 {
-    font-size: 31px;
-  }
-
-  .intermediate-grade-card {
-    min-height: 270px;
-
-    padding: 22px;
-  }
-
-  .intermediate-card-label {
-    margin-top: 24px;
-  }
-
-  .intermediate-info-card {
+  .fet-info-card {
     flex-direction: column;
-
-    padding: 22px;
-
-    gap: 13px;
   }
 
-  .intermediate-info-section {
-    padding-bottom: 20px;
-  }
-
-  .intermediate-back-section {
-    padding-bottom: 50px;
-  }
-}
-
-/* =========================================
-   VERY SMALL MOBILE
-========================================= */
-
-@media (max-width: 380px) {
-
-  .intermediate-hero h1 {
-    font-size: 40px;
-  }
-
-  .intermediate-heading h2 {
-    font-size: 28px;
-  }
-
-  .intermediate-grade-card {
-    min-height: 250px;
-  }
 }

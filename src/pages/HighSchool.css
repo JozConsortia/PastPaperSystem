@@ -1,0 +1,477 @@
+/* =========================================
+   HIGH SCHOOL PAGE
+========================================= */
+
+.high-school-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #ffffff;
+
+  color: #281f2d;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.high-school-header {
+  width: 100%;
+
+  position: relative;
+
+  z-index: 100;
+
+  border-bottom: 1px solid #eee7f1;
+
+  background: #ffffff;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.high-school-hero {
+  padding: 90px 20px 85px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(179, 78, 233, 0.09),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(149, 59, 210, 0.08),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #fbf8fd,
+      #ffffff
+    );
+}
+
+.high-school-label {
+  margin: 0 0 12px;
+
+  color: #9949b8;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+.high-school-hero h1 {
+  margin: 0;
+
+  color: #281f2d;
+
+  font-size: clamp(46px, 6vw, 74px);
+
+  line-height: 0.98;
+
+  letter-spacing: -3px;
+
+  font-weight: 800;
+}
+
+.high-school-hero h1 span {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #963bd1;
+}
+
+.high-school-hero > p {
+  max-width: 700px;
+
+  margin: 24px auto 0;
+
+  color: #7d7381;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.high-school-buttons {
+  margin-top: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+}
+
+.high-school-primary-button,
+.high-school-secondary-button {
+  min-height: 48px;
+
+  padding: 0 18px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+}
+
+.high-school-primary-button {
+  background: #963bd1;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 10px 22px rgba(150, 59, 209, 0.2);
+}
+
+.high-school-primary-button:hover {
+  background: #8732c0;
+}
+
+.high-school-secondary-button {
+  border: 1px solid #ddd3e3;
+
+  background: #ffffff;
+
+  color: #665d6d;
+}
+
+.high-school-secondary-button:hover {
+  background: #faf7fc;
+}
+
+/* =========================================
+   MAIN SECTION
+========================================= */
+
+.high-school-section {
+  width: min(1050px, calc(100% - 40px));
+
+  margin: 0 auto;
+
+  padding: 85px 0 60px;
+}
+
+.high-school-section-heading {
+  margin-bottom: 35px;
+}
+
+.high-school-section-heading p {
+  margin: 0 0 8px;
+
+  color: #9949b8;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+}
+
+.high-school-section-heading h2 {
+  margin: 0;
+
+  color: #2e2532;
+
+  font-size: 38px;
+
+  line-height: 1.1;
+
+  letter-spacing: -1.3px;
+
+  font-weight: 800;
+}
+
+.high-school-section-heading span {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #8a808d;
+
+  font-size: 12px;
+}
+
+/* =========================================
+   FET OVERVIEW
+========================================= */
+
+.fet-overview-card {
+  padding: 30px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 22px;
+
+  border: 1px solid #dfd4e4;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffaff,
+      #f8f0fc
+    );
+
+  box-shadow:
+    0 15px 35px rgba(68, 27, 82, 0.06);
+}
+
+.fet-overview-icon {
+  width: 68px;
+  height: 68px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 17px;
+
+  background: #963bd1;
+
+  font-size: 27px;
+}
+
+.fet-overview-content {
+  flex: 1;
+}
+
+.fet-overview-label {
+  margin: 0 0 5px;
+
+  color: #9949b8;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.fet-overview-content h3 {
+  margin: 0;
+
+  color: #2d2431;
+
+  font-size: 27px;
+
+  letter-spacing: -0.8px;
+
+  font-weight: 800;
+}
+
+.fet-overview-content > p:not(.fet-overview-label) {
+  max-width: 680px;
+
+  margin: 10px 0 0;
+
+  color: #7e7482;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+.fet-overview-button {
+  margin-top: 20px;
+
+  padding: 12px 16px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border-radius: 9px;
+
+  background: #963bd1;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+}
+
+.fet-overview-button:hover {
+  background: #8732c0;
+}
+
+/* =========================================
+   INFORMATION
+========================================= */
+
+.high-school-info-section {
+  width: min(1050px, calc(100% - 40px));
+
+  margin: 0 auto;
+
+  padding: 5px 0 30px;
+}
+
+.high-school-info-card {
+  padding: 28px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 16px;
+
+  border: 1px solid #e4dce8;
+
+  border-radius: 17px;
+
+  background: #faf7fc;
+}
+
+.high-school-info-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #f1e3f6;
+
+  font-size: 22px;
+}
+
+.high-school-info-card h2 {
+  margin: 0;
+
+  color: #302631;
+
+  font-size: 20px;
+}
+
+.high-school-info-card p {
+  max-width: 760px;
+
+  margin: 7px 0 0;
+
+  color: #7f7583;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   BACK
+========================================= */
+
+.high-school-back-section {
+  width: min(1050px, calc(100% - 40px));
+
+  margin: 0 auto;
+
+  padding: 0 0 70px;
+}
+
+.high-school-back {
+  color: #77348e;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.high-school-back:hover {
+  color: #963bd1;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .high-school-hero {
+    padding: 65px 20px;
+  }
+
+  .high-school-hero h1 {
+    font-size: 45px;
+
+    letter-spacing: -2px;
+  }
+
+  .high-school-buttons {
+    flex-direction: column;
+  }
+
+  .high-school-primary-button,
+  .high-school-secondary-button {
+    width: 100%;
+
+    max-width: 300px;
+  }
+
+  .fet-overview-card {
+    flex-direction: column;
+
+    padding: 24px;
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  .high-school-section {
+    width: min(100% - 32px, 520px);
+  }
+
+  .high-school-info-section,
+  .high-school-back-section {
+    width: min(100% - 32px, 520px);
+  }
+
+  .high-school-info-card {
+    flex-direction: column;
+  }
+
+}

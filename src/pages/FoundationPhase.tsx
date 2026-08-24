@@ -1,122 +1,288 @@
 import { Link } from "react-router-dom";
+
 import Navbar from "../components/Navbar";
+import "./FoundationPhase.css";
 
 function FoundationPhase() {
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background: "#ffffff",
-        color: "#281f2d",
-      }}
-    >
-      <Navbar />
+    <div className="foundation-page">
 
-      <main
-        style={{
-          maxWidth: "1100px",
-          margin: "0 auto",
-          padding: "70px 20px",
-        }}
-      >
-        <p
-          style={{
-            color: "#963bd1",
-            fontSize: "12px",
-            fontWeight: 800,
-            letterSpacing: "1.5px",
-          }}
-        >
+      {/* =====================================
+          NAVIGATION
+      ====================================== */}
+
+      <header className="foundation-header">
+        <Navbar />
+      </header>
+
+      {/* =====================================
+          HERO
+      ====================================== */}
+
+      <section className="foundation-hero">
+
+        <p className="foundation-label">
           FOUNDATION PHASE
         </p>
 
-        <h1
-          style={{
-            fontSize: "50px",
-            margin: "10px 0",
-          }}
-        >
-          Grade R – 3
+        <h1>
+          Grades R – 3
+          <span>Start Learning.</span>
         </h1>
 
-        <p
-          style={{
-            color: "#7d7381",
-            marginBottom: "40px",
-          }}
-        >
-          Select a grade.
+        <p>
+          Choose your grade to explore subjects, languages,
+          past examination papers, tests and other learning
+          resources for the Foundation Phase.
         </p>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns:
-              "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: "20px",
-          }}
-        >
+      </section>
+
+      {/* =====================================
+          GRADES
+      ====================================== */}
+
+      <section className="grades-section">
+
+        <div className="grades-heading">
+
+          <p>
+            CHOOSE YOUR GRADE
+          </p>
+
+          <h2>
+            Select a grade
+          </h2>
+
+        </div>
+
+        <div className="grades-grid">
+
+          {/* =================================
+              GRADE R
+          ================================= */}
+
           <Link
             to="/primary/phases/foundation/grade/R"
-            style={cardStyle}
+            className="grade-card"
           >
-            <strong>Grade R</strong>
-            <span>View Grade R →</span>
+
+            <div className="grade-card-top">
+
+              <div className="grade-icon">
+                R
+              </div>
+
+              <span>
+                FOUNDATION
+              </span>
+
+            </div>
+
+            <h3>
+              Grade R
+            </h3>
+
+            <p>
+              Explore learning resources and past papers
+              designed for Grade R learners.
+            </p>
+
+            <div className="grade-card-action">
+              <span>
+                View Grade R
+              </span>
+
+              <span className="grade-arrow">
+                →
+              </span>
+            </div>
+
           </Link>
+
+          {/* =================================
+              GRADE 1
+          ================================= */}
 
           <Link
             to="/primary/phases/foundation/grade/1"
-            style={cardStyle}
+            className="grade-card"
           >
-            <strong>Grade 1</strong>
-            <span>View Grade 1 →</span>
+
+            <div className="grade-card-top">
+
+              <div className="grade-icon">
+                1
+              </div>
+
+              <span>
+                FOUNDATION
+              </span>
+
+            </div>
+
+            <h3>
+              Grade 1
+            </h3>
+
+            <p>
+              Find subjects and past papers to help
+              Grade 1 learners prepare and practise.
+            </p>
+
+            <div className="grade-card-action">
+              <span>
+                View Grade 1
+              </span>
+
+              <span className="grade-arrow">
+                →
+              </span>
+            </div>
+
           </Link>
+
+          {/* =================================
+              GRADE 2
+          ================================= */}
 
           <Link
             to="/primary/phases/foundation/grade/2"
-            style={cardStyle}
+            className="grade-card"
           >
-            <strong>Grade 2</strong>
-            <span>View Grade 2 →</span>
+
+            <div className="grade-card-top">
+
+              <div className="grade-icon">
+                2
+              </div>
+
+              <span>
+                FOUNDATION
+              </span>
+
+            </div>
+
+            <h3>
+              Grade 2
+            </h3>
+
+            <p>
+              Access Grade 2 subjects, practice material
+              and past papers in one place.
+            </p>
+
+            <div className="grade-card-action">
+              <span>
+                View Grade 2
+              </span>
+
+              <span className="grade-arrow">
+                →
+              </span>
+            </div>
+
           </Link>
+
+          {/* =================================
+              GRADE 3
+          ================================= */}
 
           <Link
             to="/primary/phases/foundation/grade/3"
-            style={cardStyle}
+            className="grade-card"
           >
-            <strong>Grade 3</strong>
-            <span>View Grade 3 →</span>
+
+            <div className="grade-card-top">
+
+              <div className="grade-icon">
+                3
+              </div>
+
+              <span>
+                FOUNDATION
+              </span>
+
+            </div>
+
+            <h3>
+              Grade 3
+            </h3>
+
+            <p>
+              Prepare for Grade 3 assessments with
+              organised subjects and past papers.
+            </p>
+
+            <div className="grade-card-action">
+              <span>
+                View Grade 3
+              </span>
+
+              <span className="grade-arrow">
+                →
+              </span>
+            </div>
+
           </Link>
+
         </div>
 
-        <div style={{ marginTop: "40px" }}>
-          <Link
-            to="/primary/phases"
-            style={{
-              color: "#963bd1",
-              textDecoration: "none",
-              fontWeight: 700,
-            }}
-          >
-            ← Back to Phases
-          </Link>
+      </section>
+
+      {/* =====================================
+          INFORMATION NOTE
+      ====================================== */}
+
+      <section className="foundation-note-section">
+
+        <div className="foundation-note">
+
+          <div className="foundation-note-icon">
+            📚
+          </div>
+
+          <div>
+
+            <h2>
+              Build a strong foundation
+            </h2>
+
+            <p>
+              The Foundation Phase covers Grades R to 3.
+              Select your grade above to continue to the
+              relevant subjects and learning resources.
+              You can use the Past Paper System to practise,
+              revise and prepare for assessments.
+            </p>
+
+          </div>
+
         </div>
-      </main>
+
+      </section>
+
+      {/* =====================================
+          BACK TO PHASES
+      ====================================== */}
+
+      <section className="foundation-back-section">
+
+        <Link
+          to="/primary/phases"
+          className="foundation-back"
+        >
+          <span className="back-arrow">
+            ←
+          </span>
+
+          Back to Primary Phases
+        </Link>
+
+      </section>
+
     </div>
   );
 }
-
-const cardStyle = {
-  minHeight: "160px",
-  padding: "25px",
-  border: "1px solid #e4dce8",
-  borderRadius: "16px",
-  background: "#ffffff",
-  textDecoration: "none",
-  display: "flex",
-  flexDirection: "column" as const,
-  justifyContent: "space-between",
-  boxSizing: "border-box" as const,
-};
 
 export default FoundationPhase;

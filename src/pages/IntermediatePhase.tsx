@@ -1,114 +1,264 @@
 import { Link } from "react-router-dom";
+
 import Navbar from "../components/Navbar";
+import "./IntermediatePhase.css";
 
 function IntermediatePhase() {
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background: "#ffffff",
-        color: "#281f2d",
-      }}
-    >
-      <Navbar />
+    <div className="intermediate-page">
 
-      <main
-        style={{
-          maxWidth: "1100px",
-          margin: "0 auto",
-          padding: "70px 20px",
-        }}
-      >
-        <p
-          style={{
-            color: "#963bd1",
-            fontSize: "12px",
-            fontWeight: 800,
-            letterSpacing: "1.5px",
-          }}
-        >
+      {/* =====================================
+          NAVIGATION
+      ====================================== */}
+
+      <header className="intermediate-header">
+        <Navbar />
+      </header>
+
+      {/* =====================================
+          HERO
+      ====================================== */}
+
+      <section className="intermediate-hero">
+
+        <p className="intermediate-label">
           INTERMEDIATE PHASE
         </p>
 
-        <h1
-          style={{
-            fontSize: "50px",
-            margin: "10px 0",
-          }}
-        >
-          Grade 4 – 6
+        <h1>
+          Grades 4 – 6
+          <span>Keep Growing.</span>
         </h1>
 
-        <p
-          style={{
-            color: "#7d7381",
-            marginBottom: "40px",
-          }}
-        >
-          Select a grade.
+        <p>
+          Choose your grade to explore subjects, languages,
+          past examination papers, tests and other learning
+          resources for the Intermediate Phase.
         </p>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns:
-              "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: "20px",
-          }}
-        >
+      </section>
+
+      {/* =====================================
+          GRADES
+      ====================================== */}
+
+      <section className="intermediate-section">
+
+        <div className="intermediate-heading">
+
+          <p>
+            CHOOSE YOUR GRADE
+          </p>
+
+          <h2>
+            Select a grade
+          </h2>
+
+          <span>
+            Continue to your grade to view available subjects
+            and past papers.
+          </span>
+
+        </div>
+
+        <div className="intermediate-grades">
+
+          {/* =================================
+              GRADE 4
+          ================================= */}
+
           <Link
             to="/primary/phases/intermediate/grade/4"
-            style={cardStyle}
+            className="intermediate-grade-card"
           >
-            <strong>Grade 4</strong>
-            <span>View Grade 4 →</span>
+
+            <div className="intermediate-grade-top">
+
+              <div className="intermediate-grade-icon">
+                4
+              </div>
+
+              <span>
+                INTERMEDIATE
+              </span>
+
+            </div>
+
+            <p className="intermediate-card-label">
+              INTERMEDIATE PHASE
+            </p>
+
+            <h3>
+              Grade 4
+            </h3>
+
+            <p className="intermediate-card-description">
+              Explore Grade 4 subjects, learning resources
+              and past papers to practise and prepare for
+              assessments.
+            </p>
+
+            <div className="intermediate-card-action">
+              <span>
+                View Grade 4
+              </span>
+
+              <span className="intermediate-arrow">
+                →
+              </span>
+            </div>
+
           </Link>
+
+          {/* =================================
+              GRADE 5
+          ================================= */}
 
           <Link
             to="/primary/phases/intermediate/grade/5"
-            style={cardStyle}
+            className="intermediate-grade-card"
           >
-            <strong>Grade 5</strong>
-            <span>View Grade 5 →</span>
+
+            <div className="intermediate-grade-top">
+
+              <div className="intermediate-grade-icon">
+                5
+              </div>
+
+              <span>
+                INTERMEDIATE
+              </span>
+
+            </div>
+
+            <p className="intermediate-card-label">
+              INTERMEDIATE PHASE
+            </p>
+
+            <h3>
+              Grade 5
+            </h3>
+
+            <p className="intermediate-card-description">
+              Access Grade 5 subjects, languages and
+              organised past papers for effective revision.
+            </p>
+
+            <div className="intermediate-card-action">
+              <span>
+                View Grade 5
+              </span>
+
+              <span className="intermediate-arrow">
+                →
+              </span>
+            </div>
+
           </Link>
+
+          {/* =================================
+              GRADE 6
+          ================================= */}
 
           <Link
             to="/primary/phases/intermediate/grade/6"
-            style={cardStyle}
+            className="intermediate-grade-card"
           >
-            <strong>Grade 6</strong>
-            <span>View Grade 6 →</span>
+
+            <div className="intermediate-grade-top">
+
+              <div className="intermediate-grade-icon">
+                6
+              </div>
+
+              <span>
+                INTERMEDIATE
+              </span>
+
+            </div>
+
+            <p className="intermediate-card-label">
+              INTERMEDIATE PHASE
+            </p>
+
+            <h3>
+              Grade 6
+            </h3>
+
+            <p className="intermediate-card-description">
+              Prepare for Grade 6 assessments using
+              organised subjects, resources and past papers.
+            </p>
+
+            <div className="intermediate-card-action">
+              <span>
+                View Grade 6
+              </span>
+
+              <span className="intermediate-arrow">
+                →
+              </span>
+            </div>
+
           </Link>
+
         </div>
 
-        <div style={{ marginTop: "40px" }}>
-          <Link
-            to="/primary/phases"
-            style={{
-              color: "#963bd1",
-              textDecoration: "none",
-              fontWeight: 700,
-            }}
-          >
-            ← Back to Phases
-          </Link>
+      </section>
+
+      {/* =====================================
+          INFORMATION
+      ====================================== */}
+
+      <section className="intermediate-info-section">
+
+        <div className="intermediate-info-card">
+
+          <div className="intermediate-info-icon">
+            📖
+          </div>
+
+          <div>
+
+            <h2>
+              Prepare with confidence
+            </h2>
+
+            <p>
+              The Intermediate Phase covers Grades 4 to 6.
+              Select your grade above to continue to the
+              relevant subjects, languages and past papers.
+              Use the resources to practise, revise and
+              prepare for assessments.
+            </p>
+
+          </div>
+
         </div>
-      </main>
+
+      </section>
+
+      {/* =====================================
+          BACK TO PHASES
+      ====================================== */}
+
+      <section className="intermediate-back-section">
+
+        <Link
+          to="/primary/phases"
+          className="intermediate-back"
+        >
+          <span className="intermediate-back-arrow">
+            ←
+          </span>
+
+          Back to Primary Phases
+        </Link>
+
+      </section>
+
     </div>
   );
 }
-
-const cardStyle = {
-  minHeight: "160px",
-  padding: "25px",
-  border: "1px solid #e4dce8",
-  borderRadius: "16px",
-  background: "#ffffff",
-  textDecoration: "none",
-  display: "flex",
-  flexDirection: "column" as const,
-  justifyContent: "space-between",
-  boxSizing: "border-box" as const,
-};
 
 export default IntermediatePhase;

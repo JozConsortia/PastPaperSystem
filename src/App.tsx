@@ -49,6 +49,18 @@ import SeniorLanguageSelection from "./pages/SeniorLanguageSelection";
 import CreativeArtsSelection from "./pages/CreativeArtsSelection";
 
 // =====================================
+// HIGH SCHOOL
+// FET PHASE
+// GRADES 10 - 12
+// =====================================
+
+import HighSchool from "./pages/HighSchool";
+import FETPhase from "./pages/FETPhase";
+import FETGrade from "./pages/FETGrade";
+import FETSubjects from "./pages/FETSubjects";
+import FETSubjectPapers from "./pages/FETSubjectPapers";
+
+// =====================================
 // PAPERS
 // =====================================
 
@@ -83,17 +95,13 @@ function App() {
         />
 
         {/* =====================================
-            LOGIN
+            AUTHENTICATION
         ====================================== */}
 
         <Route
           path="/login"
           element={<Login />}
         />
-
-        {/* =====================================
-            REGISTER
-        ====================================== */}
 
         <Route
           path="/register"
@@ -108,10 +116,6 @@ function App() {
           path="/primary"
           element={<PrimarySchool />}
         />
-
-        {/* =====================================
-            PRIMARY SCHOOL PHASES
-        ====================================== */}
 
         <Route
           path="/primary/phases"
@@ -177,9 +181,7 @@ function App() {
 
         <Route
           path="/primary/phases/intermediate/grade/:gradeNumber/language/:subjectId"
-          element={
-            <IntermediateLanguageSelection />
-          }
+          element={<IntermediateLanguageSelection />}
         />
 
         {/* INTERMEDIATE SUBJECT PAPERS */}
@@ -206,7 +208,7 @@ function App() {
           element={<SeniorPhase />}
         />
 
-        {/* SENIOR GRADES 7, 8, 9 */}
+        {/* SENIOR GRADES */}
 
         <Route
           path="/primary/phases/senior/grade/:gradeNumber"
@@ -217,18 +219,14 @@ function App() {
 
         <Route
           path="/primary/phases/senior/grade/:gradeNumber/language/:subjectId"
-          element={
-            <SeniorLanguageSelection />
-          }
+          element={<SeniorLanguageSelection />}
         />
 
         {/* SENIOR CREATIVE ARTS */}
 
         <Route
           path="/primary/phases/senior/grade/:gradeNumber/creative-arts"
-          element={
-            <CreativeArtsSelection />
-          }
+          element={<CreativeArtsSelection />}
         />
 
         {/* SENIOR SUBJECT PAPERS */}
@@ -253,6 +251,47 @@ function App() {
         />
 
         {/* =====================================
+            HIGH SCHOOL
+            FET PHASE
+            GRADES 10 - 12
+        ====================================== */}
+
+        {/* HIGH SCHOOL LANDING */}
+
+        <Route
+          path="/high-school"
+          element={<HighSchool />}
+        />
+
+        {/* FET PHASE */}
+
+        <Route
+          path="/high-school/fet"
+          element={<FETPhase />}
+        />
+
+        {/* FET GRADES */}
+
+        <Route
+          path="/high-school/fet/grade/:gradeNumber"
+          element={<FETGrade />}
+        />
+
+        {/* FET SUBJECT SELECTION */}
+
+        <Route
+          path="/high-school/fet/grade/:gradeNumber/subjects"
+          element={<FETSubjects />}
+        />
+
+        {/* FET SUBJECT PAPERS */}
+
+        <Route
+          path="/high-school/fet/grade/:gradeNumber/:subjectId"
+          element={<FETSubjectPapers />}
+        />
+
+        {/* =====================================
             PAPER VIEWER
         ====================================== */}
 
@@ -262,7 +301,7 @@ function App() {
         />
 
         {/* =====================================
-            DASHBOARD
+            USER DASHBOARD
         ====================================== */}
 
         <Route
