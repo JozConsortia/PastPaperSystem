@@ -1,0 +1,189 @@
+.papers-page {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.papers-header {
+  width: min(1100px, calc(100% - 40px));
+
+  margin: auto;
+
+  padding: 25px 0;
+}
+
+.papers-header a {
+  color: #7b317f;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.papers-hero {
+  padding: 80px 20px;
+
+  text-align: center;
+
+  background: #faf5fc;
+}
+
+.papers-hero p:first-child {
+  color: #994bb8;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+.papers-hero h1 {
+  margin: 12px 0 0;
+
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1;
+
+  letter-spacing: -2px;
+}
+
+.papers-hero h1 span {
+  display: block;
+  color: #963bd1;
+}
+
+.papers-hero p:last-child {
+  margin-top: 20px;
+
+  color: #7d7381;
+
+  font-size: 14px;
+}
+
+.papers-section {
+  width: min(1000px, calc(100% - 40px));
+
+  margin: auto;
+
+  padding: 75px 0;
+}
+
+.papers-filter {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+}
+
+.papers-filter select {
+  height: 46px;
+
+  padding: 0 12px;
+
+  border: 1px solid #ded6e2;
+  border-radius: 9px;
+
+  background: white;
+
+  color: #554a5c;
+
+  font-size: 12px;
+}
+
+.paper-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.paper-card {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 18px;
+
+  border: 1px solid #e5dee8;
+  border-radius: 14px;
+
+  background: white;
+}
+
+.paper-file {
+  width: 46px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: #f4e8f8;
+
+  color: #963bd1;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.paper-info {
+  flex: 1;
+}
+
+.paper-info h3 {
+  margin: 0;
+
+  color: #302631;
+
+  font-size: 15px;
+}
+
+.paper-info p {
+  margin: 4px 0;
+
+  color: #817683;
+
+  font-size: 11px;
+}
+
+.paper-info span {
+  color: #a097a3;
+
+  font-size: 10px;
+}
+
+.view-paper {
+  padding: 10px 13px;
+
+  border-radius: 8px;
+
+  background: #963bd1;
+  color: white;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+@media (max-width: 650px) {
+  .papers-filter {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-card {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .view-paper {
+    margin-left: 61px;
+  }
+}

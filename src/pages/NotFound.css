@@ -1,0 +1,50 @@
+.not-found {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #faf8fb;
+}
+
+.not-found span {
+  color: #963bd1;
+
+  font-size: 80px;
+  font-weight: 800;
+}
+
+.not-found h1 {
+  margin: 0;
+
+  color: #2b2230;
+
+  font-size: 36px;
+}
+
+.not-found p {
+  color: #827785;
+
+  font-size: 13px;
+}
+
+.not-found a {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  padding: 12px 17px;
+
+  border-radius: 9px;
+
+  background: #963bd1;
+  color: white;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-decoration: none;
+}
