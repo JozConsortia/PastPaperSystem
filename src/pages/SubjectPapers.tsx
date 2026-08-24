@@ -1,4 +1,12 @@
+import { useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import {
+  getPaperTypes,
+  getTerms,
+  getYears,
+  pastPapers,
+} from "../data/pastPapers";
 import "./SubjectPapers.css";
 
 const subjectNames: Record<string, string> = {
@@ -9,115 +17,395 @@ const subjectNames: Record<string, string> = {
   "life-skills": "Life Skills",
 };
 
-const papers = [
-  {
-    id: "paper-001",
-    title: "Term 1 Test",
-    year: 2025,
-    term: "Term 1",
-    type: "Test",
-  },
-  {
-    id: "paper-002",
-    title: "Term 2 Examination",
-    year: 2025,
-    term: "Term 2",
-    type: "Examination",
-  },
-  {
-    id: "paper-003",
-    title: "Term 3 Test",
-    year: 2024,
-    term: "Term 3",
-    type: "Test",
-  },
-];
+const languageNames: Record<string, string> = {
+  afrikaans: "Afrikaans",
+  english: "English",
+  isindebele: "isiNdebele",
+  isixhosa: "isiXhosa",
+  isizulu: "isiZulu",
+  sepedi: "Sepedi",
+  sesotho: "Sesotho",
+  setswana: "Setswana",
+  siswati: "siSwati",
+  tshivenda: "Tshivenda",
+  xitsonga: "XiTsonga",
+  "south-african-sign-language":
+    "South African Sign Language",
+};
 
 function SubjectPapers() {
-  const { gradeNumber, subjectId } = useParams();
+  const {
+    gradeNumber,
+    subjectId,
+    language,
+  } = useParams();
+
+  const [selectedYear, setSelectedYear] =
+    useState("all");
+
+  const [selectedTerm, setSelectedTerm] =
+    useState("all");
+
+  const [selectedType, setSelectedType] =
+    useState("all");
 
   const subjectName =
-    subjectNames[subjectId ?? ""] ?? "Subject";
+    subjectNames[subjectId ?? ""] ??
+    "Subject";
+
+  const languageName =
+    languageNames[language ?? ""];
+
+  /*
+   * First select all papers for this
+   * grade and subject.
+   */
+  const basePapers = useMemo(() => {
+    return pastPapers.filter(
+      (paper) =>
+        paper.grade === gradeNumber &&
+        paper.subject === subjectId
+    );
+  }, [gradeNumber, subjectId]);
+
+  /*
+   * If a language is part of the URL,
+   * filter by language as well.
+   */
+  const subjectPapers = useMemo(() => {
+    if (!language) {
+      return basePapers;
+    }
+
+    return basePapers.filter(
+      (paper) =>
+        paper.language === language
+    );
+  }, [basePapers, language]);
+
+  /*
+   * Build filter options from the
+   * available papers.
+   */
+  const years = useMemo(
+    () => getYears(subjectPapers),
+    [subjectPapers]
+  );
+
+  const terms = useMemo(
+    () => getTerms(subjectPapers),
+    [subjectPapers]
+  );
+
+  const paperTypes = useMemo(
+    () => getPaperTypes(subjectPapers),
+    [subjectPapers]
+  );
+
+  /*
+   * Apply selected filters.
+   */
+  const filteredPapers = useMemo(() => {
+    return subjectPapers.filter((paper) => {
+      const yearMatches =
+        selectedYear === "all" ||
+        paper.year.toString() === selectedYear;
+
+      const termMatches =
+        selectedTerm === "all" ||
+        paper.term === selectedTerm;
+
+      const typeMatches =
+        selectedType === "all" ||
+        paper.paperType === selectedType;
+
+      return (
+        yearMatches &&
+        termMatches &&
+        typeMatches
+      );
+    });
+  }, [
+    subjectPapers,
+    selectedYear,
+    selectedTerm,
+    selectedType,
+  ]);
+
+  const clearFilters = () => {
+    setSelectedYear("all");
+    setSelectedTerm("all");
+    setSelectedType("all");
+  };
 
   return (
     <div className="papers-page">
-      <header className="papers-header">
-        <Link
-          to={`/primary/foundation-phase/grade/${gradeNumber}`}
-        >
-          ← Grade {gradeNumber}
-        </Link>
-      </header>
+      <Navbar />
 
       <main>
+        {/* ======================================
+            HERO
+        ====================================== */}
+
         <section className="papers-hero">
-          <p>GRADE {gradeNumber}</p>
+          <p>
+            GRADE {gradeNumber}
+          </p>
 
           <h1>
             {subjectName}
-            <span>Past Papers</span>
+
+            {languageName ? (
+              <span>
+                {languageName}
+              </span>
+            ) : (
+              <span>
+                Past Papers
+              </span>
+            )}
           </h1>
 
           <p>
-            Find tests and examination papers for Grade{" "}
-            {gradeNumber}.
+            Find past papers, tests and examinations
+            using the filters below.
           </p>
         </section>
 
+        {/* ======================================
+            CONTENT
+        ====================================== */}
+
         <section className="papers-section">
-          <div className="papers-filter">
-            <select defaultValue="all">
-              <option value="all">All Years</option>
-              <option value="2025">2025</option>
-              <option value="2024">2024</option>
-            </select>
+          {/* FILTERS */}
 
-            <select defaultValue="all">
-              <option value="all">All Terms</option>
-              <option value="Term 1">Term 1</option>
-              <option value="Term 2">Term 2</option>
-              <option value="Term 3">Term 3</option>
-              <option value="Term 4">Term 4</option>
-            </select>
+          <div className="filter-header">
+            <div>
+              <p>FILTER PAPERS</p>
 
-            <select defaultValue="all">
-              <option value="all">All Types</option>
-              <option value="Test">Test</option>
-              <option value="Examination">Examination</option>
-            </select>
+              <h2>
+                Find exactly what you need
+              </h2>
+            </div>
+
+            <span>
+              {filteredPapers.length} paper
+              {filteredPapers.length !== 1
+                ? "s"
+                : ""}{" "}
+              found
+            </span>
           </div>
 
-          <div className="paper-list">
-            {papers.map((paper) => (
-              <article
-                key={paper.id}
-                className="paper-card"
+          <div className="papers-filter">
+            <div className="filter-group">
+              <label htmlFor="year">
+                Year
+              </label>
+
+              <select
+                id="year"
+                value={selectedYear}
+                onChange={(event) =>
+                  setSelectedYear(
+                    event.target.value
+                  )
+                }
               >
-                <div className="paper-file">
-                  PDF
-                </div>
+                <option value="all">
+                  All Years
+                </option>
 
-                <div className="paper-info">
-                  <h3>{paper.title}</h3>
+                {years.map((year) => (
+                  <option
+                    key={year}
+                    value={year}
+                  >
+                    {year}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-                  <p>
-                    Grade {gradeNumber} • {subjectName}
-                  </p>
+            <div className="filter-group">
+              <label htmlFor="term">
+                Term
+              </label>
 
-                  <span>
-                    {paper.year} • {paper.term} •{" "}
-                    {paper.type}
-                  </span>
-                </div>
+              <select
+                id="term"
+                value={selectedTerm}
+                onChange={(event) =>
+                  setSelectedTerm(
+                    event.target.value
+                  )
+                }
+              >
+                <option value="all">
+                  All Terms
+                </option>
 
-                <Link
-                  to={`/paper/${paper.id}`}
-                  className="view-paper"
-                >
-                  View Paper →
-                </Link>
-              </article>
-            ))}
+                {terms.map((term) => (
+                  <option
+                    key={term}
+                    value={term}
+                  >
+                    {term}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="filter-group">
+              <label htmlFor="paperType">
+                Paper Type
+              </label>
+
+              <select
+                id="paperType"
+                value={selectedType}
+                onChange={(event) =>
+                  setSelectedType(
+                    event.target.value
+                  )
+                }
+              >
+                <option value="all">
+                  All Types
+                </option>
+
+                {paperTypes.map((type) => (
+                  <option
+                    key={type}
+                    value={type}
+                  >
+                    {type}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <button
+              type="button"
+              className="clear-filters"
+              onClick={clearFilters}
+            >
+              Clear Filters
+            </button>
+          </div>
+
+          {/* PAPERS */}
+
+          {filteredPapers.length > 0 ? (
+            <div className="paper-list">
+              {filteredPapers.map(
+                (paper) => (
+                  <article
+                    key={paper.id}
+                    className="paper-card"
+                  >
+                    <div className="paper-file">
+                      PDF
+                    </div>
+
+                    <div className="paper-info">
+                      <div className="paper-tags">
+                        <span>
+                          {paper.year}
+                        </span>
+
+                        <span>
+                          {paper.term}
+                        </span>
+
+                        <span>
+                          {paper.paperType}
+                        </span>
+                      </div>
+
+                      <h3>
+                        {paper.title}
+                      </h3>
+
+                      <p>
+                        Grade {paper.grade} •{" "}
+                        {subjectName}
+
+                        {languageName &&
+                          ` • ${languageName}`}
+                      </p>
+
+                      <small>
+                        {paper.description}
+                      </small>
+
+                      {paper.memorandumAvailable && (
+                        <strong className="memo-available">
+                          ✓ Memorandum available
+                        </strong>
+                      )}
+                    </div>
+
+                    <div className="paper-actions">
+                      <Link
+                        to={`/paper/${paper.id}`}
+                        className="view-paper"
+                      >
+                        View Paper
+                      </Link>
+
+                      <a
+                        href={paper.fileUrl}
+                        className="download-paper"
+                        download
+                      >
+                        Download
+                      </a>
+                    </div>
+                  </article>
+                )
+              )}
+            </div>
+          ) : (
+            <div className="no-papers">
+              <div className="no-papers-icon">
+                🔍
+              </div>
+
+              <h2>
+                No papers found
+              </h2>
+
+              <p>
+                There are currently no papers matching
+                your selected filters.
+              </p>
+
+              <button
+                type="button"
+                onClick={clearFilters}
+              >
+                Clear Filters
+              </button>
+            </div>
+          )}
+
+          {/* BACK LINKS */}
+
+          <div className="papers-navigation">
+            <Link
+              to={`/primary/foundation-phase/grade/${gradeNumber}`}
+            >
+              ← Back to Grade {gradeNumber}
+            </Link>
+
+            <Link to="/primary/foundation-phase">
+              Foundation Phase
+            </Link>
+
+            <Link to="/">
+              Home
+            </Link>
           </div>
         </section>
       </main>

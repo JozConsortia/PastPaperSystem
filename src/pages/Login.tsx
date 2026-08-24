@@ -1,5 +1,6 @@
 import { FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 import "./Login.css";
 
 function Login() {
@@ -11,47 +12,75 @@ function Login() {
   const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (
+    event: FormEvent<HTMLFormElement>
+  ) => {
     event.preventDefault();
 
     setError("");
 
     if (!email.trim() || !password.trim()) {
-      setError("Please enter your email address and password.");
+      setError(
+        "Please enter your email address and password."
+      );
       return;
     }
 
-    // Authentication will be connected to the backend later.
-    console.log({
-      email,
-      password,
-      rememberMe,
-    });
+    const storedUsers = localStorage.getItem(
+      "pastPaperUsers"
+    );
 
-    alert("Login successful! Backend authentication will be connected later.");
+    if (!storedUsers) {
+      setError(
+        "No account was found. Please create an account first."
+      );
+      return;
+    }
 
-    navigate("/");
+    const users = JSON.parse(storedUsers);
+
+    const user = users.find(
+      (item: {
+        email: string;
+        password: string;
+      }) =>
+        item.email.toLowerCase() ===
+          email.trim().toLowerCase() &&
+        item.password === password
+    );
+
+    if (!user) {
+      setError(
+        "Incorrect email or password."
+      );
+      return;
+    }
+
+    localStorage.setItem(
+      "currentPastPaperUser",
+      JSON.stringify(user)
+    );
+
+    if (rememberMe) {
+      localStorage.setItem(
+        "rememberPastPaperUser",
+        "true"
+      );
+    }
+
+    navigate("/dashboard");
   };
 
   return (
     <main className="login-page">
+      <Navbar />
+
       <div className="login-container">
-
-        {/* =========================
-            LEFT SIDE
-        ========================== */}
         <section className="login-left">
-          <Link to="/" className="login-brand">
-            <div className="login-brand-icon">P</div>
-
-            <div className="login-brand-text">
-              <strong>PastPaper</strong>
-              <span>Hub</span>
-            </div>
-          </Link>
-
           <div className="login-welcome">
-            <p className="login-label">WELCOME BACK</p>
+            <p className="login-label">
+              WELCOME BACK
+            </p>
 
             <h1>
               Keep learning.
@@ -64,45 +93,30 @@ function Login() {
             </p>
 
             <div className="login-feature-card">
-              <div className="login-feature-icon">📚</div>
+              <div className="login-feature-icon">
+                📚
+              </div>
 
               <div>
-                <h3>Everything in one place</h3>
+                <h3>
+                  Everything in one place
+                </h3>
+
                 <p>
-                  Find past papers organised by grade, subject, course,
-                  module and more.
+                  Find past papers organised by grade, subject,
+                  course, module and more.
                 </p>
               </div>
             </div>
           </div>
-
-          <div className="login-left-footer">
-            <span>Learn</span>
-            <span>Practice</span>
-            <span>Prepare</span>
-            <span>Succeed</span>
-          </div>
         </section>
 
-        {/* =========================
-            RIGHT SIDE
-        ========================== */}
         <section className="login-right">
           <div className="login-card">
-
-            <div className="mobile-brand">
-              <Link to="/" className="login-brand">
-                <div className="login-brand-icon">P</div>
-
-                <div className="login-brand-text">
-                  <strong>PastPaper</strong>
-                  <span>Hub</span>
-                </div>
-              </Link>
-            </div>
-
             <div className="login-header">
-              <h2>Welcome back</h2>
+              <h2>
+                Welcome back
+              </h2>
 
               <p>
                 Sign in to your account to continue.
@@ -113,14 +127,12 @@ function Login() {
               className="login-form"
               onSubmit={handleSubmit}
             >
-              {/* ERROR */}
               {error && (
                 <div className="login-error">
                   {error}
                 </div>
               )}
 
-              {/* EMAIL */}
               <div className="form-group">
                 <label htmlFor="email">
                   Email address
@@ -138,7 +150,6 @@ function Login() {
                 />
               </div>
 
-              {/* PASSWORD */}
               <div className="form-group">
                 <div className="password-header">
                   <label htmlFor="password">
@@ -146,10 +157,10 @@ function Login() {
                   </label>
 
                   <Link
-                    to="/forgot-password"
+                    to="/register"
                     className="forgot-link"
                   >
-                    Forgot password?
+                    Need help?
                   </Link>
                 </div>
 
@@ -178,25 +189,29 @@ function Login() {
                       )
                     }
                   >
-                    {showPassword ? "Hide" : "Show"}
+                    {showPassword
+                      ? "Hide"
+                      : "Show"}
                   </button>
                 </div>
               </div>
 
-              {/* REMEMBER ME */}
               <label className="remember-me">
                 <input
                   type="checkbox"
                   checked={rememberMe}
                   onChange={(event) =>
-                    setRememberMe(event.target.checked)
+                    setRememberMe(
+                      event.target.checked
+                    )
                   }
                 />
 
-                <span>Remember me</span>
+                <span>
+                  Remember me
+                </span>
               </label>
 
-              {/* LOGIN */}
               <button
                 type="submit"
                 className="login-submit"
@@ -205,12 +220,10 @@ function Login() {
               </button>
             </form>
 
-            {/* DIVIDER */}
             <div className="login-divider">
               <span>OR</span>
             </div>
 
-            {/* GOOGLE */}
             <button
               type="button"
               className="google-button"
@@ -220,24 +233,18 @@ function Login() {
                 )
               }
             >
-              <span className="google-letter">G</span>
+              <span className="google-letter">
+                G
+              </span>
+
               Continue with Google
             </button>
 
-            {/* REGISTER */}
             <p className="register-text">
               Don't have an account?{" "}
               <Link to="/register">
                 Create an account
               </Link>
-            </p>
-
-            {/* TERMS */}
-            <p className="terms-text">
-              By signing in, you agree to our{" "}
-              <Link to="/terms">Terms of Service</Link>{" "}
-              and{" "}
-              <Link to="/privacy">Privacy Policy</Link>.
             </p>
           </div>
         </section>

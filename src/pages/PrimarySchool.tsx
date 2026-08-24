@@ -1,115 +1,295 @@
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 import "./PrimarySchool.css";
 
 function PrimarySchool() {
   return (
     <div className="primary-page">
-      <header className="primary-header">
-        <div className="primary-nav">
-          <Link to="/" className="primary-logo">
-            <div className="primary-logo-icon">P</div>
-
-            <div>
-              <strong>PastPaper</strong>
-              <span>Hub</span>
-            </div>
-          </Link>
-
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/primary">Primary School</Link>
-            <Link to="/login">Login</Link>
-          </nav>
-        </div>
-      </header>
+      <Navbar />
 
       <main>
+        {/* =====================================
+            HERO
+        ====================================== */}
         <section className="primary-hero">
-          <p className="primary-label">PRIMARY SCHOOL</p>
+          <div className="primary-hero-content">
+            <p className="primary-label">
+              SOUTH AFRICAN PRIMARY SCHOOL
+            </p>
 
-          <h1>
-            Find past papers for
-            <span>every primary grade.</span>
-          </h1>
+            <h1>
+              Primary School
+              <span>Past Papers</span>
+            </h1>
 
-          <p>
-            Select a phase and grade to find examination papers,
-            tests and other learning resources.
-          </p>
+            <p className="primary-hero-description">
+              Find past papers and learning resources for South African
+              primary school learners, organised by phase, grade,
+              subject and language.
+            </p>
 
-          <Link
-            to="/primary/foundation-phase"
-            className="primary-button"
-          >
-            Explore Foundation Phase →
-          </Link>
-        </section>
-
-        <section className="phase-section">
-          <div className="phase-heading">
-            <p>PRIMARY SCHOOL PHASES</p>
-
-            <h2>Choose your phase</h2>
+            <div className="primary-hero-actions">
+              <Link
+                to="/primary/phases"
+                className="primary-main-button"
+              >
+                Explore Primary Phases
+                <span>→</span>
+              </Link>
+            </div>
           </div>
 
-          <div className="phase-grid">
-            <Link
-              to="/primary/foundation-phase"
-              className="phase-card active"
-            >
-              <div className="phase-number">01</div>
+          <div className="primary-hero-card">
+            <div className="primary-hero-card-icon">
+              📚
+            </div>
 
-              <div className="phase-icon">📚</div>
-
-              <h3>Foundation Phase</h3>
-
-              <span>Grades 1 – 3</span>
-
+            <div>
               <p>
-                Early primary school resources including
-                Mathematics, Languages and Life Skills.
+                ONE PLATFORM
               </p>
 
-              <strong>Explore →</strong>
+              <h2>
+                Foundation to Senior Phase
+              </h2>
+
+              <span>
+                Grade R through Grade 7
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* =====================================
+            PHASE OVERVIEW
+        ====================================== */}
+        <section className="primary-summary-section">
+          <div className="primary-summary-heading">
+            <p>
+              PRIMARY SCHOOL PHASES
+            </p>
+
+            <h2>
+              Everything organised by phase
+            </h2>
+
+            <span>
+              Choose a phase, then select the learner's grade.
+            </span>
+          </div>
+
+          <div className="primary-summary-grid">
+
+            {/* FOUNDATION */}
+            <Link
+              to="/primary/phases/foundation"
+              className="primary-summary-card"
+            >
+              <div className="primary-summary-icon">
+                📚
+              </div>
+
+              <div className="primary-summary-number">
+                01
+              </div>
+
+              <p className="primary-summary-label">
+                FOUNDATION PHASE
+              </p>
+
+              <h3>
+                Grade R – 3
+              </h3>
+
+              <p className="primary-summary-description">
+                Early learning resources for Grade R, Grade 1,
+                Grade 2 and Grade 3.
+              </p>
+
+              <div className="primary-summary-grades">
+                <span>Grade R</span>
+                <span>Grade 1</span>
+                <span>Grade 2</span>
+                <span>Grade 3</span>
+              </div>
+
+              <strong>
+                View Foundation Phase →
+              </strong>
             </Link>
 
-            <div className="phase-card">
-              <div className="phase-number">02</div>
+            {/* INTERMEDIATE */}
+            <Link
+              to="/primary/phases/intermediate"
+              className="primary-summary-card"
+            >
+              <div className="primary-summary-icon">
+                📖
+              </div>
 
-              <div className="phase-icon">📖</div>
+              <div className="primary-summary-number">
+                02
+              </div>
 
-              <h3>Intermediate Phase</h3>
-
-              <span>Grades 4 – 6</span>
-
-              <p>
-                Resources for learners progressing through
-                the intermediate phase.
+              <p className="primary-summary-label">
+                INTERMEDIATE PHASE
               </p>
 
-              <strong className="coming">
-                Coming Soon
-              </strong>
-            </div>
+              <h3>
+                Grade 4 – 6
+              </h3>
 
-            <div className="phase-card">
-              <div className="phase-number">03</div>
-
-              <div className="phase-icon">🎓</div>
-
-              <h3>Senior Phase</h3>
-
-              <span>Grade 7</span>
-
-              <p>
-                Grade 7 examination papers and learning
-                resources.
+              <p className="primary-summary-description">
+                Resources for Grade 4, Grade 5 and Grade 6 learners.
               </p>
 
-              <strong className="coming">
-                Coming Soon
+              <div className="primary-summary-grades">
+                <span>Grade 4</span>
+                <span>Grade 5</span>
+                <span>Grade 6</span>
+              </div>
+
+              <strong>
+                View Intermediate Phase →
               </strong>
+            </Link>
+
+            {/* SENIOR */}
+            <Link
+              to="/primary/phases/senior"
+              className="primary-summary-card"
+            >
+              <div className="primary-summary-icon">
+                🎓
+              </div>
+
+              <div className="primary-summary-number">
+                03
+              </div>
+
+              <p className="primary-summary-label">
+                SENIOR PHASE
+              </p>
+
+              <h3>
+                Grade 7
+              </h3>
+
+              <p className="primary-summary-description">
+                Grade 7 resources and Senior Phase subjects.
+              </p>
+
+              <div className="primary-summary-grades">
+                <span>Grade 7</span>
+              </div>
+
+              <strong>
+                View Senior Phase →
+              </strong>
+            </Link>
+
+          </div>
+        </section>
+
+        {/* =====================================
+            HOW IT WORKS
+        ====================================== */}
+        <section className="primary-how-section">
+          <div className="primary-how-heading">
+            <p>
+              HOW IT WORKS
+            </p>
+
+            <h2>
+              Find your past paper in three steps
+            </h2>
+          </div>
+
+          <div className="primary-how-grid">
+
+            <div className="primary-how-card">
+              <div className="primary-how-number">
+                01
+              </div>
+
+              <div className="primary-how-icon">
+                🎓
+              </div>
+
+              <h3>
+                Choose a phase
+              </h3>
+
+              <p>
+                Select Foundation, Intermediate or Senior Phase.
+              </p>
             </div>
+
+            <div className="primary-how-card">
+              <div className="primary-how-number">
+                02
+              </div>
+
+              <div className="primary-how-icon">
+                📖
+              </div>
+
+              <h3>
+                Choose a grade
+              </h3>
+
+              <p>
+                Select the learner's specific grade.
+              </p>
+            </div>
+
+            <div className="primary-how-card">
+              <div className="primary-how-number">
+                03
+              </div>
+
+              <div className="primary-how-icon">
+                🔎
+              </div>
+
+              <h3>
+                Find your paper
+              </h3>
+
+              <p>
+                Search by subject, language, year and term.
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+        {/* =====================================
+            CTA
+        ====================================== */}
+        <section className="primary-cta-section">
+          <div className="primary-cta-card">
+            <div>
+              <p>
+                START LEARNING
+              </p>
+
+              <h2>
+                Find the right past paper
+                <span>for your grade.</span>
+              </h2>
+
+              <span>
+                Explore all Primary School phases and begin studying.
+              </span>
+            </div>
+
+            <Link
+              to="/primary/phases"
+              className="primary-cta-button"
+            >
+              Explore Phases →
+            </Link>
           </div>
         </section>
       </main>

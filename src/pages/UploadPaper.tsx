@@ -1,11 +1,15 @@
 import { FormEvent, useState } from "react";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 import "./UploadPaper.css";
 
 function UploadPaper() {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] =
+    useState("");
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (
+    event: FormEvent<HTMLFormElement>
+  ) => {
     event.preventDefault();
 
     setMessage(
@@ -15,21 +19,18 @@ function UploadPaper() {
 
   return (
     <div className="upload-page">
-      <header className="upload-header">
-        <Link to="/dashboard">
-          ← Dashboard
-        </Link>
-      </header>
+      <Navbar />
 
       <main className="upload-main">
         <div className="upload-heading">
           <p>CONTRIBUTE</p>
 
-          <h1>Upload a past paper</h1>
+          <h1>
+            Upload a past paper
+          </h1>
 
           <span>
-            Share useful educational resources with other
-            learners.
+            Share useful educational resources with other learners.
           </span>
         </div>
 
@@ -57,9 +58,21 @@ function UploadPaper() {
             Grade
 
             <select defaultValue="1">
-              <option value="1">Grade 1</option>
-              <option value="2">Grade 2</option>
-              <option value="3">Grade 3</option>
+              <option value="R">
+                Grade R
+              </option>
+
+              <option value="1">
+                Grade 1
+              </option>
+
+              <option value="2">
+                Grade 2
+              </option>
+
+              <option value="3">
+                Grade 3
+              </option>
             </select>
           </label>
 
@@ -67,10 +80,21 @@ function UploadPaper() {
             Subject
 
             <select defaultValue="Mathematics">
-              <option>Mathematics</option>
-              <option>Home Language</option>
-              <option>First Additional Language</option>
-              <option>Life Skills</option>
+              <option>
+                Mathematics
+              </option>
+
+              <option>
+                Home Language
+              </option>
+
+              <option>
+                First Additional Language
+              </option>
+
+              <option>
+                Life Skills
+              </option>
             </select>
           </label>
 
@@ -89,10 +113,21 @@ function UploadPaper() {
             Term
 
             <select defaultValue="Term 1">
-              <option>Term 1</option>
-              <option>Term 2</option>
-              <option>Term 3</option>
-              <option>Term 4</option>
+              <option>
+                Term 1
+              </option>
+
+              <option>
+                Term 2
+              </option>
+
+              <option>
+                Term 3
+              </option>
+
+              <option>
+                Term 4
+              </option>
             </select>
           </label>
 
@@ -100,9 +135,17 @@ function UploadPaper() {
             Exam type
 
             <select defaultValue="Test">
-              <option>Test</option>
-              <option>Examination</option>
-              <option>Assignment</option>
+              <option>
+                Test
+              </option>
+
+              <option>
+                Examination
+              </option>
+
+              <option>
+                Assignment
+              </option>
             </select>
           </label>
 
@@ -118,6 +161,7 @@ function UploadPaper() {
 
           <label>
             Memorandum / Answers
+
             <span className="optional">
               Optional
             </span>

@@ -1,42 +1,69 @@
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 import "./Dashboard.css";
 
 function Dashboard() {
+  const storedUser = localStorage.getItem(
+    "currentPastPaperUser"
+  );
+
+  let userName = "Learner";
+
+  if (storedUser) {
+    try {
+      const user = JSON.parse(storedUser);
+
+      if (user.firstName) {
+        userName = user.firstName;
+      }
+    } catch {
+      userName = "Learner";
+    }
+  }
+
   return (
     <div className="dashboard-page">
-      <header className="dashboard-header">
-        <Link to="/" className="dashboard-logo">
-          PastPaper<span>Hub</span>
-        </Link>
-
-        <Link to="/" className="dashboard-home">
-          Home
-        </Link>
-      </header>
+      <Navbar />
 
       <main className="dashboard-main">
         <p className="dashboard-label">
           MY DASHBOARD
         </p>
 
-        <h1>Welcome back</h1>
+        <h1>
+          Welcome, {userName}
+        </h1>
 
         <p className="dashboard-description">
           Manage your learning resources and uploads.
         </p>
 
         <div className="dashboard-grid">
-          <Link to="/primary" className="dashboard-card">
+          <Link
+            to="/primary"
+            className="dashboard-card"
+          >
             <span>📚</span>
-            <h2>Find Past Papers</h2>
+
+            <h2>
+              Find Past Papers
+            </h2>
+
             <p>
               Search for past papers by grade and subject.
             </p>
           </Link>
 
-          <Link to="/upload" className="dashboard-card">
+          <Link
+            to="/upload"
+            className="dashboard-card"
+          >
             <span>⬆</span>
-            <h2>Upload Paper</h2>
+
+            <h2>
+              Upload Paper
+            </h2>
+
             <p>
               Share educational resources with other learners.
             </p>

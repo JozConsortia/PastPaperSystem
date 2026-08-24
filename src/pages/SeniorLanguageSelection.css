@@ -1,0 +1,279 @@
+.senior-language-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #ffffff;
+  color: #281f2d;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.senior-language-hero {
+  padding: 85px 20px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(179, 78, 233, 0.09),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(149, 59, 210, 0.08),
+      transparent 28%
+    ),
+    #fbf8fd;
+}
+
+.senior-language-hero p:first-child {
+  margin: 0 0 10px;
+
+  color: #9949b8;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+.senior-language-hero h1 {
+  margin: 0;
+
+  color: #281f2d;
+
+  font-size: clamp(40px, 5vw, 62px);
+
+  line-height: 1;
+
+  letter-spacing: -2.5px;
+}
+
+.senior-language-hero h1 span {
+  display: block;
+
+  color: #963bd1;
+}
+
+.senior-language-hero p:last-child {
+  max-width: 650px;
+
+  margin: 20px auto 0;
+
+  color: #7d7381;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   LANGUAGE SECTION
+========================================= */
+
+.senior-language-section {
+  width: min(1100px, calc(100% - 40px));
+
+  margin: 0 auto;
+
+  padding: 80px 0 100px;
+}
+
+.senior-language-heading {
+  margin-bottom: 32px;
+}
+
+.senior-language-heading p {
+  margin: 0 0 8px;
+
+  color: #9949b8;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+}
+
+.senior-language-heading h2 {
+  margin: 0;
+
+  color: #2e2532;
+
+  font-size: 35px;
+
+  letter-spacing: -1.2px;
+}
+
+.senior-language-heading span {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #8a808d;
+
+  font-size: 12px;
+}
+
+/* =========================================
+   LANGUAGES
+========================================= */
+
+.senior-language-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+.senior-language-card {
+  min-height: 100px;
+
+  padding: 17px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  border: 1px solid #e4dce8;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.senior-language-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #d1b6db;
+
+  box-shadow:
+    0 14px 28px rgba(67, 27, 82, 0.08);
+}
+
+.senior-language-icon {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #f2e5f7;
+
+  color: #8e34c6;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.senior-language-content {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.senior-language-content h3 {
+  margin: 0;
+
+  color: #302631;
+
+  font-size: 14px;
+}
+
+.senior-language-content p {
+  margin: 4px 0 0;
+
+  color: #938995;
+
+  font-size: 9px;
+
+  line-height: 1.4;
+}
+
+.senior-language-card > span {
+  flex-shrink: 0;
+
+  color: #963bd1;
+
+  font-size: 17px;
+}
+
+.senior-sign-card {
+  border-color: #d3c1da;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffaff,
+      #f8f0fa
+    );
+}
+
+/* =========================================
+   NOTE
+========================================= */
+
+.senior-language-note {
+  margin-top: 25px;
+
+  padding: 18px;
+
+  border-radius: 12px;
+
+  background: #faf7fc;
+}
+
+.senior-language-note strong {
+  color: #45364a;
+
+  font-size: 11px;
+}
+
+.senior-language-note p {
+  margin: 5px 0 0;
+
+  color: #817683;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 850px) {
+  .senior-language-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  .senior-language-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .senior-language-hero {
+    padding: 65px 20px;
+  }
+}

@@ -1,0 +1,283 @@
+.primary-phases-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #ffffff;
+  color: #281f2d;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.primary-phases-hero {
+  padding: 90px 20px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(179, 78, 233, 0.09),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(149, 59, 210, 0.08),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #fbf8fd,
+      #ffffff
+    );
+}
+
+.primary-phases-label {
+  margin: 0 0 12px;
+
+  color: #9949b8;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+.primary-phases-hero h1 {
+  margin: 0;
+
+  color: #281f2d;
+
+  font-size: clamp(45px, 6vw, 70px);
+
+  line-height: 0.98;
+
+  letter-spacing: -3px;
+
+  font-weight: 800;
+}
+
+.primary-phases-hero h1 span {
+  display: block;
+
+  color: #963bd1;
+}
+
+.primary-phases-hero > p:last-child {
+  max-width: 650px;
+
+  margin: 23px auto 0;
+
+  color: #7d7381;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   PHASES
+========================================= */
+
+.primary-phases-section {
+  width: min(1120px, calc(100% - 40px));
+
+  margin: 0 auto;
+
+  padding: 85px 0 100px;
+}
+
+.primary-phases-heading {
+  margin-bottom: 35px;
+}
+
+.primary-phases-heading > p {
+  margin: 0 0 8px;
+
+  color: #9949b8;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+}
+
+.primary-phases-heading h2 {
+  margin: 0;
+
+  color: #2e2532;
+
+  font-size: 38px;
+
+  letter-spacing: -1.4px;
+}
+
+.primary-phases-heading span {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #8a808d;
+
+  font-size: 12px;
+}
+
+.primary-phases-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 17px;
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.primary-phase-card {
+  position: relative;
+
+  min-height: 390px;
+
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #e4dce8;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.primary-phase-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #d2b8dc;
+
+  box-shadow:
+    0 18px 35px rgba(68, 27, 82, 0.08);
+}
+
+.primary-phase-icon {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #f1e4f6;
+
+  font-size: 24px;
+}
+
+.primary-phase-number {
+  position: absolute;
+
+  top: 25px;
+  right: 25px;
+
+  color: #bdb1c4;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.primary-phase-label {
+  margin: 28px 0 7px;
+
+  color: #a060b9;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+.primary-phase-card h3 {
+  margin: 0;
+
+  color: #2d2431;
+
+  font-size: 26px;
+
+  letter-spacing: -0.8px;
+}
+
+.primary-phase-description {
+  margin: 13px 0 0;
+
+  color: #7e7482;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+/* GRADES */
+
+.primary-phase-grades {
+  margin-top: 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 6px;
+}
+
+.primary-phase-grades span {
+  padding: 6px 8px;
+
+  border-radius: 6px;
+
+  background: #f7f2f8;
+
+  color: #7c657f;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+.primary-phase-card strong {
+  margin-top: auto;
+
+  color: #963bd1;
+
+  font-size: 10px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 850px) {
+  .primary-phases-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .primary-phases-hero {
+    padding: 65px 20px;
+  }
+
+  .primary-phases-hero h1 {
+    font-size: 45px;
+
+    letter-spacing: -2px;
+  }
+}

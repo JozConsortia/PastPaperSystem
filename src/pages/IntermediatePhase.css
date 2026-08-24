@@ -1,76 +1,39 @@
-.foundation-page {
+.intermediate-page {
+  width: 100%;
   min-height: 100vh;
+
   background: #ffffff;
-  color: #261c2b;
-}
-
-.foundation-header {
-  border-bottom: 1px solid #eee7f1;
-  background: #ffffff;
-}
-
-.foundation-nav {
-  width: min(1120px, calc(100% - 40px));
-
-  min-height: 72px;
-
-  margin: 0 auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.foundation-back {
-  color: #77348e;
-
-  font-size: 12px;
-  font-weight: 700;
-
-  text-decoration: none;
-}
-
-.foundation-home {
-  color: #271d2c;
-
-  font-size: 17px;
-  font-weight: 800;
-
-  text-decoration: none;
-}
-
-.foundation-home span {
-  color: #963bd1;
+  color: #281f2d;
 }
 
 /* =========================================
    HERO
 ========================================= */
 
-.foundation-hero {
-  padding: 90px 20px;
+.intermediate-hero {
+  padding: 85px 20px;
 
   text-align: center;
 
   background:
     radial-gradient(
-      circle at 12% 20%,
-      rgba(180, 80, 237, 0.09),
+      circle at 10% 15%,
+      rgba(179, 78, 233, 0.09),
       transparent 28%
     ),
     radial-gradient(
-      circle at 88% 15%,
+      circle at 90% 10%,
       rgba(149, 59, 210, 0.08),
       transparent 28%
     ),
     linear-gradient(
       180deg,
-      #fbf7fd,
+      #fbf8fd,
       #ffffff
     );
 }
 
-.foundation-label {
+.intermediate-label {
   margin: 0 0 12px;
 
   color: #9949b8;
@@ -81,24 +44,24 @@
   letter-spacing: 1.8px;
 }
 
-.foundation-hero h1 {
+.intermediate-hero h1 {
   margin: 0;
 
-  color: #271d2c;
+  color: #281f2d;
 
-  font-size: clamp(45px, 6vw, 72px);
+  font-size: clamp(44px, 6vw, 72px);
   line-height: 0.98;
 
   letter-spacing: -3px;
 }
 
-.foundation-hero h1 span {
+.intermediate-hero h1 span {
   display: block;
 
   color: #963bd1;
 }
 
-.foundation-hero > p:last-child {
+.intermediate-hero > p:last-child {
   max-width: 650px;
 
   margin: 23px auto 0;
@@ -113,19 +76,19 @@
    GRADES
 ========================================= */
 
-.grades-section {
-  width: min(1120px, calc(100% - 40px));
+.intermediate-section {
+  width: min(1100px, calc(100% - 40px));
 
   margin: 0 auto;
 
-  padding: 90px 0 60px;
+  padding: 85px 0 60px;
 }
 
-.grades-heading {
+.intermediate-heading {
   margin-bottom: 35px;
 }
 
-.grades-heading p {
+.intermediate-heading p {
   margin: 0 0 8px;
 
   color: #9949b8;
@@ -136,35 +99,45 @@
   letter-spacing: 1.7px;
 }
 
-.grades-heading h2 {
+.intermediate-heading h2 {
   margin: 0;
 
-  color: #2c2330;
+  color: #2e2532;
 
   font-size: 38px;
 
   letter-spacing: -1.4px;
 }
 
-.grades-grid {
+.intermediate-heading span {
+  display: block;
+
+  margin-top: 9px;
+
+  color: #8a808d;
+
+  font-size: 12px;
+}
+
+.intermediate-grades {
   display: grid;
 
   grid-template-columns:
-    repeat(4, minmax(0, 1fr));
+    repeat(3, minmax(0, 1fr));
 
-  gap: 15px;
+  gap: 17px;
 }
 
-.grade-card {
-  min-height: 330px;
+.intermediate-grade-card {
+  min-height: 320px;
 
-  padding: 24px;
+  padding: 25px;
 
   display: flex;
   flex-direction: column;
 
   border: 1px solid #e4dce8;
-  border-radius: 17px;
+  border-radius: 18px;
 
   background: #ffffff;
 
@@ -176,26 +149,18 @@
     box-shadow 0.2s ease;
 }
 
-.grade-card:hover {
+.intermediate-grade-card:hover {
   transform: translateY(-4px);
 
-  border-color: #d2b8db;
+  border-color: #d3b9dd;
 
   box-shadow:
-    0 18px 35px rgba(70, 28, 84, 0.08);
+    0 18px 35px rgba(68, 27, 82, 0.08);
 }
 
-.grade-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 10px;
-}
-
-.grade-icon {
-  width: 54px;
-  height: 54px;
+.intermediate-grade-icon {
+  width: 56px;
+  height: 56px;
 
   display: flex;
   align-items: center;
@@ -211,67 +176,72 @@
   font-weight: 800;
 }
 
-.grade-card-top > span {
-  color: #a095a5;
+.intermediate-card-label {
+  margin: 28px 0 7px;
+
+  color: #a060b9;
 
   font-size: 9px;
-  font-weight: 700;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
 }
 
-.grade-card h3 {
-  margin: 30px 0 8px;
+.intermediate-grade-card h3 {
+  margin: 0;
 
   color: #2d2431;
 
-  font-size: 24px;
+  font-size: 25px;
 
   letter-spacing: -0.8px;
 }
 
-.grade-card p {
-  margin: 0;
+.intermediate-card-description {
+  margin: 14px 0 0;
 
   color: #7e7482;
 
   font-size: 12px;
+
   line-height: 1.7;
 }
 
-.grade-card strong {
+.intermediate-grade-card strong {
   margin-top: auto;
 
   color: #963bd1;
 
   font-size: 10px;
-  font-weight: 800;
 }
 
 /* =========================================
-   NOTE
+   INFO
 ========================================= */
 
-.foundation-note-section {
-  width: min(1120px, calc(100% - 40px));
+.intermediate-info-section {
+  width: min(1100px, calc(100% - 40px));
 
   margin: 0 auto;
 
-  padding: 0 0 95px;
+  padding-bottom: 100px;
 }
 
-.foundation-note {
+.intermediate-info-card {
   padding: 28px;
 
   display: flex;
   align-items: flex-start;
+
   gap: 16px;
 
   border: 1px solid #e4dce8;
-  border-radius: 18px;
+  border-radius: 17px;
 
   background: #faf7fc;
 }
 
-.foundation-note-icon {
+.intermediate-info-icon {
   width: 48px;
   height: 48px;
 
@@ -285,25 +255,26 @@
 
   background: #f1e3f6;
 
-  font-size: 23px;
+  font-size: 22px;
 }
 
-.foundation-note h2 {
+.intermediate-info-card h2 {
   margin: 0;
 
   color: #302631;
 
-  font-size: 19px;
+  font-size: 20px;
 }
 
-.foundation-note p {
-  max-width: 800px;
+.intermediate-info-card p {
+  max-width: 760px;
 
   margin: 7px 0 0;
 
   color: #7f7583;
 
   font-size: 12px;
+
   line-height: 1.7;
 }
 
@@ -311,24 +282,23 @@
    RESPONSIVE
 ========================================= */
 
-@media (max-width: 900px) {
-  .grades-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+@media (max-width: 750px) {
+  .intermediate-grades {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 600px) {
-  .grades-grid {
-    grid-template-columns: 1fr;
+  .intermediate-hero {
+    padding: 65px 20px;
   }
 
-  .foundation-hero h1 {
+  .intermediate-hero h1 {
     font-size: 45px;
     letter-spacing: -2px;
   }
 
-  .foundation-note {
+  .intermediate-info-card {
     flex-direction: column;
   }
 }

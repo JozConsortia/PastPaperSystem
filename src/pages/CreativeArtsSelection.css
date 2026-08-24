@@ -1,0 +1,173 @@
+.creative-selection-page {
+  min-height: 100vh;
+
+  background: #ffffff;
+}
+
+.creative-selection-hero {
+  padding: 85px 20px;
+
+  text-align: center;
+
+  background: #fbf8fd;
+}
+
+.creative-selection-hero p:first-child {
+  margin: 0 0 10px;
+
+  color: #9949b8;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+}
+
+.creative-selection-hero h1 {
+  margin: 0;
+
+  color: #281f2d;
+
+  font-size: clamp(40px, 5vw, 62px);
+
+  line-height: 1;
+
+  letter-spacing: -2.5px;
+}
+
+.creative-selection-hero h1 span {
+  display: block;
+
+  color: #963bd1;
+}
+
+.creative-selection-hero p:last-child {
+  max-width: 620px;
+
+  margin: 20px auto 0;
+
+  color: #7d7381;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+.creative-selection-section {
+  width: min(1050px, calc(100% - 40px));
+
+  margin: 0 auto;
+
+  padding: 80px 0 100px;
+}
+
+.creative-selection-heading {
+  margin-bottom: 32px;
+}
+
+.creative-selection-heading p {
+  margin: 0 0 8px;
+
+  color: #9949b8;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+}
+
+.creative-selection-heading h2 {
+  margin: 0;
+
+  color: #302631;
+
+  font-size: 35px;
+
+  letter-spacing: -1.2px;
+}
+
+.creative-selection-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.creative-selection-card {
+  min-height: 250px;
+
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #e4dce8;
+
+  border-radius: 17px;
+
+  background: #ffffff;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.creative-selection-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 17px 34px rgba(68, 27, 82, 0.08);
+}
+
+.creative-selection-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: #f2e5f7;
+
+  font-size: 23px;
+}
+
+.creative-selection-card h3 {
+  margin: 22px 0 7px;
+
+  color: #2e2532;
+
+  font-size: 18px;
+}
+
+.creative-selection-card p {
+  margin: 0;
+
+  color: #7d7381;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+}
+
+.creative-selection-card strong {
+  margin-top: auto;
+
+  color: #963bd1;
+
+  font-size: 10px;
+}
+
+@media (max-width: 600px) {
+  .creative-selection-grid {
+    grid-template-columns: 1fr;
+  }
+}

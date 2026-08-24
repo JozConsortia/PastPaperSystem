@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
-function FoundationPhase() {
+function IntermediatePhase() {
   return (
     <div
       style={{
@@ -27,7 +27,7 @@ function FoundationPhase() {
             letterSpacing: "1.5px",
           }}
         >
-          FOUNDATION PHASE
+          INTERMEDIATE PHASE
         </p>
 
         <h1
@@ -36,7 +36,7 @@ function FoundationPhase() {
             margin: "10px 0",
           }}
         >
-          Grade R – 3
+          Grade 4 – 6
         </h1>
 
         <p
@@ -57,35 +57,27 @@ function FoundationPhase() {
           }}
         >
           <Link
-            to="/primary/phases/foundation/grade/R"
+            to="/primary/phases/intermediate/grade/4"
             style={cardStyle}
           >
-            <strong>Grade R</strong>
-            <span>View Grade R →</span>
+            <strong>Grade 4</strong>
+            <span>View Grade 4 →</span>
           </Link>
 
           <Link
-            to="/primary/phases/foundation/grade/1"
+            to="/primary/phases/intermediate/grade/5"
             style={cardStyle}
           >
-            <strong>Grade 1</strong>
-            <span>View Grade 1 →</span>
+            <strong>Grade 5</strong>
+            <span>View Grade 5 →</span>
           </Link>
 
           <Link
-            to="/primary/phases/foundation/grade/2"
+            to="/primary/phases/intermediate/grade/6"
             style={cardStyle}
           >
-            <strong>Grade 2</strong>
-            <span>View Grade 2 →</span>
-          </Link>
-
-          <Link
-            to="/primary/phases/foundation/grade/3"
-            style={cardStyle}
-          >
-            <strong>Grade 3</strong>
-            <span>View Grade 3 →</span>
+            <strong>Grade 6</strong>
+            <span>View Grade 6 →</span>
           </Link>
         </div>
 
@@ -119,4 +111,4 @@ const cardStyle = {
   boxSizing: "border-box" as const,
 };
 
-export default FoundationPhase;
+export default IntermediatePhase;

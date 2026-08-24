@@ -1,54 +1,307 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+} from "react-router-dom";
+
+// =====================================
+// MAIN PAGES
+// =====================================
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+
+// =====================================
+// PRIMARY SCHOOL
+// =====================================
+
 import PrimarySchool from "./pages/PrimarySchool";
+import PrimaryPhases from "./pages/PrimaryPhases";
+
+// =====================================
+// FOUNDATION PHASE
+// GRADES R - 3
+// =====================================
+
 import FoundationPhase from "./pages/FoundationPhase";
 import Grade from "./pages/Grade";
+import LanguageSelection from "./pages/LanguageSelection";
+
+// =====================================
+// INTERMEDIATE PHASE
+// GRADES 4 - 6
+// =====================================
+
+import IntermediatePhase from "./pages/IntermediatePhase";
+import IntermediateGrade from "./pages/IntermediateGrade";
+import IntermediateLanguageSelection from "./pages/IntermediateLanguageSelection";
+
+// =====================================
+// SENIOR PHASE
+// GRADES 7 - 9
+// =====================================
+
+import SeniorPhase from "./pages/SeniorPhase";
+import SeniorGrade from "./pages/SeniorGrade";
+import SeniorLanguageSelection from "./pages/SeniorLanguageSelection";
+import CreativeArtsSelection from "./pages/CreativeArtsSelection";
+
+// =====================================
+// PAPERS
+// =====================================
+
 import SubjectPapers from "./pages/SubjectPapers";
 import PaperViewer from "./pages/PaperViewer";
-import UploadPaper from "./pages/UploadPaper";
+
+// =====================================
+// USER
+// =====================================
+
 import Dashboard from "./pages/Dashboard";
+import UploadPaper from "./pages/UploadPaper";
+
+// =====================================
+// ERROR
+// =====================================
+
 import NotFound from "./pages/NotFound";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Main */}
-        <Route path="/" element={<Home />} />
 
-        {/* Authentication */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        {/* =====================================
+            HOME
+        ====================================== */}
 
-        {/* Primary School */}
-        <Route path="/primary" element={<PrimarySchool />} />
         <Route
-          path="/primary/foundation-phase"
+          path="/"
+          element={<Home />}
+        />
+
+        {/* =====================================
+            LOGIN
+        ====================================== */}
+
+        <Route
+          path="/login"
+          element={<Login />}
+        />
+
+        {/* =====================================
+            REGISTER
+        ====================================== */}
+
+        <Route
+          path="/register"
+          element={<Register />}
+        />
+
+        {/* =====================================
+            PRIMARY SCHOOL
+        ====================================== */}
+
+        <Route
+          path="/primary"
+          element={<PrimarySchool />}
+        />
+
+        {/* =====================================
+            PRIMARY SCHOOL PHASES
+        ====================================== */}
+
+        <Route
+          path="/primary/phases"
+          element={<PrimaryPhases />}
+        />
+
+        {/* =====================================
+            FOUNDATION PHASE
+            GRADES R - 3
+        ====================================== */}
+
+        <Route
+          path="/primary/phases/foundation"
           element={<FoundationPhase />}
         />
 
+        {/* FOUNDATION GRADES */}
+
         <Route
-          path="/primary/foundation-phase/grade/:gradeNumber"
+          path="/primary/phases/foundation/grade/:gradeNumber"
           element={<Grade />}
         />
 
+        {/* FOUNDATION LANGUAGE SELECTION */}
+
         <Route
-          path="/primary/foundation-phase/grade/:gradeNumber/:subjectId"
+          path="/primary/phases/foundation/grade/:gradeNumber/language/:subjectId"
+          element={<LanguageSelection />}
+        />
+
+        {/* FOUNDATION SUBJECT PAPERS */}
+
+        <Route
+          path="/primary/phases/foundation/grade/:gradeNumber/:subjectId"
           element={<SubjectPapers />}
         />
 
-        {/* Papers */}
-        <Route path="/paper/:paperId" element={<PaperViewer />} />
+        {/* FOUNDATION LANGUAGE PAPERS */}
 
-        {/* User */}
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/upload" element={<UploadPaper />} />
+        <Route
+          path="/primary/phases/foundation/grade/:gradeNumber/:subjectId/:language"
+          element={<SubjectPapers />}
+        />
 
-        {/* Not found */}
-        <Route path="*" element={<NotFound />} />
+        {/* =====================================
+            INTERMEDIATE PHASE
+            GRADES 4 - 6
+        ====================================== */}
+
+        <Route
+          path="/primary/phases/intermediate"
+          element={<IntermediatePhase />}
+        />
+
+        {/* INTERMEDIATE GRADES */}
+
+        <Route
+          path="/primary/phases/intermediate/grade/:gradeNumber"
+          element={<IntermediateGrade />}
+        />
+
+        {/* INTERMEDIATE LANGUAGE SELECTION */}
+
+        <Route
+          path="/primary/phases/intermediate/grade/:gradeNumber/language/:subjectId"
+          element={
+            <IntermediateLanguageSelection />
+          }
+        />
+
+        {/* INTERMEDIATE SUBJECT PAPERS */}
+
+        <Route
+          path="/primary/phases/intermediate/grade/:gradeNumber/:subjectId"
+          element={<SubjectPapers />}
+        />
+
+        {/* INTERMEDIATE LANGUAGE PAPERS */}
+
+        <Route
+          path="/primary/phases/intermediate/grade/:gradeNumber/:subjectId/:language"
+          element={<SubjectPapers />}
+        />
+
+        {/* =====================================
+            SENIOR PHASE
+            GRADES 7 - 9
+        ====================================== */}
+
+        <Route
+          path="/primary/phases/senior"
+          element={<SeniorPhase />}
+        />
+
+        {/* SENIOR GRADES 7, 8, 9 */}
+
+        <Route
+          path="/primary/phases/senior/grade/:gradeNumber"
+          element={<SeniorGrade />}
+        />
+
+        {/* SENIOR LANGUAGE SELECTION */}
+
+        <Route
+          path="/primary/phases/senior/grade/:gradeNumber/language/:subjectId"
+          element={
+            <SeniorLanguageSelection />
+          }
+        />
+
+        {/* SENIOR CREATIVE ARTS */}
+
+        <Route
+          path="/primary/phases/senior/grade/:gradeNumber/creative-arts"
+          element={
+            <CreativeArtsSelection />
+          }
+        />
+
+        {/* SENIOR SUBJECT PAPERS */}
+
+        <Route
+          path="/primary/phases/senior/grade/:gradeNumber/:subjectId"
+          element={<SubjectPapers />}
+        />
+
+        {/* SENIOR LANGUAGE PAPERS */}
+
+        <Route
+          path="/primary/phases/senior/grade/:gradeNumber/:subjectId/:language"
+          element={<SubjectPapers />}
+        />
+
+        {/* SENIOR CREATIVE ARTS PAPERS */}
+
+        <Route
+          path="/primary/phases/senior/grade/:gradeNumber/creative-arts/:discipline"
+          element={<SubjectPapers />}
+        />
+
+        {/* =====================================
+            PAPER VIEWER
+        ====================================== */}
+
+        <Route
+          path="/paper/:paperId"
+          element={<PaperViewer />}
+        />
+
+        {/* =====================================
+            DASHBOARD
+        ====================================== */}
+
+        <Route
+          path="/dashboard"
+          element={<Dashboard />}
+        />
+
+        {/* =====================================
+            UPLOAD PAPER
+        ====================================== */}
+
+        <Route
+          path="/upload"
+          element={<UploadPaper />}
+        />
+
+        {/* =====================================
+            404 PAGE
+        ====================================== */}
+
+        <Route
+          path="/404"
+          element={<NotFound />}
+        />
+
+        {/* =====================================
+            UNKNOWN ROUTES
+        ====================================== */}
+
+        <Route
+          path="*"
+          element={
+            <Navigate
+              to="/404"
+              replace
+            />
+          }
+        />
+
       </Routes>
     </BrowserRouter>
   );

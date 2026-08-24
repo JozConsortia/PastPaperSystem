@@ -1,0 +1,331 @@
+.senior-phase-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #ffffff;
+  color: #281f2d;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.senior-phase-hero {
+  padding: 90px 20px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(179, 78, 233, 0.09),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(149, 59, 210, 0.08),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #fbf8fd,
+      #ffffff
+    );
+}
+
+.senior-phase-label {
+  margin: 0 0 12px;
+
+  color: #9949b8;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+.senior-phase-hero h1 {
+  margin: 0;
+
+  color: #281f2d;
+
+  font-size: clamp(48px, 7vw, 75px);
+
+  line-height: 0.98;
+
+  letter-spacing: -3px;
+
+  font-weight: 800;
+}
+
+.senior-phase-hero h1 span {
+  display: block;
+
+  color: #963bd1;
+}
+
+.senior-phase-hero > p:last-child {
+  max-width: 680px;
+
+  margin: 24px auto 0;
+
+  color: #7d7381;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   GRADE CARD
+========================================= */
+
+.senior-grade-section {
+  width: min(1050px, calc(100% - 40px));
+
+  margin: 0 auto;
+
+  padding: 75px 0 60px;
+}
+
+.senior-grade-card {
+  padding: 30px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  border: 1px solid #dfd4e4;
+
+  border-radius: 19px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffaff,
+      #f8f0fc
+    );
+
+  box-shadow:
+    0 15px 35px rgba(68, 27, 82, 0.06);
+}
+
+.senior-grade-icon {
+  width: 70px;
+  height: 70px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  background: #963bd1;
+
+  color: white;
+
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.senior-grade-content {
+  flex: 1;
+}
+
+.senior-grade-content p {
+  margin: 0 0 5px;
+
+  color: #9949b8;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.senior-grade-content h2 {
+  margin: 0;
+
+  color: #2d2431;
+
+  font-size: 26px;
+
+  letter-spacing: -0.8px;
+}
+
+.senior-grade-content span {
+  display: block;
+
+  max-width: 650px;
+
+  margin-top: 7px;
+
+  color: #7e7482;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+.senior-grade-button {
+  flex-shrink: 0;
+
+  padding: 13px 17px;
+
+  border-radius: 9px;
+
+  background: #963bd1;
+
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  text-decoration: none;
+}
+
+/* =========================================
+   OVERVIEW
+========================================= */
+
+.senior-overview-section {
+  width: min(1100px, calc(100% - 40px));
+
+  margin: 0 auto;
+
+  padding: 20px 0 100px;
+}
+
+.senior-section-heading {
+  margin-bottom: 32px;
+}
+
+.senior-section-heading p {
+  margin: 0 0 8px;
+
+  color: #9949b8;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+}
+
+.senior-section-heading h2 {
+  margin: 0;
+
+  color: #2e2532;
+
+  font-size: 36px;
+
+  letter-spacing: -1.3px;
+}
+
+.senior-section-heading span {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #8a808d;
+
+  font-size: 12px;
+}
+
+.senior-overview-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 15px;
+}
+
+.senior-overview-card {
+  min-height: 210px;
+
+  padding: 22px;
+
+  border: 1px solid #e5dee8;
+
+  border-radius: 15px;
+
+  background: #ffffff;
+}
+
+.senior-overview-card > div {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #f1e4f6;
+
+  font-size: 20px;
+}
+
+.senior-overview-card h3 {
+  margin: 20px 0 7px;
+
+  color: #302631;
+
+  font-size: 15px;
+}
+
+.senior-overview-card p {
+  margin: 0;
+
+  color: #817683;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .senior-overview-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .senior-grade-card {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .senior-grade-button {
+    width: 100%;
+
+    text-align: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .senior-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .senior-phase-hero {
+    padding: 65px 20px;
+  }
+
+  .senior-phase-hero h1 {
+    font-size: 46px;
+
+    letter-spacing: -2px;
+  }
+}

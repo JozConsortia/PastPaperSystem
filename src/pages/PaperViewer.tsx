@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import Navbar from "../components/Navbar";
 import "./PaperViewer.css";
 
 function PaperViewer() {
@@ -6,11 +7,7 @@ function PaperViewer() {
 
   return (
     <div className="viewer-page">
-      <header className="viewer-header">
-        <Link to="/primary/foundation-phase">
-          ← Back to Foundation Phase
-        </Link>
-      </header>
+      <Navbar />
 
       <main className="viewer-main">
         <div className="viewer-title">
@@ -24,6 +21,10 @@ function PaperViewer() {
             <span>
               Term 2 Examination • 2025
             </span>
+
+            <small>
+              Paper ID: {paperId}
+            </small>
           </div>
 
           <button type="button">
@@ -33,18 +34,22 @@ function PaperViewer() {
 
         <div className="pdf-placeholder">
           <div>
-            <div className="pdf-icon">PDF</div>
+            <div className="pdf-icon">
+              PDF
+            </div>
 
-            <h2>Past Paper Viewer</h2>
+            <h2>
+              Past Paper Viewer
+            </h2>
 
             <p>
-              Paper ID: {paperId}
+              The real PDF viewer will be connected
+              when document storage is implemented.
             </p>
 
-            <span>
-              The real PDF viewer will be connected when
-              we add our document storage system.
-            </span>
+            <Link to="/primary">
+              Back to Primary School
+            </Link>
           </div>
         </div>
       </main>
