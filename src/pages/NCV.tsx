@@ -1,35 +1,29 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import { ncvLevels, ncvProgrammes } from "../data/tvetData";
 import "./TVETDivision.css";
 
-const levels = [
-  {
-    number: "2",
-    title: "NC(V) Level 2",
-    description:
-      "Explore Level 2 vocational programmes, subjects and assessment resources.",
-  },
-  {
-    number: "3",
-    title: "NC(V) Level 3",
-    description:
-      "Explore Level 3 vocational programmes, subjects and assessment resources.",
-  },
-  {
-    number: "4",
-    title: "NC(V) Level 4",
-    description:
-      "Explore Level 4 vocational programmes, subjects and assessment resources.",
-  },
-];
-
 function NCV() {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const selectedLevel =
+    searchParams.get("level") || "all";
+
+  const filteredProgrammes =
+    selectedLevel === "all"
+      ? ncvProgrammes
+      : ncvProgrammes.filter((programme) =>
+          programme.levels?.includes(selectedLevel)
+        );
+
   return (
     <div className="tvet-division-page">
 
       <header className="tvet-division-header">
         <Navbar />
       </header>
+
+      {/* HERO */}
 
       <section className="tvet-division-hero">
 
@@ -45,48 +39,93 @@ function NCV() {
         </h1>
 
         <p>
-          Choose an NC(V) level to explore the
-          programmes and subjects available at that level.
+          Choose an NC(V) level or browse the full
+          vocational programme catalogue.
         </p>
 
       </section>
 
       <main className="tvet-division-main">
 
+        {/* HEADING */}
+
         <div className="tvet-division-heading">
 
           <div>
 
             <p>
-              NC(V) LEVELS
+              NC(V) PROGRAMMES
             </p>
 
             <h2>
-              Choose a level
+              Choose your level
             </h2>
 
           </div>
 
           <span>
-            National Certificate (Vocational)
+            {filteredProgrammes.length} programmes
           </span>
 
         </div>
 
-        <div className="tvet-level-grid">
+        {/* LEVEL FILTER */}
 
-          {levels.map((level) => (
+        <div className="tvet-filter-row">
+
+          <button
+            type="button"
+            className={
+              selectedLevel === "all"
+                ? "tvet-filter active"
+                : "tvet-filter"
+            }
+            onClick={() => {
+              setSearchParams({});
+            }}
+          >
+            All Levels
+          </button>
+
+          {ncvLevels.map((level) => (
+
+            <button
+              key={level.id}
+              type="button"
+              className={
+                selectedLevel === level.id
+                  ? "tvet-filter active"
+                  : "tvet-filter"
+              }
+              onClick={() => {
+                setSearchParams({
+                  level: level.id,
+                });
+              }}
+            >
+              Level {level.id}
+            </button>
+
+          ))}
+
+        </div>
+
+        {/* PROGRAMMES */}
+
+        <div className="tvet-course-grid">
+
+          {filteredProgrammes.map((programme) => (
 
             <Link
-              key={level.number}
-              to={`/tvet/ncv/level/${level.number}`}
-              className="tvet-level-card"
+              key={programme.id}
+              to={`/tvet/ncv/${programme.id}`}
+              className="tvet-course-card"
             >
 
-              <div className="tvet-level-top">
+              <div className="tvet-course-top">
 
-                <div className="tvet-level-icon">
-                  {level.number}
+                <div className="tvet-course-icon">
+                  📚
                 </div>
 
                 <span>
@@ -95,26 +134,40 @@ function NCV() {
 
               </div>
 
-              <p className="tvet-level-label">
-                NATIONAL CERTIFICATE (VOCATIONAL)
+              <p className="tvet-course-category">
+                {programme.category}
               </p>
 
               <h3>
-                {level.title}
+                {programme.name}
               </h3>
 
-              <p className="tvet-level-description">
-                {level.description}
+              <p>
+                {programme.description}
               </p>
 
-              <div className="tvet-level-action">
+              <div className="tvet-course-levels">
+
+                {programme.levels?.map((level) => (
+
+                  <span key={level}>
+                    Level {level}
+                  </span>
+
+                ))}
+
+              </div>
+
+              <div className="tvet-course-action">
+
                 <span>
-                  Explore Level {level.number}
+                  Explore programme
                 </span>
 
                 <b>
                   →
                 </b>
+
               </div>
 
             </Link>
@@ -122,6 +175,8 @@ function NCV() {
           ))}
 
         </div>
+
+        {/* BACK */}
 
         <div className="tvet-division-back">
 

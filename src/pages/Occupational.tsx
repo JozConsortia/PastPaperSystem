@@ -1,23 +1,11 @@
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import "./TVETDivision.css";
 
-const categories = [
-  {
-    id: "occupational-qualifications",
-    title: "Occupational Qualifications",
-    description:
-      "Explore workplace-aligned occupational qualifications offered through the TVET sector.",
-    icon: "🎯",
-  },
-  {
-    id: "skills-programmes",
-    title: "Skills Programmes",
-    description:
-      "Explore vocational and skills-focused programmes offered through TVET colleges.",
-    icon: "🛠️",
-  },
-];
+import Navbar from "../components/Navbar";
+import {
+  occupationalCategories,
+} from "../data/tvetData";
+
+import "./TVETDivision.css";
 
 function Occupational() {
   return (
@@ -26,6 +14,8 @@ function Occupational() {
       <header className="tvet-division-header">
         <Navbar />
       </header>
+
+      {/* HERO */}
 
       <section className="tvet-division-hero">
 
@@ -41,13 +31,15 @@ function Occupational() {
         </h1>
 
         <p>
-          Explore occupational learning and
-          workplace-aligned programme resources.
+          Explore workplace-aligned occupational
+          qualifications and skills programmes.
         </p>
 
       </section>
 
       <main className="tvet-division-main">
+
+        {/* HEADING */}
 
         <div className="tvet-division-heading">
 
@@ -64,58 +56,89 @@ function Occupational() {
           </div>
 
           <span>
-            Workplace-aligned learning
+            2026 programme structure
           </span>
 
         </div>
 
+        {/* CATEGORIES */}
+
         <div className="tvet-programme-grid">
 
-          {categories.map((category) => (
+          {occupationalCategories.map(
+            (category) => (
 
-            <Link
-              key={category.id}
-              to={`/tvet/occupational/${category.id}`}
-              className="tvet-programme-card"
-            >
+              <Link
+                key={category.id}
+                to={`/tvet/occupational/${category.id}`}
+                className="tvet-programme-card"
+              >
 
-              <div className="tvet-programme-top">
+                <div className="tvet-programme-top">
 
-                <div className="tvet-programme-icon">
-                  {category.icon}
+                  <div className="tvet-programme-icon">
+                    {category.icon}
+                  </div>
+
                 </div>
 
-              </div>
+                <p>
+                  OCCUPATIONAL
+                </p>
 
-              <p>
-                OCCUPATIONAL
-              </p>
-
-              <h3>
-                {category.title}
-              </h3>
-
-              <span>
-                {category.description}
-              </span>
-
-              <div className="tvet-level-action">
+                <h3>
+                  {category.name}
+                </h3>
 
                 <span>
-                  Explore
+                  {category.description}
                 </span>
 
-                <b>
-                  →
-                </b>
+                <div className="tvet-level-action">
 
-              </div>
+                  <span>
+                    Explore
+                  </span>
 
-            </Link>
+                  <b>
+                    →
+                  </b>
 
-          ))}
+                </div>
+
+              </Link>
+
+            )
+          )}
 
         </div>
+
+        {/* IMPORTANT INFORMATION */}
+
+        <section className="tvet-occupational-note">
+
+          <div className="tvet-note-icon">
+            ℹ️
+          </div>
+
+          <div>
+
+            <h2>
+              Programme availability varies by college
+            </h2>
+
+            <p>
+              DHET publishes an updated list of occupational
+              programmes and the colleges offering them.
+              We will connect this page to that official
+              catalogue so that PastPaperHub does not
+              advertise a programme at a college where it
+              is not actually offered.
+            </p>
+
+          </div>
+
+        </section>
 
         <div className="tvet-division-back">
 

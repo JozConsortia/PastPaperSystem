@@ -1,38 +1,82 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import {
+  natedLevels,
+  natedProgrammes,
+} from "../data/tvetData";
 import "./TVETDivision.css";
 
-const programmeTypes = [
-  {
-    id: "engineering",
-    title: "Engineering Studies",
-    description:
-      "Explore engineering-related Report 191 programmes and their N-level subjects.",
-    icon: "⚙️",
-  },
-  {
-    id: "business",
-    title: "Business Studies",
-    description:
-      "Explore business and management-related Report 191 programmes.",
-    icon: "💼",
-  },
-  {
-    id: "general",
-    title: "General Studies",
-    description:
-      "Explore other Report 191 programmes outside the main engineering pathway.",
-    icon: "📚",
-  },
-];
-
 function NATED() {
+  const [searchParams, setSearchParams] =
+    useSearchParams();
+
+  const selectedLevel =
+    searchParams.get("level") || "all";
+
+  const selectedCategory =
+    searchParams.get("category") || "all";
+
+  const filteredProgrammes =
+    natedProgrammes.filter((programme) => {
+
+      const matchesLevel =
+        selectedLevel === "all" ||
+        programme.levels.includes(selectedLevel);
+
+      let matchesCategory = true;
+
+      if (selectedCategory === "engineering") {
+        matchesCategory =
+          programme.id === "engineering-studies";
+      }
+
+      if (selectedCategory === "business") {
+        matchesCategory = [
+          "business-management",
+          "financial-management",
+          "human-resource-management",
+          "management-assistant",
+          "marketing-management",
+          "public-management",
+          "public-relations",
+          "legal-secretary",
+          "medical-secretary",
+          "labour-relations",
+          "mercantile-law",
+        ].includes(programme.id);
+      }
+
+      if (selectedCategory === "services") {
+        matchesCategory = [
+          "hospitality-catering-services",
+          "tourism-nated",
+          "educare",
+          "art-and-design",
+          "clothing-production",
+          "textiles",
+          "hair-care",
+          "interior-decorating",
+          "popular-music-composition",
+          "popular-music-performance",
+          "popular-music-studio-work",
+          "farming-management",
+        ].includes(programme.id);
+      }
+
+      return (
+        matchesLevel &&
+        matchesCategory
+      );
+    });
+
   return (
     <div className="tvet-division-page">
 
       <header className="tvet-division-header">
         <Navbar />
       </header>
+
+      {/* HERO */}
 
       <section className="tvet-division-hero">
 
@@ -48,72 +92,203 @@ function NATED() {
         </h1>
 
         <p>
-          Choose a programme type to continue to
-          NATED subjects, levels and past papers.
+          Browse Engineering Studies, Business
+          Studies and Services/General programmes.
         </p>
 
       </section>
 
       <main className="tvet-division-main">
 
+        {/* HEADING */}
+
         <div className="tvet-division-heading">
 
           <div>
 
             <p>
-              PROGRAMME TYPES
+              REPORT 191 PROGRAMMES
             </p>
 
             <h2>
-              Choose a programme type
+              Choose a programme
             </h2>
 
           </div>
 
           <span>
-            Report 191 / NATED
+            {filteredProgrammes.length} programmes
           </span>
 
         </div>
 
-        <div className="tvet-programme-grid">
+        {/* CATEGORY FILTERS */}
 
-          {programmeTypes.map((programme) => (
+        <div className="tvet-filter-row">
+
+          <button
+            type="button"
+            className={
+              selectedCategory === "all"
+                ? "tvet-filter active"
+                : "tvet-filter"
+            }
+            onClick={() =>
+              setSearchParams({})
+            }
+          >
+            All
+          </button>
+
+          <button
+            type="button"
+            className={
+              selectedCategory === "engineering"
+                ? "tvet-filter active"
+                : "tvet-filter"
+            }
+            onClick={() =>
+              setSearchParams({
+                category: "engineering",
+              })
+            }
+          >
+            Engineering Studies
+          </button>
+
+          <button
+            type="button"
+            className={
+              selectedCategory === "business"
+                ? "tvet-filter active"
+                : "tvet-filter"
+            }
+            onClick={() =>
+              setSearchParams({
+                category: "business",
+              })
+            }
+          >
+            Business Studies
+          </button>
+
+          <button
+            type="button"
+            className={
+              selectedCategory === "services"
+                ? "tvet-filter active"
+                : "tvet-filter"
+            }
+            onClick={() =>
+              setSearchParams({
+                category: "services",
+              })
+            }
+          >
+            Services
+          </button>
+
+        </div>
+
+        {/* LEVEL FILTER */}
+
+        <div className="tvet-filter-row secondary">
+
+          {natedLevels.map((level) => (
+
+            <button
+              key={level}
+              type="button"
+              className={
+                selectedLevel === level
+                  ? "tvet-filter active"
+                  : "tvet-filter"
+              }
+              onClick={() => {
+
+                const nextParams =
+                  new URLSearchParams(
+                    searchParams
+                  );
+
+                nextParams.set(
+                  "level",
+                  level
+                );
+
+                setSearchParams(
+                  nextParams
+                );
+
+              }}
+            >
+              {level}
+            </button>
+
+          ))}
+
+        </div>
+
+        {/* PROGRAMMES */}
+
+        <div className="tvet-course-grid">
+
+          {filteredProgrammes.map((programme) => (
 
             <Link
               key={programme.id}
               to={`/tvet/nated/${programme.id}`}
-              className="tvet-programme-card"
+              className="tvet-course-card"
             >
 
-              <div className="tvet-programme-top">
+              <div className="tvet-course-top">
 
-                <div className="tvet-programme-icon">
-                  {programme.icon}
+                <div className="tvet-course-icon">
+                  🛠️
                 </div>
+
+                <span>
+                  NATED
+                </span>
 
               </div>
 
-              <p>
+              <p className="tvet-course-category">
                 REPORT 191
               </p>
 
               <h3>
-                {programme.title}
+                {programme.name}
               </h3>
 
-              <span>
+              <p>
                 {programme.description}
-              </span>
+              </p>
 
-              <div className="tvet-level-action">
+              <div className="tvet-course-levels">
+
+                {programme.levels.map(
+                  (level) => (
+
+                    <span key={level}>
+                      {level}
+                    </span>
+
+                  )
+                )}
+
+              </div>
+
+              <div className="tvet-course-action">
+
                 <span>
-                  Explore
+                  Explore programme
                 </span>
 
                 <b>
                   →
                 </b>
+
               </div>
 
             </Link>
