@@ -137,7 +137,7 @@
 }
 
 /* =========================================
-   NORMAL NAV LINK
+   NAV LINKS
 ========================================= */
 
 .site-nav-link {
@@ -298,12 +298,6 @@
     visibility 0.2s ease;
 }
 
-/*
-  Invisible bridge between the button and dropdown.
-  This prevents the dropdown from disappearing while
-  moving the mouse into it.
-*/
-
 .site-education-menu::before {
   content: "";
 
@@ -334,7 +328,7 @@
 }
 
 /* =========================================
-   DROPDOWN SECTION
+   MENU SECTION
 ========================================= */
 
 .site-menu-section {
@@ -436,7 +430,8 @@
 
   transition:
     background 0.2s ease,
-    color 0.2s ease;
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .site-menu-links > a:hover {
@@ -449,6 +444,8 @@
   background: #f3e7f7;
 
   color: #8432af;
+
+  border: 1px solid #e3d0e9;
 }
 
 .site-menu-links > a > div {
@@ -482,7 +479,30 @@
 }
 
 /* =========================================
-   DISABLED LINKS
+   TVET LINK
+========================================= */
+
+.site-tvet-link {
+  background: #faf6fc;
+
+  border: 1px solid #eee3f2;
+}
+
+.site-tvet-link:hover,
+.site-tvet-link.active {
+  background: #f3e7f7 !important;
+
+  border-color: #dec8e7 !important;
+
+  color: #8432af !important;
+}
+
+.site-tvet-link.active > span {
+  color: #8432af;
+}
+
+/* =========================================
+   DISABLED UNIVERSITY
 ========================================= */
 
 .site-disabled-link {
@@ -640,7 +660,7 @@
 }
 
 /* =========================================
-   FOCUS ACCESSIBILITY
+   FOCUS
 ========================================= */
 
 .site-nav-link:focus-visible,

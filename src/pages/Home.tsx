@@ -10,6 +10,7 @@ function Home() {
       ========================================== */}
 
       <header className="home-header">
+
         <div className="home-nav">
 
           {/* LOGO */}
@@ -31,6 +32,8 @@ function Home() {
           {/* MAIN NAVIGATION */}
 
           <nav className="home-navigation">
+
+            {/* HOME */}
 
             <Link to="/">
               Home
@@ -58,7 +61,9 @@ function Home() {
 
               <div className="education-dropdown-menu">
 
-                {/* PRIMARY SCHOOL */}
+                {/* =================================
+                    PRIMARY SCHOOL
+                ================================== */}
 
                 <div className="education-menu-section">
 
@@ -122,7 +127,9 @@ function Home() {
 
                 </div>
 
-                {/* HIGH SCHOOL */}
+                {/* =================================
+                    HIGH SCHOOL
+                ================================== */}
 
                 <div className="education-menu-section">
 
@@ -167,7 +174,9 @@ function Home() {
 
                 </div>
 
-                {/* TVET */}
+                {/* =================================
+                    TVET COLLEGE
+                ================================== */}
 
                 <div className="education-menu-section">
 
@@ -191,8 +200,10 @@ function Home() {
 
                   <div className="education-sub-links">
 
-                    <span className="disabled-menu-link">
-
+                    <Link
+                      to="/tvet"
+                      className="education-featured-link"
+                    >
                       <span>
                         TVET Programmes
                       </span>
@@ -201,17 +212,18 @@ function Home() {
                         NC(V) · NATED · Occupational
                       </small>
 
-                      <em>
-                        Coming Soon
-                      </em>
-
-                    </span>
+                      <b>
+                        →
+                      </b>
+                    </Link>
 
                   </div>
 
                 </div>
 
-                {/* UNIVERSITY */}
+                {/* =================================
+                    UNIVERSITY
+                ================================== */}
 
                 <div className="education-menu-section">
 
@@ -266,13 +278,17 @@ function Home() {
 
             </div>
 
+            {/* HOW IT WORKS */}
+
             <a href="#how-it-works">
               How It Works
             </a>
 
           </nav>
 
-          {/* ACCOUNT ACTIONS */}
+          {/* =====================================
+              ACCOUNT ACTIONS
+          ====================================== */}
 
           <div className="home-actions">
 
@@ -293,6 +309,7 @@ function Home() {
           </div>
 
         </div>
+
       </header>
 
       {/* =========================================
@@ -310,8 +327,11 @@ function Home() {
           <div className="hero-content">
 
             <div className="hero-badge">
+
               <span></span>
+
               Your academic resource platform
+
             </div>
 
             <h1>
@@ -360,6 +380,7 @@ function Home() {
           <div className="search-card">
 
             <div>
+
               <span className="search-label">
                 SEARCH RESOURCES
               </span>
@@ -367,6 +388,7 @@ function Home() {
               <h2>
                 What are you looking for?
               </h2>
+
             </div>
 
             <div className="search-box">
@@ -404,6 +426,10 @@ function Home() {
                 High School
               </Link>
 
+              <Link to="/tvet">
+                TVET College
+              </Link>
+
             </div>
 
           </div>
@@ -429,6 +455,7 @@ function Home() {
 
               <h2>
                 One platform.
+
                 <span>
                   Every learner.
                 </span>
@@ -488,7 +515,9 @@ function Home() {
 
               <div className="level-phase-list">
 
-                <Link to="/primary/phases/foundation">
+                <Link
+                  to="/primary/phases/foundation"
+                >
                   <span>
                     Foundation Phase
                   </span>
@@ -502,7 +531,9 @@ function Home() {
                   </b>
                 </Link>
 
-                <Link to="/primary/phases/intermediate">
+                <Link
+                  to="/primary/phases/intermediate"
+                >
                   <span>
                     Intermediate Phase
                   </span>
@@ -516,7 +547,9 @@ function Home() {
                   </b>
                 </Link>
 
-                <Link to="/primary/phases/senior">
+                <Link
+                  to="/primary/phases/senior"
+                >
                   <span>
                     Senior Phase
                   </span>
@@ -541,6 +574,7 @@ function Home() {
                 <span>
                   →
                 </span>
+
               </Link>
 
             </div>
@@ -605,11 +639,13 @@ function Home() {
               </div>
 
               <div className="level-card-button">
+
                 Explore High School
 
                 <span>
                   →
                 </span>
+
               </div>
 
             </Link>
@@ -618,7 +654,10 @@ function Home() {
                 TVET COLLEGE
             ================================== */}
 
-            <div className="level-card">
+            <Link
+              to="/tvet"
+              className="level-card level-card-link"
+            >
 
               <div className="level-card-top">
 
@@ -647,9 +686,9 @@ function Home() {
                 </span>
 
                 <p className="level-card-description">
-                  Find vocational resources across
-                  NC(V), NATED and occupational
-                  programmes.
+                  Explore vocational resources across
+                  NC(V), NATED / Report 191 and
+                  occupational programmes.
                 </p>
 
               </div>
@@ -670,11 +709,17 @@ function Home() {
 
               </div>
 
-              <div className="level-card-button level-card-button-disabled">
-                Coming Soon
+              <div className="level-card-button">
+
+                Explore TVET
+
+                <span>
+                  →
+                </span>
+
               </div>
 
-            </div>
+            </Link>
 
             {/* =================================
                 UNIVERSITY
@@ -761,9 +806,11 @@ function Home() {
 
               <h2>
                 Find what you need.
+
                 <span>
                   Study smarter.
                 </span>
+
               </h2>
 
             </div>
@@ -804,6 +851,7 @@ function Home() {
               </p>
 
               <div className="step-footer">
+
                 <span>
                   Choose your path
                 </span>
@@ -811,6 +859,7 @@ function Home() {
                 <span>
                   →
                 </span>
+
               </div>
 
             </div>
@@ -818,9 +867,11 @@ function Home() {
             {/* CONNECTOR */}
 
             <div className="step-connector">
+
               <span>
                 →
               </span>
+
             </div>
 
             {/* STEP 2 */}
@@ -849,6 +900,7 @@ function Home() {
               </p>
 
               <div className="step-footer">
+
                 <span>
                   Narrow your search
                 </span>
@@ -856,6 +908,7 @@ function Home() {
                 <span>
                   →
                 </span>
+
               </div>
 
             </div>
@@ -863,9 +916,11 @@ function Home() {
             {/* CONNECTOR */}
 
             <div className="step-connector">
+
               <span>
                 →
               </span>
+
             </div>
 
             {/* STEP 3 */}
@@ -895,6 +950,7 @@ function Home() {
               </p>
 
               <div className="step-footer">
+
                 <span>
                   Start studying
                 </span>
@@ -902,6 +958,7 @@ function Home() {
                 <span>
                   →
                 </span>
+
               </div>
 
             </div>
@@ -924,9 +981,11 @@ function Home() {
 
             <h2>
               Better preparation starts
+
               <span>
                 with practice.
               </span>
+
             </h2>
 
             <p>
@@ -946,6 +1005,13 @@ function Home() {
                 className="cta-secondary"
               >
                 Explore High School →
+              </Link>
+
+              <Link
+                to="/tvet"
+                className="cta-secondary"
+              >
+                Explore TVET →
               </Link>
 
             </div>
@@ -1012,6 +1078,10 @@ function Home() {
 
             <Link to="/high-school">
               High School
+            </Link>
+
+            <Link to="/tvet">
+              TVET College
             </Link>
 
             <Link to="/login">

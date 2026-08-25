@@ -94,7 +94,9 @@ function Navbar() {
 
                 <div className="site-menu-links">
 
-                  <NavLink to="/primary/phases/foundation">
+                  <NavLink
+                    to="/primary/phases/foundation"
+                  >
                     <div>
                       <strong>
                         Foundation Phase
@@ -110,7 +112,9 @@ function Navbar() {
                     </span>
                   </NavLink>
 
-                  <NavLink to="/primary/phases/intermediate">
+                  <NavLink
+                    to="/primary/phases/intermediate"
+                  >
                     <div>
                       <strong>
                         Intermediate Phase
@@ -126,7 +130,9 @@ function Navbar() {
                     </span>
                   </NavLink>
 
-                  <NavLink to="/primary/phases/senior">
+                  <NavLink
+                    to="/primary/phases/senior"
+                  >
                     <div>
                       <strong>
                         Senior Phase
@@ -172,8 +178,9 @@ function Navbar() {
 
                 <div className="site-menu-links">
 
-                  <NavLink to="/high-school">
-
+                  <NavLink
+                    to="/high-school"
+                  >
                     <div>
                       <strong>
                         FET Phase
@@ -187,7 +194,6 @@ function Navbar() {
                     <span>
                       →
                     </span>
-
                   </NavLink>
 
                 </div>
@@ -212,7 +218,7 @@ function Navbar() {
                     </strong>
 
                     <span>
-                      N4 – N6
+                      Vocational Education
                     </span>
                   </div>
 
@@ -220,23 +226,28 @@ function Navbar() {
 
                 <div className="site-menu-links">
 
-                  <div className="site-disabled-link">
-
+                  <NavLink
+                    to="/tvet"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "site-tvet-link active"
+                        : "site-tvet-link"
+                    }
+                  >
                     <div>
                       <strong>
                         TVET Programmes
                       </strong>
 
                       <small>
-                        Courses & Modules
+                        NC(V) · NATED · Occupational
                       </small>
                     </div>
 
-                    <em>
-                      Coming Soon
-                    </em>
-
-                  </div>
+                    <span>
+                      →
+                    </span>
+                  </NavLink>
 
                 </div>
 
@@ -276,7 +287,7 @@ function Navbar() {
                       </strong>
 
                       <small>
-                        Courses & Modules
+                        Courses · Modules
                       </small>
                     </div>
 
@@ -291,14 +302,16 @@ function Navbar() {
               </div>
 
               {/* =================================
-                  DROPDOWN FOOTER
+                  MENU FOOTER
               ================================== */}
 
               <div className="site-menu-footer">
+
                 <span>
                   From school to higher education,
                   find academic resources in one place.
                 </span>
+
               </div>
 
             </div>

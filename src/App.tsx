@@ -61,6 +61,15 @@ import FETSubjects from "./pages/FETSubjects";
 import FETSubjectPapers from "./pages/FETSubjectPapers";
 
 // =====================================
+// TVET COLLEGE
+// =====================================
+
+import TVETCollege from "./pages/TVETCollege";
+import NCV from "./pages/NCV";
+import NATED from "./pages/NATED";
+import Occupational from "./pages/Occupational";
+
+// =====================================
 // PAPERS
 // =====================================
 
@@ -289,6 +298,59 @@ function App() {
         <Route
           path="/high-school/fet/grade/:gradeNumber/:subjectId"
           element={<FETSubjectPapers />}
+        />
+
+        {/* =====================================
+            TVET COLLEGE
+        ====================================== */}
+
+        {/* TVET LANDING */}
+
+        <Route
+          path="/tvet"
+          element={<TVETCollege />}
+        />
+
+        {/* NC(V) */}
+
+        <Route
+          path="/tvet/ncv"
+          element={<NCV />}
+        />
+
+        {/* NC(V) LEVELS */}
+
+        <Route
+          path="/tvet/ncv/level/:level"
+          element={<NCV />}
+        />
+
+        {/* NATED / REPORT 191 */}
+
+        <Route
+          path="/tvet/nated"
+          element={<NATED />}
+        />
+
+        {/* NATED PROGRAMME TYPES */}
+
+        <Route
+          path="/tvet/nated/:programmeType"
+          element={<NATED />}
+        />
+
+        {/* OCCUPATIONAL PROGRAMMES */}
+
+        <Route
+          path="/tvet/occupational"
+          element={<Occupational />}
+        />
+
+        {/* OCCUPATIONAL CATEGORIES */}
+
+        <Route
+          path="/tvet/occupational/:category"
+          element={<Occupational />}
         />
 
         {/* =====================================
