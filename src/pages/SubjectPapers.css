@@ -1,9 +1,9 @@
-.papers-page {
+﻿.papers-page {
   width: 100%;
   min-height: 100vh;
 
-  background: #ffffff;
-  color: #281f2d;
+  background: var(--surface);
+  color: var(--ink);
 }
 
 /* =========================================
@@ -28,15 +28,15 @@
     ),
     linear-gradient(
       180deg,
-      #fbf8fd,
-      #ffffff
+      var(--surface-tint),
+      var(--surface)
     );
 }
 
 .papers-hero > p:first-child {
   margin: 0 0 10px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
   font-weight: 800;
@@ -47,7 +47,7 @@
 .papers-hero h1 {
   margin: 0;
 
-  color: #281f2d;
+  color: var(--ink);
 
   font-size: clamp(40px, 5vw, 64px);
 
@@ -59,7 +59,7 @@
 .papers-hero h1 span {
   display: block;
 
-  color: #963bd1;
+  color: var(--accent);
 }
 
 .papers-hero > p:last-child {
@@ -67,7 +67,7 @@
 
   margin: 20px auto 0;
 
-  color: #7d7381;
+  color: var(--muted);
 
   font-size: 13px;
 
@@ -103,7 +103,7 @@
 .filter-header p {
   margin: 0 0 6px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 9px;
   font-weight: 800;
@@ -114,7 +114,7 @@
 .filter-header h2 {
   margin: 0;
 
-  color: #2e2532;
+  color: var(--ink);
 
   font-size: 27px;
 
@@ -122,7 +122,7 @@
 }
 
 .filter-header > span {
-  color: #918793;
+  color: var(--muted);
 
   font-size: 11px;
 }
@@ -141,11 +141,11 @@
 
   gap: 12px;
 
-  border: 1px solid #e4dce8;
+  border: 1px solid var(--border);
 
   border-radius: 15px;
 
-  background: #faf8fb;
+  background: var(--surface-soft);
 
   margin-bottom: 25px;
 }
@@ -176,7 +176,7 @@
 
   outline: none;
 
-  background: #ffffff;
+  background: var(--surface);
 
   color: #4c4252;
 
@@ -201,7 +201,7 @@
 
   border-radius: 9px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   color: #793291;
 
@@ -228,11 +228,11 @@
 
   gap: 16px;
 
-  border: 1px solid #e5dee8;
+  border: 1px solid var(--border);
 
   border-radius: 15px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   transition:
     transform 0.2s ease,
@@ -265,7 +265,7 @@
 
   background: #f2e4f7;
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 9px;
   font-weight: 800;
@@ -364,7 +364,7 @@
 }
 
 .view-paper {
-  background: #963bd1;
+  background: var(--accent);
 
   color: #ffffff;
 }
@@ -372,7 +372,7 @@
 .download-paper {
   border: 1px solid #dfd5e3;
 
-  background: #ffffff;
+  background: var(--surface);
 
   color: #6c5874;
 }
@@ -424,7 +424,7 @@
   border: 0;
   border-radius: 8px;
 
-  background: #963bd1;
+  background: var(--accent);
 
   color: #ffffff;
 
@@ -460,7 +460,7 @@
 }
 
 .papers-navigation a:hover {
-  color: #963bd1;
+  color: var(--accent);
 }
 
 /* =========================================
@@ -522,3 +522,4 @@
     gap: 10px;
   }
 }
+

@@ -1,9 +1,9 @@
-.primary-phases-page {
+﻿.primary-phases-page {
   width: 100%;
   min-height: 100vh;
 
-  background: #ffffff;
-  color: #281f2d;
+  background: var(--surface);
+  color: var(--ink);
 }
 
 /* =========================================
@@ -28,15 +28,15 @@
     ),
     linear-gradient(
       180deg,
-      #fbf8fd,
-      #ffffff
+      var(--surface-tint),
+      var(--surface)
     );
 }
 
 .primary-phases-label {
   margin: 0 0 12px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
   font-weight: 800;
@@ -47,7 +47,7 @@
 .primary-phases-hero h1 {
   margin: 0;
 
-  color: #281f2d;
+  color: var(--ink);
 
   font-size: clamp(45px, 6vw, 70px);
 
@@ -61,7 +61,7 @@
 .primary-phases-hero h1 span {
   display: block;
 
-  color: #963bd1;
+  color: var(--accent);
 }
 
 .primary-phases-hero > p:last-child {
@@ -69,7 +69,7 @@
 
   margin: 23px auto 0;
 
-  color: #7d7381;
+  color: var(--muted);
 
   font-size: 14px;
 
@@ -95,7 +95,7 @@
 .primary-phases-heading > p {
   margin: 0 0 8px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
   font-weight: 800;
@@ -106,7 +106,7 @@
 .primary-phases-heading h2 {
   margin: 0;
 
-  color: #2e2532;
+  color: var(--ink);
 
   font-size: 38px;
 
@@ -146,11 +146,11 @@
   display: flex;
   flex-direction: column;
 
-  border: 1px solid #e4dce8;
+  border: 1px solid var(--border);
 
   border-radius: 18px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   text-decoration: none;
 
@@ -255,7 +255,7 @@
 .primary-phase-card strong {
   margin-top: auto;
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 10px;
 }
@@ -281,3 +281,4 @@
     letter-spacing: -2px;
   }
 }
+

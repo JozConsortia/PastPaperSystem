@@ -1,4 +1,4 @@
-/* =========================================
+﻿/* =========================================
    FET GRADE PAGE
 ========================================= */
 
@@ -6,9 +6,9 @@
   width: 100%;
   min-height: 100vh;
 
-  background: #ffffff;
+  background: var(--surface);
 
-  color: #281f2d;
+  color: var(--ink);
 }
 
 /* =========================================
@@ -22,9 +22,9 @@
 
   z-index: 100;
 
-  border-bottom: 1px solid #eee7f1;
+  border-bottom: 1px solid var(--border);
 
-  background: #ffffff;
+  background: var(--surface);
 }
 
 /* =========================================
@@ -49,15 +49,15 @@
     ),
     linear-gradient(
       180deg,
-      #fbf8fd,
-      #ffffff
+      var(--surface-tint),
+      var(--surface)
     );
 }
 
 .fet-grade-hero p {
   margin: 0 0 10px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -69,7 +69,7 @@
 .fet-grade-hero h1 {
   margin: 0;
 
-  color: #281f2d;
+  color: var(--ink);
 
   font-size: clamp(48px, 6vw, 70px);
 
@@ -87,7 +87,7 @@
 
   margin: 18px auto 0;
 
-  color: #7d7381;
+  color: var(--muted);
 
   font-size: 13px;
 
@@ -119,7 +119,7 @@
 .fet-subject-heading p {
   margin: 0 0 8px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -131,7 +131,7 @@
 .fet-subject-heading h2 {
   margin: 0;
 
-  color: #2e2532;
+  color: var(--ink);
 
   font-size: 38px;
 
@@ -240,7 +240,7 @@
 }
 
 .fet-grade-navigation a:hover {
-  color: #963bd1;
+  color: var(--accent);
 }
 
 /* =========================================
@@ -277,7 +277,7 @@
 
   background: #f3e7f8;
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 22px;
 
@@ -287,7 +287,7 @@
 .fet-grade-not-found p {
   margin: 20px 0 5px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -317,7 +317,7 @@
 .fet-grade-not-found a {
   margin-top: 22px;
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 12px;
 
@@ -381,7 +381,7 @@
 
   gap: 20px;
 
-  border: 1px solid #e4dce8;
+  border: 1px solid var(--border);
 
   border-radius: 18px;
 
@@ -485,9 +485,9 @@
 
   border-radius: 50%;
 
-  background: #ffffff;
+  background: var(--surface);
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 16px;
 
@@ -515,3 +515,4 @@
   }
 
 }
+

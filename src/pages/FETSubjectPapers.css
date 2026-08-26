@@ -1,4 +1,4 @@
-/* =========================================
+﻿/* =========================================
    FET SUBJECT PAPERS
 ========================================= */
 
@@ -6,9 +6,9 @@
   width: 100%;
   min-height: 100vh;
 
-  background: #ffffff;
+  background: var(--surface);
 
-  color: #281f2d;
+  color: var(--ink);
 }
 
 /* =========================================
@@ -21,9 +21,9 @@
   position: relative;
   z-index: 100;
 
-  border-bottom: 1px solid #eee7f1;
+  border-bottom: 1px solid var(--border);
 
-  background: #ffffff;
+  background: var(--surface);
 }
 
 /* =========================================
@@ -48,8 +48,8 @@
     ),
     linear-gradient(
       180deg,
-      #fbf8fd,
-      #ffffff
+      var(--surface-tint),
+      var(--surface)
     );
 }
 
@@ -84,7 +84,7 @@
 .fet-papers-hero > p {
   margin: 0 0 9px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -96,7 +96,7 @@
 .fet-papers-hero h1 {
   margin: 0;
 
-  color: #281f2d;
+  color: var(--ink);
 
   font-size: clamp(42px, 6vw, 68px);
 
@@ -114,7 +114,7 @@
 
   margin: 16px auto 0;
 
-  color: #7d7381;
+  color: var(--muted);
 
   font-size: 13px;
 
@@ -186,7 +186,7 @@
 .fet-papers-heading p {
   margin: 0 0 7px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -206,7 +206,7 @@
 }
 
 .fet-papers-heading > span {
-  color: #8d8391;
+  color: var(--muted);
 
   font-size: 10px;
 
@@ -238,7 +238,7 @@
 
   outline: none;
 
-  background: #ffffff;
+  background: var(--surface);
 
   color: #5f5565;
 
@@ -283,11 +283,11 @@
 
   gap: 16px;
 
-  border: 1px solid #e5dee8;
+  border: 1px solid var(--border);
 
   border-radius: 15px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   transition:
     transform 0.2s ease,
@@ -392,7 +392,7 @@
 
   border-radius: 8px;
 
-  background: #963bd1;
+  background: var(--accent);
 
   color: #ffffff;
 
@@ -489,7 +489,7 @@
 }
 
 .fet-papers-back a:hover {
-  color: #963bd1;
+  color: var(--accent);
 }
 
 /* =========================================
@@ -526,7 +526,7 @@
 
   background: #f3e7f8;
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 22px;
 
@@ -536,7 +536,7 @@
 .fet-papers-error p {
   margin: 20px 0 5px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -564,7 +564,7 @@
 .fet-papers-error a {
   margin-top: 22px;
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 12px;
 
@@ -612,3 +612,4 @@
   }
 
 }
+

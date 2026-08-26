@@ -1,6 +1,6 @@
-.viewer-page {
+﻿.viewer-page {
   min-height: 100vh;
-  background: #f7f5f8;
+  background: var(--surface-soft);
 }
 
 .viewer-header {
@@ -12,7 +12,7 @@
 }
 
 .viewer-header a {
-  color: #79328f;
+  color: var(--accent-strong);
 
   font-size: 12px;
   font-weight: 700;
@@ -69,7 +69,7 @@
   border: 0;
   border-radius: 9px;
 
-  background: #963bd1;
+  background: var(--accent);
   color: white;
 
   font-size: 11px;
@@ -86,7 +86,7 @@
   border: 1px solid #e1d9e4;
   border-radius: 15px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   box-shadow:
     0 15px 30px rgba(55, 28, 68, 0.06);
@@ -108,7 +108,7 @@
 
   background: #f2e4f7;
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-weight: 800;
 }
@@ -118,7 +118,7 @@
 }
 
 .pdf-placeholder p {
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 12px;
 }
@@ -133,3 +133,4 @@
   font-size: 12px;
   line-height: 1.6;
 }
+

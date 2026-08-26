@@ -1,4 +1,4 @@
-/* =========================================
+﻿/* =========================================
    FET SUBJECTS PAGE
 ========================================= */
 
@@ -6,9 +6,9 @@
   width: 100%;
   min-height: 100vh;
 
-  background: #ffffff;
+  background: var(--surface);
 
-  color: #281f2d;
+  color: var(--ink);
 }
 
 /* =========================================
@@ -21,9 +21,9 @@
   position: relative;
   z-index: 100;
 
-  border-bottom: 1px solid #eee7f1;
+  border-bottom: 1px solid var(--border);
 
-  background: #ffffff;
+  background: var(--surface);
 }
 
 /* =========================================
@@ -48,15 +48,15 @@
     ),
     linear-gradient(
       180deg,
-      #fbf8fd,
-      #ffffff
+      var(--surface-tint),
+      var(--surface)
     );
 }
 
 .fet-subjects-hero > p:first-child {
   margin: 0 0 10px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -68,7 +68,7 @@
 .fet-subjects-hero h1 {
   margin: 0;
 
-  color: #281f2d;
+  color: var(--ink);
 
   font-size: clamp(48px, 6vw, 72px);
 
@@ -82,7 +82,7 @@
 .fet-subjects-hero h1 span {
   display: block;
 
-  color: #963bd1;
+  color: var(--accent);
 }
 
 .fet-subjects-hero > p:last-child {
@@ -90,7 +90,7 @@
 
   margin: 20px auto 0;
 
-  color: #7d7381;
+  color: var(--muted);
 
   font-size: 13px;
 
@@ -128,7 +128,7 @@
 .fet-subjects-intro p {
   margin: 0 0 8px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -140,7 +140,7 @@
 .fet-subjects-intro h2 {
   margin: 0;
 
-  color: #2e2532;
+  color: var(--ink);
 
   font-size: 38px;
 
@@ -150,7 +150,7 @@
 }
 
 .fet-subjects-intro > span {
-  color: #8d8391;
+  color: var(--muted);
 
   font-size: 11px;
 
@@ -181,7 +181,7 @@
 
   border-radius: 10px;
 
-  background: #963bd1;
+  background: var(--accent);
 }
 
 .fet-subject-group-heading > div:not(.group-heading-line) {
@@ -224,7 +224,7 @@
 
   background: #f5edf8;
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 9px;
 
@@ -257,11 +257,11 @@
 
   flex-direction: column;
 
-  border: 1px solid #e5dee8;
+  border: 1px solid var(--border);
 
   border-radius: 16px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   text-decoration: none;
 
@@ -389,7 +389,7 @@
 
   justify-content: space-between;
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 9px;
 
@@ -424,7 +424,7 @@
 span:last-child {
   transform: translateX(3px);
 
-  background: #f2e5f7;
+  background: var(--accent-soft);
 }
 
 /* =========================================
@@ -446,7 +446,7 @@ span:last-child {
 }
 
 .fet-subjects-back a:hover {
-  color: #963bd1;
+  color: var(--accent);
 }
 
 /* =========================================
@@ -483,7 +483,7 @@ span:last-child {
 
   background: #f3e7f8;
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 22px;
 
@@ -493,7 +493,7 @@ span:last-child {
 .fet-subjects-error p {
   margin: 20px 0 5px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -523,7 +523,7 @@ span:last-child {
 .fet-subjects-error a {
   margin-top: 22px;
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 12px;
 
@@ -588,3 +588,4 @@ span:last-child {
     min-height: 215px;
   }
 }
+

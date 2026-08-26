@@ -1,4 +1,4 @@
-/* =========================================
+﻿/* =========================================
    INTERMEDIATE PAGE
 ========================================= */
 
@@ -6,9 +6,9 @@
   width: 100%;
   min-height: 100vh;
 
-  background: #ffffff;
+  background: var(--surface);
 
-  color: #281f2d;
+  color: var(--ink);
 }
 
 /* =========================================
@@ -22,9 +22,9 @@
 
   z-index: 100;
 
-  border-bottom: 1px solid #eee7f1;
+  border-bottom: 1px solid var(--border);
 
-  background: #ffffff;
+  background: var(--surface);
 }
 
 /* =========================================
@@ -49,15 +49,15 @@
     ),
     linear-gradient(
       180deg,
-      #fbf8fd,
-      #ffffff
+      var(--surface-tint),
+      var(--surface)
     );
 }
 
 .intermediate-label {
   margin: 0 0 12px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -69,7 +69,7 @@
 .intermediate-hero h1 {
   margin: 0;
 
-  color: #281f2d;
+  color: var(--ink);
 
   font-size: clamp(44px, 6vw, 72px);
 
@@ -85,7 +85,7 @@
 
   margin-top: 7px;
 
-  color: #963bd1;
+  color: var(--accent);
 }
 
 .intermediate-hero > p:last-child {
@@ -93,7 +93,7 @@
 
   margin: 23px auto 0;
 
-  color: #7d7381;
+  color: var(--muted);
 
   font-size: 14px;
 
@@ -119,7 +119,7 @@
 .intermediate-heading p {
   margin: 0 0 8px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -131,7 +131,7 @@
 .intermediate-heading h2 {
   margin: 0;
 
-  color: #2e2532;
+  color: var(--ink);
 
   font-size: 38px;
 
@@ -180,11 +180,11 @@
 
   flex-direction: column;
 
-  border: 1px solid #e4dce8;
+  border: 1px solid var(--border);
 
   border-radius: 18px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   text-decoration: none;
 
@@ -248,7 +248,7 @@
       #eee0f5
     );
 
-  color: #9234c9;
+  color: var(--accent);
 
   font-size: 20px;
 
@@ -336,7 +336,7 @@
 
   gap: 10px;
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -359,7 +359,7 @@
 
   background: #faf7fc;
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 15px;
 
@@ -372,7 +372,7 @@
 .intermediate-grade-card:hover .intermediate-arrow {
   transform: translateX(4px);
 
-  background: #f2e5f7;
+  background: var(--accent-soft);
 
   border-color: #dbc2e4;
 }
@@ -398,7 +398,7 @@
 
   gap: 16px;
 
-  border: 1px solid #e4dce8;
+  border: 1px solid var(--border);
 
   border-radius: 17px;
 
@@ -486,7 +486,7 @@
 }
 
 .intermediate-back:hover {
-  color: #963bd1;
+  color: var(--accent);
 
   transform: translateX(-3px);
 }
@@ -616,3 +616,4 @@
     min-height: 250px;
   }
 }
+

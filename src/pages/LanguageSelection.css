@@ -1,9 +1,9 @@
-.language-page {
+﻿.language-page {
   width: 100%;
   min-height: 100vh;
 
-  background: #ffffff;
-  color: #281f2d;
+  background: var(--surface);
+  color: var(--ink);
 }
 
 /* =========================================
@@ -13,9 +13,9 @@
 .language-header {
   width: 100%;
 
-  border-bottom: 1px solid #eee7f1;
+  border-bottom: 1px solid var(--border);
 
-  background: #ffffff;
+  background: var(--surface);
 }
 
 .language-nav {
@@ -40,11 +40,11 @@
 }
 
 .language-back:hover {
-  color: #963bd1;
+  color: var(--accent);
 }
 
 .language-logo {
-  color: #271d2c;
+  color: var(--ink);
 
   font-size: 17px;
   font-weight: 800;
@@ -53,7 +53,7 @@
 }
 
 .language-logo span {
-  color: #963bd1;
+  color: var(--accent);
 }
 
 /* =========================================
@@ -78,15 +78,15 @@
     ),
     linear-gradient(
       180deg,
-      #fbf8fd 0%,
-      #ffffff 100%
+      var(--surface-tint) 0%,
+      var(--surface) 100%
     );
 }
 
 .language-label {
   margin: 0 0 12px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
   font-weight: 800;
@@ -97,7 +97,7 @@
 .language-hero h1 {
   margin: 0;
 
-  color: #281f2d;
+  color: var(--ink);
 
   font-size: clamp(42px, 6vw, 68px);
 
@@ -111,7 +111,7 @@
 .language-hero h1 span {
   display: block;
 
-  color: #963bd1;
+  color: var(--accent);
 }
 
 .language-hero > p:last-child {
@@ -119,7 +119,7 @@
 
   margin: 23px auto 0;
 
-  color: #7d7381;
+  color: var(--muted);
 
   font-size: 14px;
 
@@ -145,7 +145,7 @@
 .language-heading p {
   margin: 0 0 8px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
   font-weight: 800;
@@ -156,7 +156,7 @@
 .language-heading h2 {
   margin: 0;
 
-  color: #2e2532;
+  color: var(--ink);
 
   font-size: 35px;
 
@@ -198,10 +198,10 @@
 
   gap: 13px;
 
-  border: 1px solid #e4dce8;
+  border: 1px solid var(--border);
   border-radius: 14px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   text-decoration: none;
 
@@ -234,7 +234,7 @@
 
   border-radius: 12px;
 
-  background: #f2e5f7;
+  background: var(--accent-soft);
 
   color: #8e34c6;
 
@@ -277,7 +277,7 @@
 .language-arrow {
   flex-shrink: 0;
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 17px;
 }
@@ -336,3 +336,4 @@
     grid-template-columns: 1fr;
   }
 }
+

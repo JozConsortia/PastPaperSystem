@@ -1,4 +1,4 @@
-.register-page {
+﻿.register-page {
   min-height: 100vh;
   width: 100%;
 
@@ -19,7 +19,7 @@
       rgba(114, 44, 153, 0.1),
       transparent 28%
     ),
-    #f8f6fa;
+    var(--surface-soft);
 }
 
 .register-container {
@@ -32,10 +32,10 @@
 
   overflow: hidden;
 
-  border: 1px solid #e7e0ea;
+  border: 1px solid var(--border);
   border-radius: 26px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   box-shadow:
     0 35px 70px rgba(49, 24, 61, 0.12),
@@ -95,7 +95,7 @@
 
   border-radius: 12px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   color: #812ab8;
 
@@ -215,7 +215,7 @@
 }
 
 .register-left-footer span:not(:last-child)::after {
-  content: "•";
+  content: "â€¢";
   margin-left: 10px;
   color: rgba(255, 255, 255, 0.3);
 }
@@ -318,7 +318,7 @@
 
   outline: none;
 
-  background: #ffffff;
+  background: var(--surface);
   color: #2b222e;
 
   font-size: 13px;
@@ -420,7 +420,7 @@
 
   margin-top: 1px;
 
-  accent-color: #963bd1;
+  accent-color: var(--accent);
 
   cursor: pointer;
 }
@@ -519,11 +519,11 @@
   }
 
   .mobile-register-brand .register-brand {
-    color: #24152d;
+    color: var(--ink);
   }
 
   .mobile-register-brand .register-brand-text span {
-    color: #963bd1;
+    color: var(--accent);
   }
 
   .mobile-register-brand .register-brand-icon {
@@ -542,7 +542,7 @@
   .register-page {
     padding: 0;
 
-    background: #ffffff;
+    background: var(--surface);
   }
 
   .register-container {
@@ -566,3 +566,5 @@
     grid-template-columns: 1fr;
   }
 }
+
+

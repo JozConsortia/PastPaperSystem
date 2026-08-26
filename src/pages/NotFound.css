@@ -1,4 +1,4 @@
-.not-found {
+﻿.not-found {
   min-height: 100vh;
 
   display: flex;
@@ -7,11 +7,11 @@
 
   text-align: center;
 
-  background: #faf8fb;
+  background: var(--surface-soft);
 }
 
 .not-found span {
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 80px;
   font-weight: 800;
@@ -40,7 +40,7 @@
 
   border-radius: 9px;
 
-  background: #963bd1;
+  background: var(--accent);
   color: white;
 
   font-size: 12px;
@@ -48,3 +48,4 @@
 
   text-decoration: none;
 }
+

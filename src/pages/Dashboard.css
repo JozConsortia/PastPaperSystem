@@ -1,6 +1,6 @@
-.dashboard-page {
+﻿.dashboard-page {
   min-height: 100vh;
-  background: #faf8fb;
+  background: var(--surface-soft);
 }
 
 .dashboard-header {
@@ -14,7 +14,7 @@
 
   background: white;
 
-  border-bottom: 1px solid #eae3ec;
+  border-bottom: 1px solid var(--border);
 }
 
 .dashboard-logo {
@@ -27,7 +27,7 @@
 }
 
 .dashboard-logo span {
-  color: #963bd1;
+  color: var(--accent);
 }
 
 .dashboard-home {
@@ -83,7 +83,7 @@
 .dashboard-card {
   padding: 30px;
 
-  border: 1px solid #e5dee8;
+  border: 1px solid var(--border);
   border-radius: 18px;
 
   background: white;
@@ -117,3 +117,4 @@
     grid-template-columns: 1fr;
   }
 }
+

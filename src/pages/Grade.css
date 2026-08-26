@@ -1,9 +1,9 @@
-.grade-page {
+﻿.grade-page {
   min-height: 100vh;
 
-  background: #ffffff;
+  background: var(--surface);
 
-  color: #281f2d;
+  color: var(--ink);
 }
 
 /* =========================================
@@ -26,8 +26,8 @@
     ),
     linear-gradient(
       180deg,
-      #fbf8fd 0%,
-      #ffffff 100%
+      var(--surface-tint) 0%,
+      var(--surface) 100%
     );
 }
 
@@ -42,7 +42,7 @@
 .grade-eyebrow {
   margin: 0 0 12px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
   font-weight: 800;
@@ -53,7 +53,7 @@
 .grade-hero h1 {
   margin: 0;
 
-  color: #2a2230;
+  color: var(--ink);
 
   font-size: clamp(46px, 6vw, 72px);
 
@@ -67,7 +67,7 @@
 .grade-hero h1 span {
   display: block;
 
-  color: #963bd1;
+  color: var(--accent);
 }
 
 .grade-hero-description {
@@ -75,7 +75,7 @@
 
   margin: 22px auto 0;
 
-  color: #7d7381;
+  color: var(--muted);
 
   font-size: 13px;
 
@@ -109,7 +109,7 @@
 .grade-section-heading p {
   margin: 0 0 7px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -133,7 +133,7 @@
 .grade-section-heading a {
   flex-shrink: 0;
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -166,11 +166,11 @@
 
   box-sizing: border-box;
 
-  border: 1px solid #e4dce8;
+  border: 1px solid var(--border);
 
   border-radius: 17px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   text-decoration: none;
 
@@ -246,7 +246,7 @@
 .grade-subject-card h3 {
   margin: 24px 0 8px;
 
-  color: #2e2532;
+  color: var(--ink);
 
   font-size: 18px;
 
@@ -256,7 +256,7 @@
 .grade-subject-card p {
   margin: 0;
 
-  color: #7d7381;
+  color: var(--muted);
 
   font-size: 11px;
 
@@ -280,7 +280,7 @@
 }
 
 .grade-subject-action span {
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -288,7 +288,7 @@
 }
 
 .grade-subject-action strong {
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 16px;
 }
@@ -384,11 +384,11 @@
 
   text-align: center;
 
-  border: 1px solid #e4dce8;
+  border: 1px solid var(--border);
 
   border-radius: 18px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   box-shadow:
     0 15px 30px rgba(68, 27, 82, 0.06);
@@ -409,7 +409,7 @@
 
   background: #f5eafa;
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-weight: 800;
 }
@@ -433,7 +433,7 @@
 }
 
 .grade-error-card a {
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 11px;
 
@@ -478,3 +478,4 @@
     flex-direction: column;
   }
 }
+

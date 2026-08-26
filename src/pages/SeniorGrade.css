@@ -1,9 +1,9 @@
-.senior-grade-page {
+﻿.senior-grade-page {
   min-height: 100vh;
 
-  background: #ffffff;
+  background: var(--surface);
 
-  color: #281f2d;
+  color: var(--ink);
 }
 
 /* =========================================
@@ -26,8 +26,8 @@
     ),
     linear-gradient(
       180deg,
-      #fbf8fd,
-      #ffffff
+      var(--surface-tint),
+      var(--surface)
     );
 }
 
@@ -42,7 +42,7 @@
 .senior-grade-eyebrow {
   margin: 0 0 12px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -54,7 +54,7 @@
 .senior-grade-hero h1 {
   margin: 0;
 
-  color: #2a2230;
+  color: var(--ink);
 
   font-size: clamp(46px, 6vw, 72px);
 
@@ -68,7 +68,7 @@
 .senior-grade-hero h1 span {
   display: block;
 
-  color: #963bd1;
+  color: var(--accent);
 }
 
 .senior-grade-hero-inner > p:last-child {
@@ -76,7 +76,7 @@
 
   margin: 22px auto 0;
 
-  color: #7d7381;
+  color: var(--muted);
 
   font-size: 13px;
 
@@ -110,7 +110,7 @@
 .senior-subject-heading p {
   margin: 0 0 7px;
 
-  color: #9949b8;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -134,7 +134,7 @@
 .senior-subject-heading a {
   flex-shrink: 0;
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -171,11 +171,11 @@
 
   box-sizing: border-box;
 
-  border: 1px solid #e4dce8;
+  border: 1px solid var(--border);
 
   border-radius: 16px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   text-decoration: none;
 
@@ -259,7 +259,7 @@
 .senior-subject-card h3 {
   margin: 23px 0 8px;
 
-  color: #2e2532;
+  color: var(--ink);
 
   font-size: 17px;
 
@@ -269,7 +269,7 @@
 .senior-subject-card p {
   margin: 0;
 
-  color: #7d7381;
+  color: var(--muted);
 
   font-size: 11px;
 
@@ -289,7 +289,7 @@
 }
 
 .senior-subject-action span {
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 10px;
 
@@ -297,7 +297,7 @@
 }
 
 .senior-subject-action strong {
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 16px;
 }
@@ -382,7 +382,7 @@
 
   border-radius: 7px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   color: #756a78;
 
@@ -414,11 +414,11 @@
 
   text-align: center;
 
-  border: 1px solid #e4dce8;
+  border: 1px solid var(--border);
 
   border-radius: 18px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   box-shadow:
     0 15px 30px rgba(68, 27, 82, 0.06);
@@ -440,7 +440,7 @@
 
   background: #f5eafa;
 
-  color: #963bd1;
+  color: var(--accent);
 
   font-weight: 800;
 }
@@ -462,7 +462,7 @@
 }
 
 .senior-error-card a {
-  color: #963bd1;
+  color: var(--accent);
 
   font-size: 11px;
 
@@ -514,3 +514,4 @@
     flex-direction: column;
   }
 }
+

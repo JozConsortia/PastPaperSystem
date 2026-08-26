@@ -1,7 +1,7 @@
-.upload-page {
+﻿.upload-page {
   min-height: 100vh;
 
-  background: #faf8fb;
+  background: var(--surface-soft);
 }
 
 .upload-header {
@@ -13,7 +13,7 @@
 }
 
 .upload-header a {
-  color: #79328f;
+  color: var(--accent-strong);
 
   font-size: 12px;
   font-weight: 700;
@@ -62,7 +62,7 @@
   flex-direction: column;
   gap: 17px;
 
-  border: 1px solid #e4dce8;
+  border: 1px solid var(--border);
   border-radius: 17px;
 
   background: white;
@@ -124,7 +124,7 @@
   border: 0;
   border-radius: 10px;
 
-  background: #963bd1;
+  background: var(--accent);
   color: white;
 
   font-size: 13px;
@@ -148,3 +148,4 @@
     padding: 20px;
   }
 }
+

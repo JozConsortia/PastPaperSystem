@@ -1,4 +1,4 @@
-/* ===================================
+﻿/* ===================================
    LOGIN PAGE
 =================================== */
 
@@ -20,7 +20,7 @@
       rgba(114, 44, 153, 0.1),
       transparent 28%
     ),
-    #f8f6fa;
+    var(--surface-soft);
 
   box-sizing: border-box;
 }
@@ -80,10 +80,10 @@
 
   overflow: hidden;
 
-  border: 1px solid #e7e0ea;
+  border: 1px solid var(--border);
   border-radius: 26px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   box-shadow:
     0 35px 70px rgba(49, 24, 61, 0.12),
@@ -253,7 +253,7 @@
 }
 
 .login-left-footer span:not(:last-child)::after {
-  content: "•";
+  content: "â€¢";
 
   margin-left: 10px;
 
@@ -271,7 +271,7 @@
 
   padding: 50px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   box-sizing: border-box;
 }
@@ -334,13 +334,13 @@
 }
 
 .login-brand-text strong {
-  color: #24152d;
+  color: var(--ink);
 
   font-weight: 800;
 }
 
 .login-brand-text span {
-  color: #963bd1;
+  color: var(--accent);
 
   font-weight: 500;
 }
@@ -412,7 +412,7 @@
 
   outline: none;
 
-  background: #ffffff;
+  background: var(--surface);
   color: #2b222e;
 
   font-size: 14px;
@@ -517,7 +517,7 @@
   width: 16px;
   height: 16px;
 
-  accent-color: #963bd1;
+  accent-color: var(--accent);
 
   cursor: pointer;
 }
@@ -634,7 +634,7 @@
   border: 1px solid #ddd6e1;
   border-radius: 11px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   color: #392f3c;
 
@@ -771,7 +771,7 @@ input:focus-visible {
 
     box-shadow: none;
 
-    background: #ffffff;
+    background: var(--surface);
   }
 
   .login-right {
@@ -808,3 +808,5 @@ input:focus-visible {
     gap: 5px;
   }
 }
+
+
