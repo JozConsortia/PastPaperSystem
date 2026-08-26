@@ -399,7 +399,7 @@ function SubjectPapers() {
               ← Back to Grade {gradeNumber}
             </Link>
 
-            <Link to="/primary/foundation-phase">
+            <Link to="/primary/phases/foundation">
               Foundation Phase
             </Link>
 

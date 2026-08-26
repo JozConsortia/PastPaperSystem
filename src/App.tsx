@@ -12,12 +12,15 @@ import {
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 
 // =====================================
 // SEARCH
 // =====================================
 
 import SearchResults from "./pages/SearchResults";
+import HomeworkAssistance from "./pages/HomeworkAssistance";
 
 // =====================================
 // PRIMARY SCHOOL
@@ -135,6 +138,16 @@ function App() {
           element={<Register />}
         />
 
+        <Route
+          path="/terms"
+          element={<Terms />}
+        />
+
+        <Route
+          path="/privacy"
+          element={<Privacy />}
+        />
+
         {/* =====================================
             GLOBAL SEARCH
         ====================================== */}
@@ -151,6 +164,11 @@ function App() {
         <Route
           path="/primary"
           element={<PrimarySchool />}
+        />
+
+        <Route
+          path="/primary/homework-assistant"
+          element={<HomeworkAssistance />}
         />
 
         <Route

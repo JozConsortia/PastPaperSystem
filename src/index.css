@@ -26,6 +26,7 @@
   --radius-md: 12px;
   --radius-lg: 18px;
   --content-width: 1120px;
+  --page-gutter: 40px;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -47,7 +48,10 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: var(--surface-soft);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(139, 61, 184, 0.1), transparent 24rem),
+    radial-gradient(circle at 92% 72%, rgba(93, 157, 182, 0.08), transparent 26rem),
+    var(--surface-soft);
   color: var(--ink);
 }
 
@@ -93,11 +97,37 @@ a {
   color: var(--ink);
 }
 
+[class$="-page"]:not(.login-page):not(.register-page) {
+  background-color: var(--surface-soft) !important;
+  background-image:
+    linear-gradient(rgba(139, 61, 184, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 61, 184, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 8% 4%, rgba(139, 61, 184, 0.1), transparent 22rem),
+    radial-gradient(circle at 92% 70%, rgba(93, 157, 182, 0.07), transparent 24rem) !important;
+  background-size: 36px 36px, 36px 36px, auto, auto !important;
+  background-attachment: fixed !important;
+}
+
+[class$="-main"]:not(.legal-main):not(.upload-main):not(.viewer-main),
+[class$="-section"] {
+  width: min(var(--content-width), calc(100% - var(--page-gutter))) !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.site-navbar-container,
+.home-nav {
+  width: min(var(--content-width), calc(100% - var(--page-gutter))) !important;
+}
+
 [class$="-header"],
 .home-header,
 .login-navbar {
   border-color: var(--border);
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.86) !important;
+  box-shadow: 0 1px 0 rgba(70, 37, 82, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 [class$="-hero"] {
@@ -156,5 +186,15 @@ select {
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--ink-soft);
+}
+
+@media (max-width: 700px) {
+  [class$="-main"]:not(.legal-main):not(.upload-main):not(.viewer-main),
+  [class$="-section"],
+  .site-navbar-container,
+  .home-nav {
+    width: calc(100% - 32px) !important;
+    scroll-margin-top: 76px;
+  }
 }
 

@@ -36,6 +36,14 @@ function PrimarySchool() {
                 Explore Primary Phases
                 <span>→</span>
               </Link>
+
+              <Link
+                to="/primary/homework-assistant"
+                className="primary-secondary-button"
+              >
+                Homework Tutor
+                <span>✦</span>
+              </Link>
             </div>
           </div>
 

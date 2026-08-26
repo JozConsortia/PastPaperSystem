@@ -1,5 +1,19 @@
 # React + TypeScript + Vite
 
+## Backend setup
+
+The TypeScript API lives in `server/` and uses MySQL for users and past-paper
+records. MySQL Workbench can run the setup script at `server/schema.sql`.
+
+1. Copy `.env.example` to `.env` and set the MySQL values.
+2. Run `server/schema.sql` in MySQL Workbench.
+3. Start the API with `npm run server:dev`.
+4. Start the frontend with `npm run dev`.
+
+The homework assistant calls `POST /api/homework-assistance`. Add
+`OPENAI_API_KEY` to `.env` for real AI responses; without it, the safe local
+tutor fallback remains available.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

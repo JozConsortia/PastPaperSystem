@@ -148,6 +148,24 @@ function Navbar() {
                     </span>
                   </NavLink>
 
+                  <NavLink
+                    to="/primary/homework-assistant"
+                  >
+                    <div>
+                      <strong>
+                        Homework Tutor
+                      </strong>
+
+                      <small>
+                        Guided help for Grades R - 6
+                      </small>
+                    </div>
+
+                    <span>
+                      →
+                    </span>
+                  </NavLink>
+
                 </div>
 
               </div>
