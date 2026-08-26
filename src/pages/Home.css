@@ -8,7 +8,7 @@
 
   overflow-x: hidden;
 
-  background: var(--surface);
+  background: var(--surface-soft);
 
   color: var(--ink);
 }
@@ -982,7 +982,12 @@
 
   border-radius: 18px;
 
-  background: var(--surface);
+  background:
+    linear-gradient(
+      145deg,
+      #fffaff,
+      #faf2fd
+    );
 
   text-decoration: none;
 
@@ -1002,15 +1007,6 @@
 
   box-shadow:
     0 18px 35px rgba(68, 27, 82, 0.08);
-}
-
-.level-card-primary {
-  background:
-    linear-gradient(
-      145deg,
-      #fffaff,
-      #faf2fd
-    );
 }
 
 .level-card-link {

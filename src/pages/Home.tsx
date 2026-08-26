@@ -1,7 +1,39 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+
+import type { FormEvent } from "react";
+
+import { Link, useNavigate } from "react-router-dom";
+
 import "./Home.css";
 
 function Home() {
+
+  const navigate = useNavigate();
+
+  const [searchTerm, setSearchTerm] =
+    useState("");
+
+  const handleSearch = (
+    event: FormEvent<HTMLFormElement>
+  ) => {
+
+    event.preventDefault();
+
+    const cleanSearch =
+      searchTerm.trim();
+
+    if (!cleanSearch) {
+      navigate("/search");
+      return;
+    }
+
+    navigate(
+      `/search?q=${encodeURIComponent(
+        cleanSearch
+      )}`
+    );
+  };
+
   return (
     <div className="home-page">
 
@@ -19,29 +51,34 @@ function Home() {
             to="/"
             className="home-logo"
           >
+
             <div className="home-logo-icon">
               P
             </div>
 
             <div className="home-logo-text">
-              <strong>PastPaper</strong>
-              <span>Hub</span>
+
+              <strong>
+                PastPaper
+              </strong>
+
+              <span>
+                Hub
+              </span>
+
             </div>
+
           </Link>
 
           {/* MAIN NAVIGATION */}
 
           <nav className="home-navigation">
 
-            {/* HOME */}
-
             <Link to="/">
               Home
             </Link>
 
-            {/* =================================
-                EDUCATION LEVELS
-            ================================== */}
+            {/* EDUCATION LEVELS */}
 
             <div className="education-dropdown">
 
@@ -50,6 +87,7 @@ function Home() {
                 className="education-dropdown-button"
                 aria-haspopup="true"
               >
+
                 <span>
                   Education Levels
                 </span>
@@ -57,13 +95,12 @@ function Home() {
                 <span className="dropdown-arrow">
                   ▾
                 </span>
+
               </button>
 
               <div className="education-dropdown-menu">
 
-                {/* =================================
-                    PRIMARY SCHOOL
-                ================================== */}
+                {/* PRIMARY */}
 
                 <div className="education-menu-section">
 
@@ -74,6 +111,7 @@ function Home() {
                     </div>
 
                     <div>
+
                       <strong>
                         Primary School
                       </strong>
@@ -81,6 +119,7 @@ function Home() {
                       <span>
                         Grades R – 9
                       </span>
+
                     </div>
 
                   </div>
@@ -127,9 +166,7 @@ function Home() {
 
                 </div>
 
-                {/* =================================
-                    HIGH SCHOOL
-                ================================== */}
+                {/* HIGH SCHOOL */}
 
                 <div className="education-menu-section">
 
@@ -140,6 +177,7 @@ function Home() {
                     </div>
 
                     <div>
+
                       <strong>
                         High School
                       </strong>
@@ -147,6 +185,7 @@ function Home() {
                       <span>
                         Grades 10 – 12
                       </span>
+
                     </div>
 
                   </div>
@@ -174,9 +213,7 @@ function Home() {
 
                 </div>
 
-                {/* =================================
-                    TVET COLLEGE
-                ================================== */}
+                {/* TVET */}
 
                 <div className="education-menu-section">
 
@@ -187,6 +224,7 @@ function Home() {
                     </div>
 
                     <div>
+
                       <strong>
                         TVET College
                       </strong>
@@ -194,6 +232,7 @@ function Home() {
                       <span>
                         Vocational Education
                       </span>
+
                     </div>
 
                   </div>
@@ -221,9 +260,7 @@ function Home() {
 
                 </div>
 
-                {/* =================================
-                    UNIVERSITY
-                ================================== */}
+                {/* UNIVERSITY */}
 
                 <div className="education-menu-section">
 
@@ -234,6 +271,7 @@ function Home() {
                     </div>
 
                     <div>
+
                       <strong>
                         University
                       </strong>
@@ -241,33 +279,33 @@ function Home() {
                       <span>
                         Higher Education
                       </span>
+
                     </div>
 
                   </div>
 
                   <div className="education-sub-links">
 
-                    <span className="disabled-menu-link">
-
+                    <Link
+                      to="/university"
+                      className="education-featured-link"
+                    >
                       <span>
                         University Programmes
                       </span>
 
                       <small>
-                        Courses · Modules
+                        Qualifications · Modules
                       </small>
 
-                      <em>
-                        Coming Soon
-                      </em>
-
-                    </span>
+                      <b>
+                        →
+                      </b>
+                    </Link>
 
                   </div>
 
                 </div>
-
-                {/* FOOTER */}
 
                 <div className="education-menu-footer">
                   Supporting learners from school
@@ -278,17 +316,13 @@ function Home() {
 
             </div>
 
-            {/* HOW IT WORKS */}
-
             <a href="#how-it-works">
               How It Works
             </a>
 
           </nav>
 
-          {/* =====================================
-              ACCOUNT ACTIONS
-          ====================================== */}
+          {/* ACCOUNT */}
 
           <div className="home-actions">
 
@@ -335,12 +369,15 @@ function Home() {
             </div>
 
             <h1>
+
               Find past papers.
+
               <br />
 
               <span>
                 Study with confidence.
               </span>
+
             </h1>
 
             <p>
@@ -360,6 +397,7 @@ function Home() {
                 <span>
                   →
                 </span>
+
               </Link>
 
               <a
@@ -374,7 +412,7 @@ function Home() {
           </div>
 
           {/* =====================================
-              SEARCH
+              GLOBAL SEARCH
           ====================================== */}
 
           <div className="search-card">
@@ -391,44 +429,92 @@ function Home() {
 
             </div>
 
-            <div className="search-box">
+            <form
+              className="search-box"
+              onSubmit={handleSearch}
+            >
 
               <span>
                 ⌕
               </span>
 
               <input
-                type="text"
+                type="search"
+                value={searchTerm}
+                onChange={(event) =>
+                  setSearchTerm(
+                    event.target.value
+                  )
+                }
                 placeholder="Search for a grade, subject, course or module..."
               />
 
-              <button type="button">
+              <button type="submit">
                 Search
               </button>
 
-            </div>
+            </form>
 
             <div className="popular-searches">
 
               <span>
-                Popular:
+                Try:
               </span>
 
-              <Link to="/primary">
-                Primary School
-              </Link>
+              <button
+                type="button"
+                onClick={() =>
+                  navigate(
+                    "/search?q=mathematics"
+                  )
+                }
+              >
+                Mathematics
+              </button>
 
-              <Link to="/primary/phases/foundation">
-                Foundation Phase
-              </Link>
+              <button
+                type="button"
+                onClick={() =>
+                  navigate(
+                    "/search?q=Grade%2010"
+                  )
+                }
+              >
+                Grade 10
+              </button>
 
-              <Link to="/high-school">
-                High School
-              </Link>
+              <button
+                type="button"
+                onClick={() =>
+                  navigate(
+                    "/search?q=N4"
+                  )
+                }
+              >
+                N4
+              </button>
 
-              <Link to="/tvet">
-                TVET College
-              </Link>
+              <button
+                type="button"
+                onClick={() =>
+                  navigate(
+                    "/search?q=CSC101"
+                  )
+                }
+              >
+                CSC101
+              </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  navigate(
+                    "/search?q=TUT"
+                  )
+                }
+              >
+                TUT
+              </button>
 
             </div>
 
@@ -459,6 +545,7 @@ function Home() {
                 <span>
                   Every learner.
                 </span>
+
               </h2>
 
             </div>
@@ -473,9 +560,7 @@ function Home() {
 
           <div className="levels-grid">
 
-            {/* =================================
-                PRIMARY SCHOOL
-            ================================== */}
+            {/* PRIMARY */}
 
             <div className="level-card level-card-primary">
 
@@ -579,9 +664,7 @@ function Home() {
 
             </div>
 
-            {/* =================================
-                HIGH SCHOOL
-            ================================== */}
+            {/* HIGH SCHOOL */}
 
             <Link
               to="/high-school"
@@ -650,9 +733,7 @@ function Home() {
 
             </Link>
 
-            {/* =================================
-                TVET COLLEGE
-            ================================== */}
+            {/* TVET */}
 
             <Link
               to="/tvet"
@@ -686,9 +767,8 @@ function Home() {
                 </span>
 
                 <p className="level-card-description">
-                  Explore vocational resources across
-                  NC(V), NATED / Report 191 and
-                  occupational programmes.
+                  Explore NC(V), NATED / Report 191
+                  and occupational programmes.
                 </p>
 
               </div>
@@ -721,11 +801,12 @@ function Home() {
 
             </Link>
 
-            {/* =================================
-                UNIVERSITY
-            ================================== */}
+            {/* UNIVERSITY */}
 
-            <div className="level-card">
+            <Link
+              to="/university"
+              className="level-card level-card-link"
+            >
 
               <div className="level-card-top">
 
@@ -754,9 +835,9 @@ function Home() {
                 </span>
 
                 <p className="level-card-description">
-                  Search for academic resources by
-                  institution, qualification, course,
-                  module and module code.
+                  Find resources by institution,
+                  qualification, study area, module
+                  and module code.
                 </p>
 
               </div>
@@ -768,7 +849,7 @@ function Home() {
                 </span>
 
                 <span>
-                  Course
+                  Qualification
                 </span>
 
                 <span>
@@ -777,11 +858,17 @@ function Home() {
 
               </div>
 
-              <div className="level-card-button level-card-button-disabled">
-                Coming Soon
+              <div className="level-card-button">
+
+                Explore University
+
+                <span>
+                  →
+                </span>
+
               </div>
 
-            </div>
+            </Link>
 
           </div>
 
@@ -816,9 +903,9 @@ function Home() {
             </div>
 
             <p>
-              Finding the right past paper should be
-              simple. Follow three straightforward steps
-              to get to the resource you need.
+              Find your education level, narrow your
+              search to the right resource and start
+              preparing.
             </p>
 
           </div>
@@ -846,8 +933,9 @@ function Home() {
               </h3>
 
               <p className="step-description">
-                Start by selecting Primary School,
-                High School, TVET College or University.
+                Start with Primary School,
+                High School, TVET College
+                or University.
               </p>
 
               <div className="step-footer">
@@ -864,14 +952,10 @@ function Home() {
 
             </div>
 
-            {/* CONNECTOR */}
-
             <div className="step-connector">
-
               <span>
                 →
               </span>
-
             </div>
 
             {/* STEP 2 */}
@@ -891,12 +975,13 @@ function Home() {
               </p>
 
               <h3>
-                Select your grade or module
+                Search or select your resource
               </h3>
 
               <p className="step-description">
-                Choose your grade, phase, programme,
-                course, subject or module.
+                Search by grade, subject,
+                programme, qualification, course,
+                module or module code.
               </p>
 
               <div className="step-footer">
@@ -913,14 +998,10 @@ function Home() {
 
             </div>
 
-            {/* CONNECTOR */}
-
             <div className="step-connector">
-
               <span>
                 →
               </span>
-
             </div>
 
             {/* STEP 3 */}
@@ -944,9 +1025,9 @@ function Home() {
               </h3>
 
               <p className="step-description">
-                Open the past paper, study online,
-                practise your answers and prepare
-                for your assessment.
+                Open the resource, practise with
+                the past paper and prepare for
+                your assessment.
               </p>
 
               <div className="step-footer">
@@ -989,9 +1070,9 @@ function Home() {
             </h2>
 
             <p>
-              Start exploring past papers today and
-              prepare with resources organised around
-              the way you study.
+              Explore Primary School, High School,
+              TVET and University resources from
+              one academic platform.
             </p>
 
             <div className="cta-buttons">
@@ -1012,6 +1093,13 @@ function Home() {
                 className="cta-secondary"
               >
                 Explore TVET →
+              </Link>
+
+              <Link
+                to="/university"
+                className="cta-secondary"
+              >
+                Explore University →
               </Link>
 
             </div>
@@ -1042,14 +1130,22 @@ function Home() {
               </div>
 
               <div className="home-logo-text">
-                <strong>PastPaper</strong>
-                <span>Hub</span>
+
+                <strong>
+                  PastPaper
+                </strong>
+
+                <span>
+                  Hub
+                </span>
+
               </div>
 
             </Link>
 
             <p>
-              Past papers made easier for every learner.
+              Past papers made easier
+              for every learner.
             </p>
 
           </div>
@@ -1082,6 +1178,10 @@ function Home() {
 
             <Link to="/tvet">
               TVET College
+            </Link>
+
+            <Link to="/university">
+              University
             </Link>
 
             <Link to="/login">

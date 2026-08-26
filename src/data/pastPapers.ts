@@ -25,6 +25,8 @@ export interface PastPaper {
 
   fileUrl?: string;
 
+  memorandumAvailable?: boolean;
+
   uploadedBy: string;
 }
 
@@ -379,10 +381,10 @@ export const pastPapers: PastPaper[] = [
 |--------------------------------------------------------------------------
 */
 
-export function getYears(): number[] {
+export function getYears(papers: PastPaper[] = pastPapers): number[] {
   return Array.from(
     new Set(
-      pastPapers.map(
+      papers.map(
         (paper) => paper.year
       )
     )
@@ -395,10 +397,10 @@ export function getYears(): number[] {
 |--------------------------------------------------------------------------
 */
 
-export function getTerms(): string[] {
+export function getTerms(papers: PastPaper[] = pastPapers): string[] {
   return Array.from(
     new Set(
-      pastPapers.map(
+      papers.map(
         (paper) => paper.term
       )
     )
@@ -411,10 +413,10 @@ export function getTerms(): string[] {
 |--------------------------------------------------------------------------
 */
 
-export function getPaperTypes(): string[] {
+export function getPaperTypes(papers: PastPaper[] = pastPapers): string[] {
   return Array.from(
     new Set(
-      pastPapers.map(
+      papers.map(
         (paper) => paper.paperType
       )
     )

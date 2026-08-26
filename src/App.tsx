@@ -14,6 +14,12 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 
 // =====================================
+// SEARCH
+// =====================================
+
+import SearchResults from "./pages/SearchResults";
+
+// =====================================
 // PRIMARY SCHOOL
 // =====================================
 
@@ -70,6 +76,18 @@ import NATED from "./pages/NATED";
 import Occupational from "./pages/Occupational";
 
 // =====================================
+// UNIVERSITY
+// =====================================
+
+import University from "./pages/University";
+import UniversityInstitutions from "./pages/UniversityInstitutions";
+import UniversityInstitution from "./pages/UniversityInstitution";
+import UniversityQualifications from "./pages/UniversityQualifications";
+import UniversityStudyAreas from "./pages/UniversityStudyAreas";
+import UniversityModules from "./pages/UniversityModules";
+import UniversityModulePapers from "./pages/UniversityModulePapers";
+
+// =====================================
 // PAPERS
 // =====================================
 
@@ -115,6 +133,15 @@ function App() {
         <Route
           path="/register"
           element={<Register />}
+        />
+
+        {/* =====================================
+            GLOBAL SEARCH
+        ====================================== */}
+
+        <Route
+          path="/search"
+          element={<SearchResults />}
         />
 
         {/* =====================================
@@ -318,10 +345,10 @@ function App() {
           element={<NCV />}
         />
 
-        {/* NC(V) LEVELS */}
+        {/* NC(V) PROGRAMME */}
 
         <Route
-          path="/tvet/ncv/level/:level"
+          path="/tvet/ncv/:programmeId"
           element={<NCV />}
         />
 
@@ -332,10 +359,10 @@ function App() {
           element={<NATED />}
         />
 
-        {/* NATED PROGRAMME TYPES */}
+        {/* NATED PROGRAMME */}
 
         <Route
-          path="/tvet/nated/:programmeType"
+          path="/tvet/nated/:programmeId"
           element={<NATED />}
         />
 
@@ -346,11 +373,89 @@ function App() {
           element={<Occupational />}
         />
 
-        {/* OCCUPATIONAL CATEGORIES */}
+        {/* OCCUPATIONAL CATEGORY */}
 
         <Route
           path="/tvet/occupational/:category"
           element={<Occupational />}
+        />
+
+        {/* =====================================
+            UNIVERSITY
+        ====================================== */}
+
+        {/* UNIVERSITY LANDING */}
+
+        <Route
+          path="/university"
+          element={<University />}
+        />
+
+        {/* ALL UNIVERSITIES */}
+
+        <Route
+          path="/university/institutions"
+          element={<UniversityInstitutions />}
+        />
+
+        {/* ALL QUALIFICATION TYPES */}
+
+        <Route
+          path="/university/qualifications"
+          element={<UniversityQualifications />}
+        />
+
+        {/* ALL STUDY AREAS */}
+
+        <Route
+          path="/university/study-areas"
+          element={<UniversityStudyAreas />}
+        />
+
+        {/* =====================================
+            SPECIFIC UNIVERSITY
+        ====================================== */}
+
+        <Route
+          path="/university/:universityId"
+          element={<UniversityInstitution />}
+        />
+
+        {/* UNIVERSITY QUALIFICATIONS */}
+
+        <Route
+          path="/university/:universityId/qualifications"
+          element={<UniversityQualifications />}
+        />
+
+        {/* UNIVERSITY STUDY AREAS */}
+
+        <Route
+          path="/university/:universityId/study-areas"
+          element={<UniversityStudyAreas />}
+        />
+
+        {/* UNIVERSITY SPECIFIC STUDY AREA */}
+
+        <Route
+          path="/university/:universityId/study-area/:studyAreaId"
+          element={<UniversityModules />}
+        />
+
+        {/* UNIVERSITY MODULE */}
+
+        <Route
+          path="/university/:universityId/module/:moduleId"
+          element={<UniversityModulePapers />}
+        />
+
+        {/* =====================================
+            GENERAL STUDY AREA
+        ====================================== */}
+
+        <Route
+          path="/university/study-area/:studyAreaId"
+          element={<UniversityModules />}
         />
 
         {/* =====================================

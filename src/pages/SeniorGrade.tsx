@@ -158,18 +158,11 @@ function SeniorGrade() {
 
           <div className="senior-subject-grid">
             {subjects.map((subject) => {
-              let destination = "";
-
-              if (subject.languageBased) {
-                destination =
-                  `/primary/phases/senior/grade/${gradeNumber}/language/${subject.id}`;
-              } else if (subject.creativeArts) {
-                destination =
-                  `/primary/phases/senior/grade/${gradeNumber}/creative-arts`;
-              } else {
-                destination =
-                  `/primary/phases/senior/grade/${gradeNumber}/${subject.id}`;
-              }
+              const destination = subject.languageBased
+                ? `/primary/phases/senior/grade/${gradeNumber}/language/${subject.id}`
+                : subject.creativeArts
+                ? `/primary/phases/senior/grade/${gradeNumber}/creative-arts`
+                : `/primary/phases/senior/grade/${gradeNumber}/${subject.id}`;
 
               return (
                 <Link
