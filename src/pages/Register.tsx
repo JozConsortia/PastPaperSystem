@@ -62,9 +62,20 @@ function Register() {
 
     const existingUsersString = localStorage.getItem("pastPaperUsers");
 
-    const existingUsers: RegisteredUser[] = existingUsersString
-      ? JSON.parse(existingUsersString)
-      : [];
+    let existingUsers: RegisteredUser[] = [];
+
+    if (existingUsersString) {
+      try {
+        const parsedUsers = JSON.parse(existingUsersString);
+
+        if (Array.isArray(parsedUsers)) {
+          existingUsers = parsedUsers;
+        }
+      } catch {
+        setError("There was a problem reading your account information. Please try again.");
+        return;
+      }
+    }
 
     const emailAlreadyExists = existingUsers.some(
       (user) =>

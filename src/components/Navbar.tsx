@@ -297,7 +297,7 @@ function Navbar() {
 
                 <div className="site-menu-links">
 
-                  <div className="site-disabled-link">
+                  <NavLink to="/university">
 
                     <div>
                       <strong>
@@ -309,11 +309,11 @@ function Navbar() {
                       </small>
                     </div>
 
-                    <em>
-                      Coming Soon
-                    </em>
+                    <span>
+                      →
+                    </span>
 
-                  </div>
+                  </NavLink>
 
                 </div>
 

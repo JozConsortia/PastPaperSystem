@@ -354,13 +354,19 @@ function SubjectPapers() {
                         View Paper
                       </Link>
 
-                      <a
-                        href={paper.fileUrl}
-                        className="download-paper"
-                        download
-                      >
-                        Download
-                      </a>
+                      {paper.fileUrl ? (
+                        <a
+                          href={paper.fileUrl}
+                          className="download-paper"
+                          download
+                        >
+                          Download
+                        </a>
+                      ) : (
+                        <span className="download-paper unavailable">
+                          PDF unavailable
+                        </span>
+                      )}
                     </div>
                   </article>
                 )
@@ -394,9 +400,9 @@ function SubjectPapers() {
 
           <div className="papers-navigation">
             <Link
-              to={`/primary/foundation-phase/grade/${gradeNumber}`}
+              to="/primary/phases"
             >
-              ← Back to Grade {gradeNumber}
+              ← Back to Primary Phases
             </Link>
 
             <Link to="/primary/phases/foundation">

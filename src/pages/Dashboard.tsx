@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import "./Dashboard.css";
 
@@ -8,6 +8,10 @@ function Dashboard() {
   );
 
   let userName = "Learner";
+
+  if (!storedUser) {
+    return <Navigate to="/login" replace />;
+  }
 
   if (storedUser) {
     try {
