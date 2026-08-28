@@ -2,13 +2,44 @@
 
 ## Backend setup
 
-The TypeScript API lives in `server/` and uses MySQL for users and past-paper
-records. MySQL Workbench can run the setup script at `server/schema.sql`.
+The TypeScript API lives in `backend/` and uses MySQL for users and past-paper
+records. MySQL Workbench can run the setup script at `backend/schema.sql`.
 
-1. Copy `.env.example` to `.env` and set the MySQL values.
-2. Run `server/schema.sql` in MySQL Workbench.
+1. Copy `.env.example` to `backend/.env` and set the MySQL values.
+2. Run `backend/schema.sql` in MySQL Workbench.
 3. Start the API with `npm run server:dev`.
 4. Start the frontend with `npm run dev`.
+
+After registering the first account, promote it to an administrator in MySQL:
+
+```sql
+UPDATE users SET role = 'admin' WHERE email = 'admin@example.com';
+```
+
+If the database was created before roles were added, run this migration first:
+
+```sql
+ALTER TABLE users ADD COLUMN role ENUM('student', 'admin') NOT NULL DEFAULT 'student';
+ALTER TABLE users ADD COLUMN account_type VARCHAR(40) NOT NULL DEFAULT 'Student';
+```
+
+If `past_papers` already exists, add memorandum support as well:
+
+```sql
+ALTER TABLE past_papers ADD COLUMN memo_url VARCHAR(500) NULL;
+ALTER TABLE past_papers ADD COLUMN memorandum_available BOOLEAN NOT NULL DEFAULT FALSE;
+```
+
+Sign out and sign in again after changing the role so the new role is included
+in the session token. Administrators can then use `/admin` to upload papers.
+
+The frontend application lives in `frontend/`, with its React source in
+`frontend/src/` and static files in `frontend/public/`.
+
+You can also work inside each application folder:
+
+- `cd frontend && npm install && npm run dev`
+- `cd backend && npm install && npm run dev`
 
 The homework assistant calls `POST /api/homework-assistance`. Add
 `OPENAI_API_KEY` to `.env` for real AI responses; without it, the safe local
@@ -48,7 +79,7 @@ export default defineConfig([
     ],
     languageOptions: {
       parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        project: ['./frontend/tsconfig.node.json', './frontend/tsconfig.app.json'],
         tsconfigRootDir: import.meta.dirname,
       },
       // other options...
@@ -78,7 +109,7 @@ export default defineConfig([
     ],
     languageOptions: {
       parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        project: ['./frontend/tsconfig.node.json', './frontend/tsconfig.app.json'],
         tsconfigRootDir: import.meta.dirname,
       },
       // other options...

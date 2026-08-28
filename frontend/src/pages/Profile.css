@@ -1,0 +1,14 @@
+.profile-page { min-height: 100vh; background: var(--surface-soft); }
+.profile-main { width: min(700px, calc(100% - 40px)); margin: auto; padding: 70px 0; }
+.profile-label { margin: 0 0 8px; color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: 1.6px; }
+.profile-main h1 { margin: 0; font-size: 42px; }
+.profile-description { color: var(--muted); font-size: 13px; }
+.profile-form { margin-top: 32px; padding: 30px; display: flex; flex-direction: column; gap: 17px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); }
+.profile-form label { display: flex; flex-direction: column; gap: 7px; color: var(--ink-soft); font-size: 12px; font-weight: 700; }
+.profile-form input { height: 46px; padding: 0 12px; border: 1px solid var(--border); border-radius: 8px; }
+.profile-form button { height: 46px; border: 0; border-radius: 8px; background: var(--accent); color: white; font-weight: 700; }
+.profile-form button:disabled { opacity: .6; cursor: wait; }
+.profile-form a { color: var(--accent-strong); font-size: 12px; font-weight: 700; text-decoration: none; }
+.profile-message { padding: 12px; border-radius: 8px; background: var(--accent-soft); color: var(--accent-strong); font-size: 12px; }
+.profile-detail { padding: 11px 0; display: flex; justify-content: space-between; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; }
+.profile-detail strong { color: var(--ink); }
