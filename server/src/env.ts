@@ -13,7 +13,7 @@ export const env = {
     host: process.env.DB_HOST || "localhost",
     port: numberFromEnv(process.env.DB_PORT, 3306),
     user: process.env.DB_USER || "root",
-    password: process.env.DB_PASSWORD || "",
+    password: process.env.DB_PASSWORD || "JozConsortia#8",
     database: process.env.DB_NAME || "pastpaperhub",
   },
   openAiApiKey: process.env.OPENAI_API_KEY || "",

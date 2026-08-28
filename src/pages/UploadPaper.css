@@ -81,7 +81,8 @@
 }
 
 .upload-form input,
-.upload-form select {
+.upload-form select,
+.upload-form textarea {
   height: 46px;
 
   padding: 0 12px;
@@ -97,8 +98,15 @@
   font-size: 12px;
 }
 
+.upload-form textarea {
+  height: auto;
+  padding-top: 12px;
+  resize: vertical;
+}
+
 .upload-form input:focus,
-.upload-form select:focus {
+.upload-form select:focus,
+.upload-form textarea:focus {
   border-color: #9d42cf;
 
   box-shadow:
@@ -141,6 +149,11 @@
   color: #338040;
 
   font-size: 11px;
+}
+
+.upload-message.error {
+  background: #fff1f1;
+  color: #a33a3a;
 }
 
 @media (max-width: 500px) {
